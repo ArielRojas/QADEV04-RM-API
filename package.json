@@ -1,0 +1,25 @@
+{
+  "name": "TCAutomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AlejandroJeanCarlo/RMTCAutomation.git"
+  },
+  "author": "JC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejandroJeanCarlo/RMTCAutomation/issues"
+  },
+  "homepage": "https://github.com/AlejandroJeanCarlo/RMTCAutomation",
+  "dependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "superagent": "^1.4.0",
+    "superagent-proxy": "^1.0.0"
+  }
+}
