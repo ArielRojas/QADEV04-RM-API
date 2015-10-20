@@ -1,25 +1,29 @@
 {
-  "name": "TCAutomation",
-  "version": "1.0.0",
-  "description": "",
+  "name": "QADEV04-RM-API",
+  "version": "0.0.1",
+  "description": "Room Manager Automation Project",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chai": "^3.3.0",
+    "superagent": "^1.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:AlejandroJeanCarlo/RMTCAutomation.git"
+    "url": "https://github.com/JFVF/QADEV04-RM-API.git"
   },
-  "author": "JC",
+  "author": "QaDev04 RM",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlejandroJeanCarlo/RMTCAutomation/issues"
+    "url": "https://github.com/JFVF/QADEV04-RM-API/issues"
   },
-  "homepage": "https://github.com/AlejandroJeanCarlo/RMTCAutomation",
-  "dependencies": {
-    "chai": "^3.3.0",
-    "mocha": "^2.3.3",
-    "superagent": "^1.4.0",
-    "superagent-proxy": "^1.0.0"
-  }
+  "homepage": "https://github.com/JFVF/QADEV04-RM-API"
 }
