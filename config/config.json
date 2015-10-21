@@ -9,6 +9,7 @@
 	"httpStatus" :{
 		"Ok": 200
 	},
+	"tokenHeader":"Authorization",
 	"path":{
 		"tokenAPI" : "../../lib/tokenAPI",
 		"loginAPI" : "../../lib/loginAPI",
