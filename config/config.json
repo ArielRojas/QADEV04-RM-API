@@ -15,5 +15,7 @@
 		"endPoints" : "../../config/endPoints.json",
 		"resourceConfig" : "../../config/resource.json",
 		"util" : "../util/util"
-	}
+	},
+	"tokenHeader" : "Authorization",
+	"tokenPrefix" : "jwt "
 }
