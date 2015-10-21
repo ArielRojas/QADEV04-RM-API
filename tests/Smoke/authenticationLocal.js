@@ -11,8 +11,6 @@ var tokenAPI = require(config.path.tokenAPI);
 
 describe('Smoke testing for Authentication (token)', function () {
 
-	//global variable
-	var userCredential = config.userAccountJson;
 	this.timeout(config.timeOut);
 
 	before('Setting for obtain the token', function(){
@@ -21,7 +19,7 @@ describe('Smoke testing for Authentication (token)', function () {
 
 	it('POST /Authentication/login (local) with valid authentication',function (done){
 		tokenAPI
-		.getToken(userCredential, function(token){
+		.getToken(function(err, token){
 			expect(token.status).to.equal(config.httpStatus.Ok);
 			expect(token.body.token).not.to.be.null;
 			done();
