@@ -8,9 +8,7 @@
   },
   "dependencies": {
     "chai": "^3.3.0",
-    "superagent": "^1.4.0"
-  },
-  "devDependencies": {
+    "superagent": "^1.4.0",
     "mocha": "^2.3.3"
   },
   "scripts": {

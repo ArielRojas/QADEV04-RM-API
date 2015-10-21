@@ -1,5 +1,6 @@
 // util
-var resourceConfig = require('..\\config\\resource.json');
+var config = require('../config/config.json')
+var resourceConfig = require('../config/resource.json');
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
