@@ -20,4 +20,3 @@
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt "
 }
-
