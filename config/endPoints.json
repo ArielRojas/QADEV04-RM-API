@@ -5,6 +5,5 @@
 	"roomByIdEndPoint":"\/rooms",
 	"resources" :"/resources",
 	"login" : "/login",
-	"resourceId":"/resources/{:id}",
-	"tokenHeader":"Authorization"
+	"resourceId":"/resources/{:id}"
 }
