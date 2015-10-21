@@ -11,11 +11,10 @@
 	},
 	"path":{
 		"tokenAPI" : "../../lib/tokenAPI",
-		"loginAPI" : "../../lib/loginAPI",
 		"resourcesAPI" : "../../lib/resourcesAPI",
 		"endPoints" : "../config/endPoints.json",
-		"meetingsAPI":"../../lib/meetingsAPI",
 		"resourceConfig" : "../../config/resource.json",
+		"meetingsAPI":"../../lib/meetingsAPI",
 		"util" : "../util/util"
 	},
 	"tokenHeader" : "Authorization",
