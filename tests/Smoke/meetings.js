@@ -15,7 +15,6 @@ var tokenAPI = require(config.path.tokenAPI);
 describe('Smoke testings for meetings', function () {
 
 	//global variables
-	var userCredential = config.userAccountJson;
 	//the token variable will contain the token
 	var token = null;
 	//the serviceId variable will contain the service id
@@ -29,7 +28,7 @@ describe('Smoke testings for meetings', function () {
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 		//getting the token
 		tokenAPI
-			.getToken(userCredential,function(res){
+			.getToken(function(err, res){
 				token = res;
 				done();
 			});
@@ -37,10 +36,10 @@ describe('Smoke testings for meetings', function () {
 
 	beforeEach('Getting the service id and room id ',function (done){
 		meetingsAPI
-				.getService(token.body.token, function(res1){
+				.getService(token.body.token, function(err, res1){
 					serviceId = res1.body[0]._id;
 				meetingsAPI
-					.getRooms(function(res2){
+					.getRooms(function(err, res2){
 						roomId = res2.body[0]._id;
 						done();
 					});
@@ -49,7 +48,7 @@ describe('Smoke testings for meetings', function () {
 
 	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings returns 200',function (done){	
 		meetingsAPI
-			.getMeetings(serviceId,roomId,function(res){
+			.getMeetings(serviceId,roomId,function(err, res){
 				expect(res.status).to.equal(200);
 				done();
 		});
