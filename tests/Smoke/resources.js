@@ -1,25 +1,26 @@
 //Smoke TC Resources
-//initial configuration
-var request = require('superagent');
+//Jean Carlo Rodriguez
+var config = require('../../config/config.json');
 var expect = require('chai').expect;
-var tokenAPI = require('../../lib/tokenAPI');
-var util = require('../../util/util');
-var resourcesAPI = require('../../lib/resourcesAPI');
-var endPoints = require('..\\..\\config\\endPoints.json');
-var config = require('..\\..\\config\\config.json');
+var tokenAPI = require(config.path.tokenAPI);
+var resourcesAPI = require(config.path.resourcesAPI);
+var endPoints = require(config.path.endPoints);
+var resourceConfig = require(config.path.resourceConfig);
 //user account
 var userJSon = config.userAccountJson;
 //End Points
 var url = config.url;
 var tokenEndPoint = endPoints.login;
 var resourceEndPoint = endPoints.resources;
-
+var resourceIdEndPoint = endPoints.resourceId;
 // global variables
 var token = null; 
-describe('Resources', function () {
+
+
+describe('Resources Smoke tests', function () {
 	this.timeout(config.timeOut);
-	//bEFORE
-	before('Before Set',function (done) {
+	//Before
+	before(function (done) {
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 		//getting the token
 		tokenAPI
@@ -28,33 +29,25 @@ describe('Resources', function () {
 				done();
 			});
 	});
+	afterEach(function () {
+		resourceIdEndPoint = endPoints.resourceId;
+	});
 
 	it('Get /Resources', function (done) {
 		resourcesAPI
-			.get(url+resourceEndPoint,function(err,res){
-				expect(res.status).to.equal(200);
+			.obtain(url+resourceEndPoint,function(err,res){
+				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});
 
 	it('Post /Resources', function (done) {
 		var resourceId = null;
-		resourceName = util.generateString(12);
-		var resourceJSon = {
-			  "name": resourceName,
-			  "customName": resourceName,
-			  "fontIcon": "fa fa-tv",
-			  "from": "",
-			  "description": "This is a resource"
-		};
-		
-		request
-			.post(url+resourceEndPoint)
-			.set('Authorization','jwt '+token)
-			.send(resourceJSon)
-			.end(function(err,res){
+		resourcesAPI
+			.create(url+resourceEndPoint,token,function(err,res){
 				resourceId = res.body._id;
-				expect(res.status).to.equal(200);
+				expect(res.status).to.equal(config.httpStatus.Ok);
+				//Delete resource
 				resourcesAPI.delete(url+resourceEndPoint,resourceId,token,function(){
 					done();	
 				});
@@ -63,37 +56,26 @@ describe('Resources', function () {
 
 	it('Get /Resources/{id}', function (done) {
 		resourcesAPI
-			.create(url+resourceEndPoint,token,function(res){
+			.create(url+resourceEndPoint,token,function(err,res){
 				var resourceId = res.body._id
-				request
-					.get(url+resourceEndPoint+'/'+resourceId)
-					.set('Authorization','jwt '+token)
-					.end(function(err,res){
-
-						expect(res.status).to.equal(200);
-						resourcesAPI.delete(url+resourceEndPoint,resourceId,token,function(){
+				resourceIdEndPoint = resourceIdEndPoint.replace('{:id}',resourceId);
+				resourcesAPI
+					.obtain(url+resourceIdEndPoint,function(err,res){
+						expect(res.status).to.equal(config.httpStatus.Ok);
+						resourcesAPI.delete(url+resourceEndPoint,resourceId,token,function(res){
 							done();	
 						});	
 					});
 			});
 	});
 	it('Put /Resources/{id}', function (done) {
-		resourceName = util.generateString(12);
-		var resourceUpdate = config.resourceJson;
-		resourceUpdate = JSON.stringify(resourceUpdate).replace(/resourceName/g,resourceName);
-		resourceUpdate = JSON.parse(resourceUpdate);
-		//console.log('original ',resourceUpdate);
 		resourcesAPI
-			.create(url+resourceEndPoint,token,function(res){
+			.create(url+resourceEndPoint,token,function(err,res){
 				var resourceId = res.body._id
-				//console.log('creaado',res.body);
-				request
-					.put(url+resourceEndPoint+'/'+resourceId)
-					.set('Authorization','jwt '+token)
-					.send(resourceUpdate)
-					.end(function(err,res){
-						//console.log('cambiado',res.body);
-						expect(res.status).to.equal(200);
+				resourceIdEndPoint = resourceIdEndPoint.replace('{:id}',resourceId);
+				resourcesAPI
+					.update(url+resourceIdEndPoint,token,function(err,res){
+						expect(res.status).to.equal(config.httpStatus.Ok);
 						resourcesAPI.delete(url+resourceEndPoint,resourceId,token,function(){
 							done();	
 						});	
@@ -103,14 +85,14 @@ describe('Resources', function () {
 
 	it('Delete /Resources/{id}', function (done) {
 		
-	resourcesAPI
-		.create(url+resourceEndPoint,token,function(res){
-			var resourceId = res.body._id;
-			resourcesAPI
-				.delete(url+resourceEndPoint,resourceId,token,function(res){
-					expect(res.status).to.equal(200);
-					done();
-				});
-		});
+		resourcesAPI
+			.create(url+resourceEndPoint,token,function(err,res){
+				var resourceId = res.body._id;
+				resourcesAPI
+					.delete(url+resourceEndPoint,resourceId,token,function(res){
+						expect(res.status).to.equal(config.httpStatus.Ok);
+						done();
+					});
+			});
 	});
 });
