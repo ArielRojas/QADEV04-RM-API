@@ -1,0 +1,38 @@
+{
+	"userCredential":{
+	"username":"ArielWagner",
+	"password":"Client123",
+	"authentication":"local"
+	},
+
+	"userCredentialInvalidUserName":{
+		"username": "ArielWagne",
+		"password": "Client123",
+  		"authentication": "local"
+	},
+
+	"userCredentialInvalidPassword":{
+		"username": "ArielWagner",
+  		"password": "Client12",
+  		"authentication": "local"
+	},
+
+
+	"userCredentialInvalidAuth":{
+ 		"username": "ArielWagner",
+  		"password": "Client123",
+  		"authentication": "loc"
+	},
+
+	"userCredentialInvalidAuthType":{
+ 		"username": "FOREST1\\awagner",
+  		"password": "Client123",
+  		"authentication": "ldap"
+	},
+
+	"url":"https:\/\/172.20.208.195:4040",
+
+	"NODE_TLS_REJECT_UNAUTHORIZED":0,
+	
+	"timeout":10000
+}

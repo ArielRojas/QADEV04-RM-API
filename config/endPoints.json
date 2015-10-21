@@ -1,0 +1,8 @@
+{
+	"_comments":"Endpoints for Authentication",
+	"tokenEndPoint":"\/login",
+	"meetingsByIdEndPoint":"\/services\/{serviceId}\/rooms\/{roomId}\/meetings",
+	"servicesByIdEndPoint":"\/services",
+	"roomByIdEndPoint":"\/rooms",
+	"tokenHeader":"Authorization"
+}
