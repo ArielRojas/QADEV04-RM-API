@@ -4,7 +4,7 @@
   "description": "Room Manager Automation Project",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "tests"
   },
   "dependencies": {
     "chai": "^3.3.0",
@@ -27,3 +27,4 @@
   },
   "homepage": "https://github.com/JFVF/QADEV04-RM-API"
  }
+}

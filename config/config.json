@@ -1,38 +1,21 @@
 {
-	"userCredential":{
-	"username":"ArielWagner",
-	"password":"Client123",
-	"authentication":"local"
-	},
-
-	"userCredentialInvalidUserName":{
-		"username": "ArielWagne",
-		"password": "Client123",
-  		"authentication": "local"
-	},
-
-	"userCredentialInvalidPassword":{
+	"url" : "https://172.20.208.195:4040",
+	"timeOut" : 4000,
+	"userAccountJson" : {
 		"username": "ArielWagner",
-  		"password": "Client12",
-  		"authentication": "local"
+	  	"password": "Client123",
+	  	"authentication": "local"
 	},
-
-
-	"userCredentialInvalidAuth":{
- 		"username": "ArielWagner",
-  		"password": "Client123",
-  		"authentication": "loc"
+	"httpStatus" :{
+		"Ok": 200
 	},
-
-	"userCredentialInvalidAuthType":{
- 		"username": "FOREST1\\awagner",
-  		"password": "Client123",
-  		"authentication": "ldap"
-	},
-
-	"url":"https:\/\/172.20.208.195:4040",
-
-	"NODE_TLS_REJECT_UNAUTHORIZED":0,
-	
-	"timeout":10000
+	"path":{
+		"tokenAPI" : "../../lib/tokenAPI",
+		"loginAPI" : "../../lib/loginAPI",
+		"resourcesAPI" : "../../lib/resourcesAPI",
+		"meetingsAPI":"../../lib/meetingsAPI",
+		"endPoints" : "../config/endPoints.json",
+		"resourceConfig" : "../../config/resource.json",
+		"util" : "../util/util"
+	}
 }
