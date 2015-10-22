@@ -2,7 +2,7 @@
 	"url" : "https://172.20.208.195:4040",
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "ArielWagner",
+		"username": "test",
 	  	"password": "Client123",
 	  	"authentication": "local"
 	},
