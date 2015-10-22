@@ -1,0 +1,10 @@
+{
+	"resourceJson" : {
+		"name": "resourceName",
+		"customName": "resourceName",
+		"fontIcon": "fa fa-tv",
+		"from": "",
+		"description": "This is a television"
+	},
+	"resourceNameSize": 12
+}
