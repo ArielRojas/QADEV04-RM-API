@@ -1,9 +1,10 @@
 //Smoke TC Resources
 //Jean Carlo Rodriguez
-var config = require('../../config/config.json');
+var init = require('../../init');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var expect = require('chai').expect;
-var tokenAPI = require(config.path.tokenAPI);
-var resourcesAPI = require(config.path.resourcesAPI);
+var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
+var resourcesAPI = require(GLOBAL.initialDirectory+config.path.resourcesAPI);
 // global variables
 var token = null; 
 
