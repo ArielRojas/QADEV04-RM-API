@@ -15,7 +15,8 @@
 		"endPoints" : "/config/endPoints.json",
 		"resourceConfig" : "/config/resource.json",
 		"meetingsAPI" : "/lib/meetingsAPI",
-		"util" : "/util/util"
+		"util" : "/util/util",
+		"roomManagerAPI" : "/lib/roomManagerAPI"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
