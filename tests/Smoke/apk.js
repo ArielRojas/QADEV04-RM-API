@@ -4,8 +4,13 @@
 
 var expect = require('chai').expect;
 //import libraries
-var config = require('../../config/config.json');
-var apkAPI = require('../../lib/apkAPI');
+var init = require('../../init');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
+var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
+
+//url 
+var apkEndPoint = config.url + endPoints.apk; 
 
 describe('APK Routers', function () {
 
@@ -16,8 +21,8 @@ describe('APK Routers', function () {
 	});	
 
 	it('GET /apk refactor', function(done) {
-		apkAPI
-			.getAPK(function(res){
+		roomManagerAPI
+			.get(apkEndPoint, function(err, res){							
 				expect(res.status).to.equal(config.httpStatus.Ok);
 
 				done();

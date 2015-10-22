@@ -3,8 +3,13 @@
 
 var expect = require('chai').expect;
 //import libraries
-var config = require('../../config/config.json');
-var publicKey = require('../../lib/public-keyAPI');
+var init = require('../../init');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
+var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
+
+//url
+var publicKeyEndPoint = config.url + endPoints.publicKey;
 
 describe('Smoke TC PGP public-key', function () {
 
@@ -15,9 +20,10 @@ describe('Smoke TC PGP public-key', function () {
 	});	
 
 	it('GET /PGP Public Key Refactor', function(done) {
-		publicKey
-			.getPgpPublicKeyAPI(function(res){				
+		roomManagerAPI
+			.get(publicKeyEndPoint, function(err, res){				
 				expect(res.status).to.equal(config.httpStatus.Ok);
+
 				done();
 			});
 	});
