@@ -1,7 +1,10 @@
 {
-	"apk" : "/apk",
-	"publicKey" : "/public-key",
-	"resources" : "/resources",
+	"meetingsByIdEndPoint":"/services/{:serviceId}/rooms/{:roomId}/meetings",
+	"servicesByIdEndPoint":"\/services",
+	"roomByIdEndPoint":"\/rooms",
+	"resources" :"/resources",
 	"login" : "/login",
-	"resourceId":"/resources/{:id}"	
+	"resourceId":"/resources/{:id}",
+	"apk" : "/apk",
+	"publicKey" : "/public-key"
 }

@@ -1,12 +1,10 @@
 //Smoke TC pgp public-key
 //Miguel Angel Terceros Caballero
 
-var request = require('superagent');
-require('superagent-proxy')(request);
 var expect = require('chai').expect;
 //import libraries
 var config = require('../../config/config.json');
-var pgp = require('../../lib/public-keyAPI');
+var publicKey = require('../../lib/public-keyAPI');
 
 describe('Smoke TC PGP public-key', function () {
 
@@ -17,8 +15,8 @@ describe('Smoke TC PGP public-key', function () {
 	});	
 
 	it('GET /PGP Public Key Refactor', function(done) {
-		pgp
-			.getPgpAPI(function(res){				
+		publicKey
+			.getPgpPublicKeyAPI(function(res){				
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
