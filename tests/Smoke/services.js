@@ -25,12 +25,6 @@ var idService=null;
 describe('Smoke test for RoomManager',function()
 {
 	this.timeout(config.timeOut);
-	var json={
- 		 username: "jgonzales",
-  		  password: "Control123",
- 		 authentication: "local"
-		};
-	
 	before(function (done) {
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 		//getting the token
@@ -54,7 +48,7 @@ describe('Smoke test for RoomManager',function()
 				done();
 			});
 	});
-	it.only('GET /servicesType SomkeTest, Verify the status 200',function(done)
+	it('GET /servicesType SomkeTest, Verify the status 200',function(done)
 	{
 		servicesAPI
 			.getServiceType(function(err,res)
@@ -70,8 +64,7 @@ describe('Smoke test for RoomManager',function()
 			{
 				expect(res.status).to.equal(200);
 				done();
-			});
-				
+			});				
 	});
 	
 	it('GET /services/ServiceID Smoke test, Verify the status 200 (GET method) by serviceID',function(done)
@@ -87,27 +80,13 @@ describe('Smoke test for RoomManager',function()
 				});
 			});
 	});
-	it('DELETE /services/serviceID Smoke test, verify the status 200 after to delete an email server',function(done)
-	{
-		servicesAPI
-			.getServices(token,function(err,resp)
-			{
-				idService=resp.body[0]._id;
-				servicesAPI
-					.deleteServices(idService,adminJson,token,function(err,res)
-					{
-						expect(res.status).to.equal(200);
-						done();
-					});
-			});
-	});
+	
 	it('GET /services/serviceID/rooms smoke test, verify the status 200 after to require rooms',function(done)
 	{
 		servicesAPI
 			.getServices(token,function(err,resp)
 			{
 				idService=resp.body[0]._id;
-				done();
 				servicesAPI
 					.getRooms(idService,function(err,res)
 					{
@@ -157,6 +136,20 @@ describe('Smoke test for RoomManager',function()
 										done();
 									});
 							});
+					});
+			});
+	});
+	it('DELETE /services/serviceID Smoke test, verify the status 200 after to delete an email server',function(done)
+	{
+		servicesAPI
+			.getServices(token,function(err,resp)
+			{
+				idService=resp.body[0]._id;
+				servicesAPI
+					.deleteServices(idService,adminJson,token,function(err,res)
+					{
+						expect(res.status).to.equal(200);
+						done();
 					});
 			});
 	});
