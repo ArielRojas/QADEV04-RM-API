@@ -1,7 +1,5 @@
 //Smoke testing - POST Authentication
 //Author Ariel Wagner Rojas
-var request = require('superagent');
-require('superagent-proxy')(request);
 var expect = require('chai').expect;
 //with config it can use the parameters located into the config file
 var config = require('../../config/config.json');
