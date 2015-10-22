@@ -25,6 +25,19 @@ var getRandomResourcesJson = function(size)
 exports.getRandomResourcesJson = getRandomResourcesJson;
 
 
+
+
+
+ var generateOutOforderJson = function (id,from,to,sizeTitle){
+      var outOfOrderJson = 
+		{		"roomId":id,
+				"from": from,
+				"to": to,
+				"title":generateString(sizeTitle)			
+		};
+	return outOfOrderJson;
+};
+exports.generateOutOforderJson = generateOutOforderJson;
  /**
  * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
  * @num: sum the number sending to actual day  if you put 0, the day is the day actual

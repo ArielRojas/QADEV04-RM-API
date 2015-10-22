@@ -1,12 +1,11 @@
 //Smoke TC Resources
 //Ivan Morales Camacho
 
-
+var init = require('../../init');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
 var expect = require('chai').expect;
-var config = require('../../config/config.json');
 var outOfOrder = require('../../lib/outOfOrderAPI');
-var tokenAPI = require(config.path.tokenAPI);
-
 
 
 var timeout=config.timeOut;
