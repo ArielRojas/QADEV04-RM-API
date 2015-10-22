@@ -23,3 +23,20 @@ var getRandomResourcesJson = function(size)
 		return resourceJSon;
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
+
+
+ /**
+ * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
+ * @num: sum the number sending to actual day  if you put 0, the day is the day actual
+ * @res: return Current date e.g 2015-10-23T16:00:00.000Z
+ */
+
+var getDate = function(num){
+	var date = new Date();
+	var aleatorio = (Math.round(Math.random()*23))+1;
+	if(aleatorio<10){aleatorio='0'+aleatorio}
+	if(num==0){aleatorio=24}
+    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+	return time;
+}
+exports.getDate = getDate;

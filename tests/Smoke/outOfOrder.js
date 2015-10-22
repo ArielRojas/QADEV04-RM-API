@@ -1,4 +1,5 @@
-//CRUD example v1.0
+//Smoke TC Resources
+//Ivan Morales Camacho
 
 
 var expect = require('chai').expect;
@@ -10,6 +11,8 @@ var tokenAPI = require(config.path.tokenAPI);
 
 var timeout=config.timeOut;
 var token=null;
+
+
 
 
 describe('Smoke test about out of order', function () {
@@ -34,7 +37,15 @@ describe('Smoke test about out of order', function () {
 
 	it('GET/out-of-orders', function(done){
 		outOfOrder
-			.getOfOrder(function(res){
+			.getOfOrder(function(err,res){
+			    expect(res.status).to.equal(config.httpStatus.Ok);
+				done();
+			});
+	});
+
+	it('GET/{:out-of-orderId}', function(done){
+		outOfOrder
+			.get(function(err,res){
 			    expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
@@ -42,7 +53,7 @@ describe('Smoke test about out of order', function () {
 
 	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 		outOfOrder
-			.getOfOrderbyID(function(res){
+			.getOfOrderbyID(function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});			
@@ -53,35 +64,35 @@ describe('Smoke test about out of order', function () {
 	it('POST//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 
 		outOfOrder
-			.creategetOfOrder(token,function(res){
+			.createOutOfOrder(token,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});
 
-	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
+	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 
 		outOfOrder
-			.getOfOrderbyService(function(res){
+			.getOfOrderbyService(function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});
 
 
-	it('PUT//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
+	it('PUT//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 
 		outOfOrder
-			.putOrderbyService(token,function(res){
+			.putOrderbyService(token,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});
 
-	it('DEL//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
+	it('DEL//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 
 		outOfOrder
-			.delOrderbyService(token,function(res){
+			.delOrderbyService(token,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
