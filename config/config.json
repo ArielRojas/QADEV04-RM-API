@@ -14,7 +14,7 @@
 		"resourcesAPI" : "../../lib/resourcesAPI",
 		"endPoints" : "../../config/endPoints.json",
 		"resourceConfig" : "../../config/resource.json",
-		"meetingsAPI":"../../lib/meetingsAPI",
+		"meetingsAPI" : "../../lib/meetingsAPI",
 		"util" : "../util/util"
 	},
 	"tokenHeader" : "Authorization",
