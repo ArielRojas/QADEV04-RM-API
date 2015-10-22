@@ -1,24 +1,24 @@
 //Smoke testing - GET Meetings
 //Author Ariel Wagner Rojas
-var expect = require('chai').expect;
+var init = require('../../init');
 //with config it can use the methods located into the config file
-var config = require('../../config/config.json');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var expect = require('chai').expect;
 //with meetingsAPI it can use the methods located into the meetingsAPI file
-var meetingsAPI = require(config.path.meetingsAPI);
+var meetingsAPI = require(GLOBAL.initialDirectory+config.path.meetingsAPI);
 //with tokenAPI it can use the parameters located into the loginAPI file
-var tokenAPI = require(config.path.tokenAPI);
+var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
 
+//global variables
+//the token variable will contain the token
+var token = null;
+//the serviceId variable will contain the service id
+var serviceId = null;
+//the roomId variable will contain the room id
+var roomId = null;
 
 describe('Smoke testings for meetings', function () {
-
-	//global variables
-	//the token variable will contain the token
-	var token = null;
-	//the serviceId variable will contain the service id
-	var serviceId = null;
-	//the roomId variable will contain the room id
-	var roomId = null;
-
+	
 	this.timeout(config.timeOut);
 
 	before('Getting the token ',function (done){
