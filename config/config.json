@@ -14,6 +14,7 @@
 		"resourcesAPI" : "../../lib/resourcesAPI",
 		"endPoints" : "../../config/endPoints.json",
 		"resourceConfig" : "../../config/resource.json",
+		"servicesAPI" : "../../lib/servicesAPI",
 		"meetingsAPI" : "../../lib/meetingsAPI",
 		"util" : "../util/util"
 	},

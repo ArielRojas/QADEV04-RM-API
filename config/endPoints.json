@@ -4,5 +4,9 @@
 	"roomByIdEndPoint":"\/rooms",
 	"resources" :"/resources",
 	"login" : "/login",
-	"resourceId":"/resources/{:id}"
+	"resourceId":"/resources/{:id}",
+	"services":"/services",
+	"serviceType":"/service-types",
+	"serviceById":"/services/{:serviceId}",
+	"roomsEndpoint":"/services/{:serviceId}/rooms"
 }

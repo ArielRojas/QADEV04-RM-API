@@ -1,0 +1,16 @@
+
+{
+	"adminJson":{
+		"username":"Administrator",
+		"password":"Clave123",
+		"hostname":"qadev04exc04.forest1.local"
+	},
+	"roomJson":
+		{
+  			"enabled": false,
+			"customDisplayName": "SmokeTest"
+		},
+	"authorization":"Authorization",
+	"jwt":"jwt ",
+	"postFilter":"?type=exchange"
+}
