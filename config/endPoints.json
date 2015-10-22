@@ -1,7 +1,7 @@
 {
 	"meetingsByIdEndPoint":"/services/{:serviceId}/rooms/{:roomId}/meetings",
-	"servicesByIdEndPoint":"\/services",
-	"roomByIdEndPoint":"\/rooms",
+	"servicesByIdEndPoint":"/services",
+	"roomByIdEndPoint":"/rooms",
 	"resources" :"/resources",
 	"login" : "/login",
 	"resourceId":"/resources/{:id}",
