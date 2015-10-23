@@ -2,9 +2,9 @@
 	"url" : "https://172.20.208.27:4040",
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "forest1\\admin.ivan",
-	  	"password": "Control123",
-	  	"authentication": "ldap"
+		"username": "test",
+	  	"password": "Client123",
+	  	"authentication": "local"
 	},
 	"httpStatus" :{
 		"Ok": 200
