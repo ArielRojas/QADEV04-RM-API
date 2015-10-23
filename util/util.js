@@ -23,3 +23,18 @@ var getRandomResourcesJson = function(size)
 		return resourceJSon;
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
+
+
+var generateRandom=function (min,max){
+
+    if(min==max)
+        return max;
+
+    else{
+
+        return Math.round(Math.random()*(max-min)+min);
+    }
+
+};
+
+exports.generateRandom = generateRandom;
