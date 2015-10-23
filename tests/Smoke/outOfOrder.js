@@ -44,12 +44,15 @@ describe('Smoke test about out of order', function () {
 
 	describe('set of tests with use roomId and serviceId for rooms out of orders', function () {
 	    var endPoint= null
+	    var idroom = null;
 		 /**
 		 * @description: Pre condition to execute the set Test Cases.
-		 * @res: return an endpoint by roomId and serviceId of a room out of order 
+		 *return an endpoint by roomId and serviceId of a room out of order with the roomId
+		 * @res: res an endpoint with the roomId
 		 */	 
 		beforeEach('Before set',function (done) {
 			roomsAPI.getRoomByPos(0,function(err,room){
+				idroom = room._id;
 				endPoint= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id)
 				done();
 			});
@@ -58,7 +61,7 @@ describe('Smoke test about out of order', function () {
 
 		it('POST//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 			roomManagerAPI
-				.post(token,endPoint,util.generateOutOforderJson(room._id,util.getDate(0),util.getDate(1),config.outOfOrderZise),function(err,res){
+				.post(token,endPoint,util.generateOutOforderJson(idroom,util.getDate(0),util.getDate(1),config.outOfOrderZise),function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});	
@@ -109,13 +112,16 @@ describe('Smoke test about out of order', function () {
 	});
 
 	describe('set of tests with use roomId, serviceId and out-of-orderId for rooms out of orders', function () {
-	    var endPoint= null
+	    var endPoint= null;
+	    var idroom = null; 
 		 /**
 		 * @description: Pre condition to execute the set Test Cases.
-		 * @res: return an endpoint of serviceId, roomId and out-of-orderId of a room out of order 
-		 */	    
+		 *return an endpoint of serviceId, roomId and out-of-orderId of a room out of order with the roomId
+		 * @res: res an endpoint with the roomId
+		 */	 		    
 		beforeEach('Before Set',function (done) {
 			roomsAPI.getRoomByPos(0,function(err,room){
+				idroom=room._id;
 				endPoint1= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id)
 				roomManagerAPI.get(endPoint1,function(err,res){
 					endPoint= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id,res.body[0]._id)	
@@ -136,7 +142,7 @@ describe('Smoke test about out of order', function () {
 
 		it('PUT//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 			roomManagerAPI
-				.put(token,endPoint,util.generateOutOforderJson(room._id,util.getDate(2),util.getDate(3),config.outOfOrderZise),function(err,res){
+				.put(token,endPoint,util.generateOutOforderJson(idroom,util.getDate(2),util.getDate(3),config.outOfOrderZise),function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});					
