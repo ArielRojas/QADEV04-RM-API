@@ -1,8 +1,8 @@
 {
-	"meetingsByIdEndPoint":"/services/{:serviceId}/rooms/{:roomId}/meetings",
-	"servicesByIdEndPoint":"/services",
-	"roomByIdEndPoint":"/rooms",
+	"meetings":"/meetings",
+	"rooms":"/rooms",
 	"resources" :"/resources",
 	"login" : "/login",
-	"resourceId":"/resources/{:id}"
+	"resourceId":"/resources/{:id}",
+	"services":"/services"
 }
