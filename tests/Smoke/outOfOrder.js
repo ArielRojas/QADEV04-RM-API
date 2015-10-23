@@ -13,10 +13,7 @@ var getEndPoint=require(GLOBAL.initialDirectory+config.path.endPoints);
 /* End Points*/  
 
 var RoomEndPoint=config.url+getEndPoint.room;     
-var outOfOrderbyIDEndPoint=config.url+getEndPoint.getOutOfOrder;
-var outOrderPoint=config.url+getEndPoint.outOfOrder;
-var outOfOrderbyServiceEndPoint=config.url+getEndPoint.getOutOfOrderbyService;
-var outOfOrderEndPoint=config.url+getEndPoint.outOfOrderEndPoint;	
+var outOrderPoint=config.url+getEndPoint.outOfOrder;	
 var timeout=config.timeOut;
 var token=null;
 
