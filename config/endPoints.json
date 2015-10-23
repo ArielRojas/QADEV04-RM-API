@@ -1,10 +1,10 @@
 {
-	"meetingsByIdEndPoint":"/services/{:serviceId}/rooms/{:roomId}/meetings",
-	"servicesByIdEndPoint":"/services",
-	"roomByIdEndPoint":"/rooms",
+	"meetings":"/meetings",
+	"rooms":"/rooms",
 	"resources" :"/resources",
 	"login" : "/login",
 	"resourceId":"/resources/{:id}",
 	"apk" : "/apk",
-	"publicKey" : "/public-key"
+	"publicKey" : "/public-key",
+	"services":"/services"
 }
