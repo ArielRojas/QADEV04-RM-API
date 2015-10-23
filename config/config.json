@@ -17,7 +17,8 @@
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"outOfOrderAPI" : "/lib/outOfOrderAPI"
+		"outOfOrderAPI" : "/lib/outOfOrderAPI",
+		"roomsAPI" : "/lib/roomsAPI"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",

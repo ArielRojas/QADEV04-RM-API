@@ -29,7 +29,7 @@ exports.getRandomResourcesJson = getRandomResourcesJson;
  * @description: This method get a Json with create an out of order in a room
  * @param: id, room's Id of the roommanager
  * @param: to,  date to start the out of order e.g. e.g 2015-10-23T16:00:00.000Z
- * @param: from , date to end the out of order e.g. e.g 2015-10-24T16:00:00.000Z
+ * @param: from , date to end the out of order e.g. e.g 2015-10-24T24:00:00.000Z
  * @param: title , the title of the out of order
  * @res: return a Json with the configations entered
  */
