@@ -1,12 +1,12 @@
 //Smoke testing - POST Authentication
 //Author Ariel Wagner Rojas
+// the next line call the file init.js to declare a global var(GLOBAL.initialDirectory)
 var init = require('../../init');
 //with config it can use the parameters located into the config file
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var expect = require('chai').expect;
 //with tokenAPI it can use the methods located into the tokenAPI file
 var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
-
 
 describe('Smoke testing for Authentication (token)', function () {
 
