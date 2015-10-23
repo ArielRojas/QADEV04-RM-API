@@ -10,11 +10,13 @@
 		"Ok": 200
 	},
 	"path":{
-		"tokenAPI": "../../lib/tokenAPI",
-		"resourcesAPI" : "../../lib/resourcesAPI",
-		"endPoints" : "../../config/endPoints.json",
-		"resourceConfig" : "../../config/resource.json",
-		"util" : "../util/util"
+		"tokenAPI" : "/lib/tokenAPI",
+		"resourcesAPI" : "/lib/resourcesAPI",
+		"endPoints" : "/config/endPoints.json",
+		"resourceConfig" : "/config/resource.json",
+		"meetingsAPI" : "/lib/meetingsAPI",
+		"util" : "/util/util",
+		"roomManagerAPI" : "/lib/roomManagerAPI"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt "

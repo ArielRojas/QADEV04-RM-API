@@ -1,10 +1,16 @@
 {
-	"resources" : "/resources",
+	"meetingsByIdEndPoint":"/services/{:serviceId}/rooms/{:roomId}/meetings",
+	"servicesByIdEndPoint":"/services",
+	"roomByIdEndPoint":"/rooms",
+	"resources" :"/resources",
 	"login" : "/login",
 	"resourceId":"/resources/{:id}",
 	"rooms": "/rooms",
   	"roomsId": "\/rooms\/{roomId}",
   	"roomsIdResources":"\/rooms\/{roomId}\/resources",
   	"roomsIdResourcesId":"\/rooms\/{:roomId}\/resources\/{roomResourceId}",
-  	"services":"/services"
+  	"services":"/services",
+  	"apk" : "/apk",
+	"publicKey" : "/public-key"
 }
+
