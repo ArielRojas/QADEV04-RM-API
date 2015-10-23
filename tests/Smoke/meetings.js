@@ -43,11 +43,11 @@ describe('Smoke testings for meetings', function () {
 				});
 	});
 
-	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings returns 200',function (done){	
+	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings returns 200', function (done){	
 		meetingsAPI
 			.getMeetings(serviceId,roomId,function(err, res){
-				expect(res.status).to.equal(200);
+				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
-		});
+			});
 	});
 });
