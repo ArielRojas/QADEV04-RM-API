@@ -2,12 +2,10 @@
 //Ivan Morales Camacho
 
 var init = require('../../init');
+var expect = require('chai').expect;
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
-var expect = require('chai').expect;
-var outOfOrder = require('../../lib/outOfOrderAPI');
-
-
+var outOfOrder = require(GLOBAL.initialDirectory+config.path.outOfOrderAPI);
 var timeout=config.timeOut;
 var token=null;
 
@@ -44,7 +42,7 @@ describe('Smoke test about out of order', function () {
 
 	it('GET/{:out-of-orderId}', function(done){
 		outOfOrder
-			.get(function(err,res){
+			.getOutOfOrderId(function(err,res){
 			    expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
@@ -52,7 +50,7 @@ describe('Smoke test about out of order', function () {
 
 	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 		outOfOrder
-			.getOfOrderbyID(function(err,res){
+			.getOfOrderServicesAndRoom(function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});			
@@ -63,7 +61,7 @@ describe('Smoke test about out of order', function () {
 	it('POST//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 
 		outOfOrder
-			.createOutOfOrder(token,function(err,res){
+			.postOutOfOrder(token,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
@@ -72,7 +70,7 @@ describe('Smoke test about out of order', function () {
 	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 
 		outOfOrder
-			.getOfOrderbyService(function(err,res){
+			.getOfOrderServiceIdRoomIdOrderId(function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});

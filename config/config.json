@@ -16,7 +16,8 @@
 		"resourceConfig" : "/config/resource.json",
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
-		"roomManagerAPI" : "/lib/roomManagerAPI"
+		"roomManagerAPI" : "/lib/roomManagerAPI",
+		"outOfOrderAPI" : "/lib/outOfOrderAPI"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",

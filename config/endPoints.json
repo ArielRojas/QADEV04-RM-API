@@ -8,9 +8,7 @@
 	"room":"/rooms",
 	"outOfOrder":"/out-of-orders",
 	"getOutOfOrder":"/services/{:idService}/rooms/{:idRoom}/out-of-orders",
-	"getOutOfOrderbyID":"/services/{:serviceId}/rooms/{:roomId}/out-of-orders",
 	"getOutOfOrderbyService":"/services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:outOfOrderId}",
 	"outOfOrderEndPoint":"/out-of-orders/{:out-of-orderId}"
-
 
 }

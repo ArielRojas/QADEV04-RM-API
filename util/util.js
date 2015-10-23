@@ -24,10 +24,15 @@ var getRandomResourcesJson = function(size)
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
 
-
-
-
-
+ 
+ /**
+ * @description: This method get a Json with create an out of order in a room
+ * @param: id, room's Id of the roommanager
+ * @param: to,  date to start the out of order e.g. e.g 2015-10-23T16:00:00.000Z
+ * @param: from , date to end the out of order e.g. e.g 2015-10-24T16:00:00.000Z
+ * @param: title , the title of the out of order
+ * @res: return a Json with the configations entered
+ */
  var generateOutOforderJson = function (id,from,to,sizeTitle){
       var outOfOrderJson = 
 		{		"roomId":id,
@@ -40,7 +45,7 @@ exports.getRandomResourcesJson = getRandomResourcesJson;
 exports.generateOutOforderJson = generateOutOforderJson;
  /**
  * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
- * @num: sum the number sending to actual day  if you put 0, the day is the day actual
+ * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
  * @res: return Current date e.g 2015-10-23T16:00:00.000Z
  */
 
