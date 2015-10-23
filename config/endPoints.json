@@ -6,5 +6,8 @@
 	"resourceId":"/resources/{:id}",
 	"apk" : "/apk",
 	"publicKey" : "/public-key",
-	"services":"/services"
+	"services":"/services",
+	"locations":"/locations",
+	"locationById" : "/locations/{:locationId}",
+	"attend" : "/services/{:serviceId}/attendees?filter=A"
 }

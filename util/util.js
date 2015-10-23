@@ -23,3 +23,24 @@ var getRandomResourcesJson = function(size)
 		return resourceJSon;
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
+/**
+ * Function: generateLocationJson
+ * This function generate random string to location that recive of size for name, custom name and description
+ * Parameters:
+ *   sizeName        - is the size of name of location
+ *   customNameSize  - is the size of display name
+ *   descriptionSize - is a small description about of location.
+ * Returns:
+ *   return the json with name, custonName and description of location.
+ */
+var generateLocationJson = function (sizeName, customNameSize, descriptionSize) {
+	
+	var locationsJson = 
+		{
+		  		"name" : generateString(sizeName),
+				"customName" : generateString(customNameSize),
+				"description": generateString(descriptionSize)
+		};
+	return locationsJson;
+};
+exports.generateLocationJson = generateLocationJson;
