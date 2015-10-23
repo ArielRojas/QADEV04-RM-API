@@ -4,5 +4,7 @@
 	"resources" :"/resources",
 	"login" : "/login",
 	"resourceId":"/resources/{:id}",
+	"apk" : "/apk",
+	"publicKey" : "/public-key",
 	"services":"/services"
 }
