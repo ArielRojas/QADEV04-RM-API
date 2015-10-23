@@ -1,0 +1,8 @@
+{
+	"publicKeyStructure" : {
+		"publicKeyBegin" : "-----BEGIN PGP PUBLIC KEY BLOCK-----",
+		"publicKeyVersion" : "Version: BCPG C# v1.7.4137.9283",
+		"publicKeyEnd" : "-----END PGP PUBLIC KEY BLOCK-----"
+	},
+	"publicKeyType" : "text"
+}
