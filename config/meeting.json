@@ -1,0 +1,25 @@
+{
+  "meetingJSon" : {
+    "organizer": "Ariel Wagner",
+    "title": "test3",
+    "start": "2015-10-28T12:21:00.000Z",
+    "end": "2015-10-28T13:45:00.000Z",
+    "location": "Floor1Room81",
+    "roomEmail": "Floor1Room81@forest1.local",
+    "resources": [
+      "Floor1Room81@forest1.local"
+    ],
+    "attendees": [
+      "test3@myexchange.com"
+    ]
+  },
+  "meetingPutJSon":{
+    "title": "test",
+    "start": "2015-10-28T10:25:00.000Z",
+    "end": "2015-10-28T11:48:00.000Z",
+    "attendees": [
+      "test@myexchange.com",
+      "test1@myexchange.com"
+    ]
+  }
+}
