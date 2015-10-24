@@ -42,6 +42,7 @@ var stringReplace = function(text,textToReplace,replaceWith){
 	text = text.replace(textToReplace,replaceWith);
 	return text;
 };
+exports.stringReplace = stringReplace;
 
 /**
  * Function: generateLocationJson

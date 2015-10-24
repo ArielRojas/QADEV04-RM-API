@@ -6,7 +6,7 @@
 var expect = require('chai').expect;
 var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
 var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
-var servicesAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
+var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 
 var token = null;
 var url = config.url + endPoints.servicesByIdEndPoint;
@@ -26,12 +26,12 @@ describe('Smoke testing attendees route', function() {
 
 	it('Get /services/{servicesId}/attendees?filter=....', function (done) {
 		
-	  servicesAPI
+	  roomManagerAPI
 	  	//get the services id
 		.getwithToken(token,url, function (err,res) {
 			var servicesID = res.body[0]._id;
 			var endPointServicesById = endPointById.replace('{:serviceId}',servicesID);
-			servicesAPI
+			roomManagerAPI
 				//get the ID of services 
 			  .get(endPointServicesById,function (err,res) {
 			 	 expect(res.status).to.equal(config.httpStatus.Ok);

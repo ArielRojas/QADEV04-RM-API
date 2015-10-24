@@ -1,3 +1,4 @@
 {
-	"size" : {"nameSize": 8, "customNameSize": 8, "description": 20}
+	"size" : {"nameSize": 8, "customNameSize": 8, "description": 20},
+	"locationIdReplace":"{:locationId}"
 }
