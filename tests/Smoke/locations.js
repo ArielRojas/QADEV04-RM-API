@@ -48,7 +48,7 @@ describe('Smoke testing for Locations of room manager', function() {
 		});
 
 		it('POST /locations', function(done) {
-		// create a locations with random string
+		// create a locations with random string.
 		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 		locationAPI
 			.post(token,url,locationJson,function (err,res) {
