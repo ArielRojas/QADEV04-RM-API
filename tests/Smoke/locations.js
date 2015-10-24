@@ -37,66 +37,80 @@ describe('Smoke testing for Locations of room manager', function() {
 			});
 	});
 
-	it('POST /locations', function(done) {
+	describe('Test that need the DELETE the location at finished', function () {
+		var locationID = null;
+		afterEach(function (done) {
+			var endPointLocationById = endPointById.replace('{:locationId}',locationID);
+			locationAPI
+				.del(token,endPointLocationById,function (err,res) {
+					done();
+			});
+		});
+
+		it('POST /locations', function(done) {
 		// create a locations with random string
 		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 		locationAPI
 			.post(token,url,locationJson,function (err,res) {
 				expect(res.status).to.equal(config.httpStatus.Ok);
-				var locationID = res.body._id;
-				var endPointLocationById = endPointById.replace('{:locationId}',locationID);
-				locationAPI
-				  .del(token,endPointLocationById,function (err,res) {
-				  		done();
-				  })
+				locationID = res.body._id;
+				done();
 			});
+		});
 	});
 
-	it('GET /locations/{:locationId}', function(done) {
-		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
-		locationAPI
-			.post(token,url,locationJson,function (err,res) {
-				var locationID = res.body._id;
-				var endPointLocationById = endPointById.replace('{:locationId}',locationID);
+	describe('Test that needed location created', function () {
+		var locationID = null; 
+		var endPointLocationById = null;
+		var locationJson  = null;
+	
+		beforeEach(function (done) {
+			locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
+			locationAPI
+				.post(token,url,locationJson,function (err,res) {
+					locationID = res.body._id;
+					endPointLocationById = endPointById.replace('{:locationId}',locationID);
+					done();
+				});
+		});
+	
+		afterEach(function (done) {
+			locationAPI
+			  .del(token,endPointLocationById,function (err,res) {
+			  	 	done();
+			  });
+		});
+
+		it('GET /locations/{:locationId}', function(done) {
+			locationAPI
+				.get(endPointLocationById,function (err,res) {
+					expect(res.status).to.equal(config.httpStatus.Ok);
+					done();
+				});
+		});
+
+		it('PUT /locations/{:locationId}', function (done) {
+			console.log(endPointLocationById);
 					locationAPI
-						.get(endPointLocationById,function (err,res) {
+						.put(token,endPointLocationById,locationJson,function (err,res) {
 							expect(res.status).to.equal(config.httpStatus.Ok);
-							locationAPI
-							  .del(token,endPointLocationById,function (err,res) {
-							  	 	done();
-							  })
-						})
-			})
-	});
+							done()
+						});
+				});
+		});
 
-	it('PUT /locations/{:locationId}', function (done) {
-		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
-		locationAPI
-			.post(token,url,locationJson,function (err,res) {
-				var locationID = res.body._id;
-				var endPointLocationById = endPointById.replace('{:locationId}',locationID);
-				locationAPI
-					.put(token,endPointLocationById,locationJson,function (err,res) {
-						expect(res.status).to.equal(config.httpStatus.Ok);
-						locationAPI
-							.del(token,endPointLocationById,function (err,res) {
-								done();
-							})
-					})
-			})
-	});
+		it('DELETE /locations/{:locationId}', function (done) {
+			var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
+			locationAPI
+				.post(token,url,locationJson,function (err,res) {
+					var locationID = res.body._id;
+					var endPointLocationById = endPointById.replace('{:locationId}',locationID);
+					locationAPI
+					  .del(token,endPointLocationById,function (err,res) {
+					  		expect(res.status).to.equal(config.httpStatus.Ok);
+					  		done();
+					  })
+				});
+		})
 
-	it('DELETE /locations/{:locationId}', function (done) {
-		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
-		locationAPI
-			.post(token,url,locationJson,function (err,res) {
-				var locationID = res.body._id;
-				var endPointLocationById = endPointById.replace('{:locationId}',locationID);
-				locationAPI
-				  .del(token,endPointLocationById,function (err,res) {
-				  		expect(res.status).to.equal(config.httpStatus.Ok);
-				  		done();
-				  })
-			});
-	})
 });
