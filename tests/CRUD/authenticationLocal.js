@@ -56,18 +56,20 @@ describe('CRUD testing for Authentication (token)', function () {
 	it('POST /Authentication/login (local) Verify that the hours difference between the creation and expiration of token is six', function (done) {
 		tokenAPI
 		.getToken(function(err, res){
-			//var currentDate = util.getDateFromUnixTimeStamp((new Date()).getTime());
 			var date = new Date();
 			var hour = date.getHours();
-			//var expiration = res.body.expiration;
 			var hourCreation = parseInt(res.body.createdAt.substr(11,2));
 			var hourExpiration = parseInt(res.body.expiration.substr(11,2));
 			differenceHours = hourExpiration - hourCreation;
+			if(hourCreation > 17){
+				expect(differenceHours).to.equal(-18);
+			}
+			else{
+				expect(differenceHours).to.equal(6);
+			}
 			expect(res.status).to.equal(config.httpStatus.Ok);
 			expect(res.body.createdAt).not.to.be.null;
 			expect(res.body.createdAt).to.not.be.undefined;
-			//expect(currentDate).to.equal(createdAuth);
-			expect(differenceHours).to.equal(6);
 			done();
 		});
 	});
