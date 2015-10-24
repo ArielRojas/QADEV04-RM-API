@@ -1,5 +1,3 @@
-//SmokeRooms
-
 var init = require('../init');
 var expect = require('chai').expect;
 
