@@ -1,5 +1,6 @@
 {
 	"url" : "https://172.20.208.216:4040",
+	"urlmongodb" : "mongodb://172.20.208.216:27017/roommanager",
 	"timeOut" : 4000,
 	"userAccountJson" : {
 		"username": "BrayanRosas",
