@@ -43,7 +43,10 @@ var stringReplace = function(text,textToReplace,replaceWith){
     text = text.replace(textToReplace,replaceWith);
     return text;
 };
-
+/**
+ * This method return a start date and a end date
+ * @return {array[date]} return an array of dates.
+ */
 var getDate = function(){
     var date = new Array();
     var objToday = new Date();
@@ -62,7 +65,11 @@ var getDate = function(){
     return date;
 };
 exports.getDate = getDate;
-
+/**
+ * This method returns the roomId and displayName
+ * @param  {object} the parameter that is founded to then be replaced
+ * @return {array[roomId, DisplayName]}
+ */
 getRandomRoomId = function (rooms) {
     var data = new Array();
     var nro = Math.round(Math.random() * (rooms.body.length - 1));
@@ -70,7 +77,11 @@ getRandomRoomId = function (rooms) {
     return data;
 };
 exports.getRandomRoomId = getRandomRoomId;
-
+/**
+ * this method returns a date in american format
+ * @param  {Date} the parameter that is founded to then be replaced
+ * @return {date}
+ */
 var getDateFromUnixTimeStamp = function (timeStamp) {
     var date = moment(timeStamp,'x').format('YYYY-MM-DD');
     return date;
