@@ -1,6 +1,7 @@
 // util
 var config = require('../config/config.json')
 var resourceConfig = require('../config/resource.json');
+var outOfOrderConfig = require('../config/outOfOrder.json');
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -33,14 +34,15 @@ exports.getRandomResourcesJson = getRandomResourcesJson;
  * @param: title , the title of the out of order
  * @res: return a Json with the configations entered
  */
- var generateOutOforderJson = function (id,from,to,sizeTitle){
-      var outOfOrderJson = 
-		{		"roomId":id,
-				"from": from,
-				"to": to,
-				"title":generateString(sizeTitle)			
-		};
-	return outOfOrderJson;
+ var generateOutOforderJson = function (id,from,to){
+        var outOfOrder;
+		outOfOrderConfig.outOfOrderJson.roomId=id;
+		outOfOrderConfig.outOfOrderJson.from=from;
+		outOfOrderConfig.outOfOrderJson.to=to;
+		outOfOrderConfig.outOfOrderJson.title=generateString(outOfOrderConfig.titleSize);
+		outOfOrder=outOfOrderConfig.outOfOrderJson
+		return 	outOfOrder;
+
 };
 exports.generateOutOforderJson = generateOutOforderJson;
  /**
@@ -58,3 +60,18 @@ var getDate = function(num){
 	return time;
 }
 exports.getDate = getDate;
+
+ /**
+ * @description: This method can replace some text of an endpoint specific
+ * @param: endPoint, receive the endpoint e.g "/services/{:serviceId}/rooms/{:roomId}/out-of-orders"
+ * @param: replaceId, the text that you wnat to replace e.g {:serviceId}
+ * @param: id, Id of the room e.g 562505b9f2eab938088d5d9d
+ * @res: return an end point "/services/562505b9f2eab938088d5d9d/out-of-orders
+ */
+var replaceEndPoint= function(endPoint,replaceId,id){
+
+	var endPoint=endPoint.replace(replaceId,id);
+	return 	endPoint;
+}
+
+exports.replaceEndPoint = replaceEndPoint;

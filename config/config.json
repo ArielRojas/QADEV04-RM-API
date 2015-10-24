@@ -2,9 +2,9 @@
 	"url" : "https://172.20.208.27:4040",
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "test",
-	  	"password": "Client123",
-	  	"authentication": "local"
+		"username": "forest1\\admin.ivan",
+	  	"password": "Control123",
+	  	"authentication": "ldap"
 	},
 	"httpStatus" :{
 		"Ok": 200
@@ -17,10 +17,13 @@
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"outOfOrderAPI" : "/lib/outOfOrderAPI",
 		"roomsAPI" : "/lib/roomsAPI"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
-	"outOfOrderZise":"6"
+	"nameId":{
+		"serviceId" : "{:serviceId}",
+		"roomId" : "{:roomId}",
+		"outOfOrderId" : "{:outOfOrderId}"
+	}
 }

@@ -6,10 +6,10 @@
 	"resourceId":"/resources/{:id}",
 	"room":"/rooms",
 	"outOfOrder":"/out-of-orders",
-	"outOfOrderId":"/out-of-orders/{:out-of-orderId}",
-	"getOutOfOrder":"/services/{:idService}/rooms/{:idRoom}/out-of-orders",
+	"outOfOrderId":"/out-of-orders/{:outOfOrderId}",
+	"getOutOfOrder":"/services/{:serviceId}/rooms/{:roomId}/out-of-orders",
 	"getOutOfOrderbyService":"/services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:outOfOrderId}",
-	"outOfOrderEndPoint":"/out-of-orders/{:out-of-orderId}",
+	"outOfOrderEndPoint":"/out-of-orders/{:outOfOrderId}",
 	"apk" : "/apk",
 	"publicKey" : "/public-key",
 	"services":"/services"

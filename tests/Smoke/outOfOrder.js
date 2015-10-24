@@ -3,21 +3,20 @@
 var init = require('../../init');
 var expect = require('chai').expect;
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
-var roomsAPI=require(GLOBAL.initialDirectory+config.path.roomsAPI);
-var outOfOrderAPI=require(GLOBAL.initialDirectory+config.path.outOfOrderAPI);
 var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
-var outOfOrder = require(GLOBAL.initialDirectory+config.path.outOfOrderAPI);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 var util=require(GLOBAL.initialDirectory+config.path.util);
 var getEndPoint=require(GLOBAL.initialDirectory+config.path.endPoints);
 /* End Points*/  
-
-var RoomEndPoint=config.url+getEndPoint.room;     
-var outOrderPoint=config.url+getEndPoint.outOfOrder;	
+var RoomEndPoint=config.url+getEndPoint.room;     	
+var outOfOrderbyIDEndPoint=config.url+getEndPoint.getOutOfOrder;
+var outOfOrderbyServiceEndPoint=config.url+getEndPoint.getOutOfOrderbyService;
+var outOfOrderId=config.url+getEndPoint.outOfOrderId;
 var timeout=config.timeOut;
+
+var endPointOutOfOrder= null;
+var room = null;
 var token=null;
-
-
 
 
 describe('Smoke test about out of order', function () {
@@ -37,42 +36,40 @@ describe('Smoke test about out of order', function () {
 				});
 		});
 
-	this.timeout(timeout);
 
-	describe('set of tests with use roomId and serviceId for rooms out of orders', function () {
-	    var endPoint= null
-	    var idroom = null;
 		 /**
 		 * @description: Pre condition to execute the set Test Cases.
 		 *return an endpoint by roomId and serviceId of a room out of order with the roomId
 		 * @res: res an endpoint with the roomId
 		 */	 
-		beforeEach('Before set',function (done) {
-			roomsAPI.getRoomByPos(0,function(err,room){
-				idroom = room._id;
-				endPoint= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id)
-				done();
-			});
+	before('Before set',function (done) {
+		roomManagerAPI.get(RoomEndPoint,function(err,res){
+			room = res.body[0];
+			endPoint1= util.replaceEndPoint(outOfOrderbyIDEndPoint,config.nameId.serviceId,res.body[0].serviceId)
+			endPointOutOfOrder= util.replaceEndPoint(endPoint1,config.nameId.roomId,res.res.body[0]._id)
+			done();
 		});
+	});
+
+	this.timeout(timeout);
 
 
-		it('POST//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
+	it('POST//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 			roomManagerAPI
-				.post(token,endPoint,util.generateOutOforderJson(idroom,util.getDate(0),util.getDate(1),config.outOfOrderZise),function(err,res){
+				.post(token,endPointOutOfOrder,util.generateOutOforderJson(room._id,util.getDate(0),util.getDate(1)),function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});	
-		});
-		it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
+	});
+
+	it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders', function(done) {
 			roomManagerAPI
-				.get(endPoint,function(err,res){
+				.get(endPointOutOfOrder,function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});			
 			
-		});			
-
-	});	
+	});			
 
 	it('GET/out-of-orders', function(done){
 		roomManagerAPI
@@ -89,12 +86,12 @@ describe('Smoke test about out of order', function () {
 		 * @res: return an endpoint of out-of-orderId of a room out of order 
 		 */	
 		beforeEach('Before Set',function (done) {
-			roomsAPI.getRoomByPos(0,function(err,res){
-				endPoint1=outOfOrderAPI.replaceEndPoint(res.serviceId,res._id);
-				roomManagerAPI.get(endPoint1,function(err,resp){
-					endPoint=outOfOrderAPI.replaceEndPoint(resp.body[0]._id);		
-					done();		
-				});
+
+			roomManagerAPI.get(endPointOutOfOrder,function(err,res){
+				outOrderId= res.body[0]._id;
+				endPoint=util.replaceEndPoint(outOfOrderId,config.nameId.outOfOrderId,outOrderId);		
+				done();		
+			
 			});
 		});
 
@@ -110,24 +107,22 @@ describe('Smoke test about out of order', function () {
 
 	describe('set of tests with use roomId, serviceId and out-of-orderId for rooms out of orders', function () {
 	    var endPoint= null;
-	    var idroom = null; 
 		 /**
 		 * @description: Pre condition to execute the set Test Cases.
 		 *return an endpoint of serviceId, roomId and out-of-orderId of a room out of order with the roomId
-		 * @res: res an endpoint with the roomId
-		 */	 		    
+		 * @res: an endpoint with the roomId
+		 */	  
 		beforeEach('Before Set',function (done) {
-			roomsAPI.getRoomByPos(0,function(err,room){
-				idroom=room._id;
-				endPoint1= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id)
-				roomManagerAPI.get(endPoint1,function(err,res){
-					endPoint= outOfOrderAPI.replaceEndPoint(room.serviceId,room._id,res.body[0]._id)	
-					done();
-				});
-				
-			});
-		});
 
+			roomManagerAPI.get(endPointOutOfOrder,function(err,res){
+				outOrderId= res.body[0]._id;
+				endPoint1= util.replaceEndPoint(outOfOrderbyServiceEndPoint,config.nameId.serviceId,room.serviceId)
+				endPoint2= util.replaceEndPoint(endPoint1,config.nameId.roomId,room._id)	
+				endPoint= util.replaceEndPoint(endPoint2,config.nameId.outOfOrderId,outOrderId)	
+				done();		
+			});			
+		});
+	
 		it('GET//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 			roomManagerAPI
 				.get(endPoint,function(err,res){
@@ -136,15 +131,13 @@ describe('Smoke test about out of order', function () {
 				});			
 		});
 
-
 		it('PUT//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 			roomManagerAPI
-				.put(token,endPoint,util.generateOutOforderJson(idroom,util.getDate(2),util.getDate(3),config.outOfOrderZise),function(err,res){
+				.put(token,endPoint,util.generateOutOforderJson(room._id,util.getDate(2),util.getDate(3)),function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});					
 		});
-
 
 		it('DEL//services/{:serviceId}/rooms/{:roomId}/out-of-orders/{:out-of-orderId}', function(done) {
 			roomManagerAPI
@@ -152,12 +145,7 @@ describe('Smoke test about out of order', function () {
 					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});			
-			
-			});	
+		});	
 
 	});
-
-
-
 });
-
