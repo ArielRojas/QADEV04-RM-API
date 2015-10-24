@@ -13,13 +13,21 @@ var generateString = function(size){
 };
 
 exports.generateString = generateString;
+/**this method return a Json with the field Name, Custom Name, From and description, with random values
+ * @size  {number} the size of the random string for all fields
+ * @return {Json}
+ */
+var getRandomResourcesJson = function(size){
 
-var getRandomResourcesJson = function(size)
-{
 	if(size==undefined)
 		size = 12;
 	var resourceJSon = resourceConfig.resourceJson;
-		resourceJSon = JSON.stringify(resourceJSon).replace(/resourceName/g,generateString(size));
+		resourceJSon = JSON.stringify(resourceJSon)
+		resourceJSon = stringReplace(resourceJSon,'resourceName',generateString(size));
+		resourceJSon = stringReplace(resourceJSon,'resourceCustomName',generateString(size));
+		resourceJSon = stringReplace(resourceJSon,'resourceFrom',generateString(size));
+		resourceJSon = stringReplace(resourceJSon,'resourceDescription',generateString(size));
+
 		resourceJSon = JSON.parse(resourceJSon);
 		return resourceJSon;
 };
@@ -61,17 +69,16 @@ var getDate = function(num){
 }
 exports.getDate = getDate;
 
- /**
- * @description: This method can replace some text of an endpoint specific
- * @param: endPoint, receive the endpoint e.g "/services/{:serviceId}/rooms/{:roomId}/out-of-orders"
- * @param: replaceId, the text that you wnat to replace e.g {:serviceId}
- * @param: id, Id of the room e.g 562505b9f2eab938088d5d9d
- * @res: return an end point "/services/562505b9f2eab938088d5d9d/out-of-orders
+
+/**
+ * @text  {string} the text that its want to replace some value
+ * @textToreplace  {[string} the text that is founded to then be replaced
+ * @replaceWith  {string} the text that is wanded to be replaced
+ * @text {string} return the string modified with the changes
  */
-var replaceEndPoint= function(endPoint,replaceId,id){
+var stringReplace = function(text,textToReplace,replaceWith){
+	text = text.replace(textToReplace,replaceWith);
+	return text;
+};
 
-	var endPoint=endPoint.replace(replaceId,id);
-	return 	endPoint;
-}
-
-exports.replaceEndPoint = replaceEndPoint;
+exports.stringReplace = stringReplace;

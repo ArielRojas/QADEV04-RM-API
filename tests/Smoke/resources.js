@@ -33,7 +33,7 @@ describe('Resources Smoke tests', function () {
 		
 		roomManagerAPI
 			.get(resourceEndPoint,function(err,res){
-				expect(res.status).to.equal(200);
+				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});
@@ -96,7 +96,7 @@ describe('Resources Smoke tests', function () {
 
 			roomManagerAPI
 				.get(resourceEndPoint+'/'+resourceId,function(err,res){
-					expect(res.status).to.equal(200);
+					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});
 		});
@@ -104,7 +104,7 @@ describe('Resources Smoke tests', function () {
 			var resourcePutJSon = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 			roomManagerAPI
 				.put(token,resourceEndPoint+'/'+resourceId,resourcePutJSon,function(err,res){
-					expect(res.status).to.equal(200);
+					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});
 		});
@@ -125,7 +125,7 @@ describe('Resources Smoke tests', function () {
 		it('Delete /Resources/{id}', function (done) {
 			roomManagerAPI
 				.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
-					expect(res.status).to.equal(200);
+					expect(res.status).to.equal(config.httpStatus.Ok);
 					done();
 				});
 		});
