@@ -1,5 +1,6 @@
 //SmokeRooms
-var init = require('../../init');
+
+var init = require('../init');
 var expect = require('chai').expect;
 
 var tokenAPI=require(GLOBAL.initialDirectory+'/lib/tokenAPI');
