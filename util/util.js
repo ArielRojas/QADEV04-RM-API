@@ -52,12 +52,13 @@ var getDate = function(){
     months = new Array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
     curMonth = months[objToday.getMonth() + 1];
     curYear = objToday.getFullYear();
+    var curHour = (Math.round(Math.random()*23))+1;
     if(curHour<10){
         curHour='0'+curHour;
     };
     var today  =  curYear+ "-" + curMonth + "-"+dayOfMonth+"T" +curHour+ ":" + "00:00.000Z";
     var today_end  =  curYear+ "-" + curMonth + "-"+dayOfMonth+"T" +curHour+ ":"  + "10:00.000Z";
-    date.push(today,today_end);
+    date.push(today, today_end);
     return date;
 };
 exports.getDate = getDate;
