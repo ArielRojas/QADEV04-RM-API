@@ -69,8 +69,6 @@ describe('CRUD Suite', function () {
 					.and.be.equal(resourceId);
 				expect(res.body).to.have.property("fontIcon")
 					.and.not.be.empty;
-				
-
 				done();
 			});
 		
