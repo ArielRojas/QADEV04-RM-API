@@ -4,5 +4,18 @@
 		"publicKeyVersion" : "Version: BCPG C# v1.7.4137.9283",
 		"publicKeyEnd" : "-----END PGP PUBLIC KEY BLOCK-----"
 	},
-	"publicKeyType" : "text"
+	"publicKeyType" : "text",
+
+	"beginKeyBlock" : {
+		"begin" : 0,
+		"end" : 36
+	},
+	"keyVersion" : {
+		"begin" : 38,
+		"end" : 69
+	},
+	"endKeyBlock" : {
+		"begin" : 36,
+		"end" : 2
+	}
 }

@@ -7,8 +7,10 @@ var init = require('../../init');
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
+var apk = require(GLOBAL.initialDirectory+config.path.apk);
 
 //url 
+
 var apkEndPoint = config.url + endPoints.apk;
 
 describe('CRUD TCs of APK Routers', function () {
@@ -19,12 +21,10 @@ describe('CRUD TCs of APK Routers', function () {
 	});	
 
 	it('verify that the service not exists', function(done) {
-		var code = "ResourceNotFound";
-		var message = "/apk does not exist";
 		roomManagerAPI
 			.get(apkEndPoint, function(err, res){							
-				expect(code).to.equal(res.body.code);
-				expect(message).to.equal(res.body.message);
+				expect(apk.apkError.code).to.equal(res.body.code);
+				expect(apk.apkError.message).to.equal(res.body.message);
 
 				done();
 			});

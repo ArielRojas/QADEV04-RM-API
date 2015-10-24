@@ -7,7 +7,7 @@ var init = require('../../init');
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
-var publicKey = require(GLOBAL.initialDirectory+'/config/publicKey.json');
+var publicKey = require(GLOBAL.initialDirectory+config.path.publicKey);
 
 //url
 var publicKeyEndPoint = config.url + endPoints.publicKey;
@@ -16,6 +16,9 @@ var publicKeyBegin = publicKey.publicKeyStructure.publicKeyBegin;
 var publicKeyVersion = publicKey.publicKeyStructure.publicKeyVersion;
 var publicKeyEnd = publicKey.publicKeyStructure.publicKeyEnd;
 var publicKeyType = publicKey.publicKeyType;
+//variables of endblockkey
+var endBlocKeyBegin = publicKey.endKeyBlock.begin;
+var endBlocKeyEnd = publicKey.endKeyBlock.end;
 
 describe('Smoke TC PGP public-key', function () {
 
@@ -33,9 +36,10 @@ describe('Smoke TC PGP public-key', function () {
 				var cadena = res.body.content;
 				//assersions begin, version, end block of the key
 				expect(publicKeyType).to.equal(res.body.type);
-				expect(publicKeyBegin).to.equal(cadena.substring(0,36));
-				expect(publicKeyVersion).to.equal(cadena.substring(38,69));
-				expect(publicKeyEnd).to.equal(cadena.substring(cadena.length-36, cadena.length-2));
+				expect(publicKeyBegin).to.equal(cadena.substring(publicKey.beginKeyBlock.begin, publicKey.beginKeyBlock.end));
+				expect(publicKeyVersion).to.equal(cadena.substring(publicKey.keyVersion.begin, publicKey.keyVersion.end));
+				var endBlock = cadena.substring(cadena.length - endBlocKeyBegin, cadena.length - endBlocKeyEnd);
+				expect(publicKeyEnd).to.equal(endBlock);
 
 				done();
 			});
