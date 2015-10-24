@@ -62,8 +62,8 @@ describe('Smoke testings for meetings', function () {
 			.delwithTokenBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, function(err, res){
 				done();
 			});
-	});*/
-	
+	});
+	*/
 	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings returns 200', function (done){	
 		roomManagerAPI
 			.get(servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, function(err, res){
