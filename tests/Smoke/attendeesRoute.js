@@ -9,7 +9,7 @@ var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 
 var token = null;
-var url = config.url + endPoints.servicesByIdEndPoint;
+var endPointServices = config.url + endPoints.servicesByIdEndPoint;
 var endPointById = config.url + endPoints.attend;
 
 describe('Smoke testing attendees route', function() {
@@ -28,7 +28,7 @@ describe('Smoke testing attendees route', function() {
 		
 	  roomManagerAPI
 	  	//get the services id
-		.getwithToken(token,url, function (err,res) {
+		.getwithToken(token,endPointServices, function (err,res) {
 			var servicesID = res.body[0]._id;
 			var endPointServicesById = endPointById.replace('{:serviceId}',servicesID);
 			roomManagerAPI

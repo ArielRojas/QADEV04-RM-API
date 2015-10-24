@@ -12,7 +12,7 @@ var locationConfig = require(GLOBAL.initialDirectory+config.path.locationConfig)
 
 //global variables
 var token = null;
-var url = config.url + endPoints.locations;
+var endPoint = config.url + endPoints.locations;
 var endPointById = config.url + endPoints.locationById;
 var size = locationConfig.size;
 
@@ -31,7 +31,7 @@ describe('Smoke testing for Locations of room manager', function() {
 
 	it('GET /locations', function(done) {
 		roomManagerAPI
-			.get(url,function (err,res){
+			.get(endPoint,function (err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
@@ -51,7 +51,7 @@ describe('Smoke testing for Locations of room manager', function() {
 		// create a locations with random string.
 		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 		roomManagerAPI
-			.post(token,url,locationJson,function (err,res) {
+			.post(token,endPoint,locationJson,function (err,res) {
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				locationID = res.body._id;
 				done();
@@ -67,7 +67,7 @@ describe('Smoke testing for Locations of room manager', function() {
 		beforeEach(function (done) {
 			locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 			roomManagerAPI
-				.post(token,url,locationJson,function (err,res) {
+				.post(token,endPoint,locationJson,function (err,res) {
 					locationID = res.body._id;
 					endPointLocationById = util.stringReplace(endPointById,locationConfig.locationIdReplace,locationID);
 					done();
@@ -103,7 +103,7 @@ describe('Smoke testing for Locations of room manager', function() {
 			before(function (done) {
 				var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 				roomManagerAPI
-					.post(token,url,locationJson,function (err,res) {
+					.post(token,endPoint,locationJson,function (err,res) {
 						var locationID = res.body._id;
 						endPointLocationById = util.stringReplace(endPointById,locationConfig.locationIdReplace,locationID);
 						done();
