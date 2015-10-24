@@ -90,7 +90,6 @@ describe('Smoke testing for Locations of room manager', function() {
 		});
 
 		it('PUT /locations/{:locationId}', function (done) {
-			console.log(endPointLocationById);
 					locationAPI
 						.put(token,endPointLocationById,locationJson,function (err,res) {
 							expect(res.status).to.equal(config.httpStatus.Ok);
