@@ -14,7 +14,7 @@ var resourceEndPoint = url+endPoints.resources;
 // global variables
 var token = null; 
 
-describe('Resrouce CRUD Suite get by id and put', function () {
+describe('Resource CRUD Suite get by id and put', function () {
 	this.timeout(config.timeOut);
 	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 	var resourceId = null;
@@ -101,8 +101,8 @@ describe('Resrouce CRUD Suite get by id and put', function () {
 
 	});
 });
-
-describe('suite', function () {
+//TODO
+describe.skip('suite', function () {
 	it.skip('CRUD-Delete /Resources/{:Id} api returns all the resources', function (done) {
 		
 	});
@@ -111,10 +111,10 @@ describe('suite', function () {
 		
 	});
 });
+//TODO
+describe.skip('Resources CRUD get 10', function () {
 
-describe('Resources CRUD get 10', function () {
 
-	
 	it.skip('CRUD-GET /Resources api returns all the resources', function (done) {
 			
 	});
