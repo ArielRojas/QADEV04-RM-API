@@ -14,7 +14,7 @@ var resourceEndPoint = url+endPoints.resources;
 // global variables
 var token = null; 
 
-describe('CRUD Suite', function () {
+describe('Resource CRUD Suite get by id and put', function () {
 	this.timeout(config.timeOut);
 	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 	var resourceId = null;
@@ -44,6 +44,7 @@ describe('CRUD Suite', function () {
 			roomManagerAPI
 				.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
 					resourceId = null;
+					resourceJson = null;
 					done();
 				});
 		}else{
@@ -57,6 +58,7 @@ describe('CRUD Suite', function () {
 		roomManagerAPI
 			.get(resourceEndPoint+'/'+resourceId,function(err,res){
 
+				expect(err).to.be.null;
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				expect(res.body).to.have.property("name")
 					.and.be.equal(resourceJson.name);
@@ -75,4 +77,45 @@ describe('CRUD Suite', function () {
 		
 	});
 
+	it('CRUD-PUT /Resources/{:id} api returns the resource modified', function (done) {
+		var resourceJsonToUpdate = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
+		roomManagerAPI
+			.put(token,resourceEndPoint+'/'+resourceId,resourceJsonToUpdate,function(err,res){
+				expect(err).to.be.null;
+				expect(res.status).to.equal(config.httpStatus.Ok);
+				expect(res.body).to.have.property("_id")
+					.and.be.equal(resourceId);
+				expect(res.body).to.have.property("name")
+					.and.be.equal(resourceJsonToUpdate.name);
+				expect(res.body).to.have.property("customName")
+					.and.be.equal(resourceJsonToUpdate.customName);
+				expect(res.body).to.have.property("from")
+					.and.be.equal(resourceJsonToUpdate.from);
+				expect(res.body).to.have.property("description")
+					.and.be.equal(resourceJsonToUpdate.description);
+				expect(res.body).to.have.property("fontIcon")
+					.and.not.be.empty;
+				expect(res.body).to.have.property("__v");
+				done();
+			});
+
+	});
+});
+//TODO
+describe.skip('suite', function () {
+	it.skip('CRUD-Delete /Resources/{:Id} api returns all the resources', function (done) {
+		
+	});
+
+	it.skip('CRUD-POST /Resources api returns a created resource', function (done) {
+		
+	});
+});
+//TODO
+describe.skip('Resources CRUD get 10', function () {
+
+
+	it.skip('CRUD-GET /Resources api returns all the resources', function (done) {
+			
+	});
 });
