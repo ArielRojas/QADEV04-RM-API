@@ -19,6 +19,7 @@ describe('CRUD Suite', function () {
 	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 	var resourceId = null;
 	var resourceJson = null;
+	
 	before(function (done) {
 		tokenAPI
 			.getToken(function(err,res){
