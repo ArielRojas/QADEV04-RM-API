@@ -1,17 +1,16 @@
 var init = require('../../init');
 var expect = require('chai').expect;
 var tokenAPI=require(GLOBAL.initialDirectory+'/lib/tokenAPI');
+var roomManagerAPI=require(GLOBAL.initialDirectory+'/lib/RoomManagerAPI');
 var mongodb=require(GLOBAL.initialDirectory+'/lib/mongodb');
 var config =require(GLOBAL.initialDirectory+'/config/config.json');
 var endPoints=require(GLOBAL.initialDirectory+'/config/endPoints');
 var resourceConfig = require(GLOBAL.initialDirectory+'/config/resource.json');
-var roomManagerAPI=require(GLOBAL.initialDirectory+'/lib/RoomManagerAPI');
+var roomJson = require(GLOBAL.initialDirectory+'/config/room.json');
 var util=require(GLOBAL.initialDirectory+'/util/util');
 var token=null;
 var room=null;
 var resource=null;
-var randomRoom=null;
-var sendJson={"quantity": 5};
 var json=null;
 var resourceAsoc=null;
 var endPoint=null;
@@ -33,7 +32,7 @@ describe('Smoke Testing for Room routes', function() {
 			.getToken(function(err,res){
 				token = res.body.token;
 				endPoint=config.url+endPoints.rooms;
-				json={"customDisplayName": "Floor1Room1"};
+				json=roomJson.roomQueries[0];
 				mongodb.findDocument('rooms',json,function(doc){
 					room=doc;
 					done();
@@ -42,22 +41,19 @@ describe('Smoke Testing for Room routes', function() {
 	});
 
 	after('Post conditions : restore the properties of the rooms changed ',function (done) {
-	endPoint=config.url+endPoints.rooms+'/'+room._id;
-		json.customDisplayName="Floor1Room1";
-		console.log(json);
-		roomManagerAPI.
-			put(token,endPoint,json,function(err,res){
-				done();
-			});	
-		
-});
+		endPoint=config.url+endPoints.rooms+'/'+room._id;
+			json.customDisplayName="Floor1Room1";
+			roomManagerAPI.
+				put(token,endPoint,json,function(err,res){
+					done();
+				});			
+	});
 
 /**
  * Smoke Test to the service room with the method get.
  * Test : Get all rooms and validate the status.
  */
 	it('Get /rooms , Verify the status 200',function(done){
-		//endPoint=config.url+endPoints.rooms;
 		roomManagerAPI.
 			get(endPoint,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
@@ -68,8 +64,7 @@ describe('Smoke Testing for Room routes', function() {
  * Smoke Test to the service room with the method get for getting a
  * specific room by roomId.
  */
-	it('Get /rooms/{roomId}, Verify the status 200 ',function(done){
-		
+	it('Get /rooms/{roomId}, Verify the status 200 ',function(done){	
 		endPoint=endPoint+'/'+room._id;
 		roomManagerAPI.
 			get(endPoint,function(err,res){
@@ -82,9 +77,8 @@ describe('Smoke Testing for Room routes', function() {
  * Smoke Test to the service room with the method put for modify the
  * display name of the room 
  */
-	it('PUT /rooms/{roomId}, Verify the status 200',function(done)
-	{			
-		json={"customDisplayName": "customDisplayName Modified"};
+	it('PUT /rooms/{roomId}, Verify the status 200',function(done){			
+		json=roomJson.roomUpdateQ[0];
 		roomManagerAPI.
 			put(token,endPoint,json,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
@@ -95,7 +89,7 @@ describe('Smoke Testing for Room routes', function() {
 
 describe('Smoke Testing for Room Resources routes ', function() {
 	this.timeout(config.timeOut);
-
+	
 	/**
 	 * Pre condition to execute the set Test Cases.
 	 * @getToken(rollback)
@@ -107,19 +101,19 @@ describe('Smoke Testing for Room Resources routes ', function() {
 			.getToken(function(err,res){
 				token = res.body.token;
 				endPoint=config.url+endPoints.rooms;
-				mongodb
-					.findDocument('rooms',json,function(doc){
+				mongodb.findDocument('rooms',json,function(doc){
 						room=doc;
 						endPoint2=config.url+endPoints.resources;
 						json=util.getRandomResourcesJson(resourceConfig.resourceNameSize);
-						roomManagerAPI.post(token,endPoint2,json,function(err,resourceRes){
-							resource=resourceRes;
-								 	endPoint=endPoint+'/'+room._id+'/resources';
-								var json2={"resourceId": resource.body._id,"quantity": 1 };	
-									roomManagerAPI.post
-										(token,endPoint,json2,function(err,resAsoc){
-										resourceAsoc=resAsoc;
-										done();
+							roomManagerAPI.post(token,endPoint2,json,function(err,resourceRes){
+								resource=resourceRes;
+								 	endPoint=endPoint+'/'+room._id+'/resources';		
+									json=roomJson.roomUpdateQ[3];
+									json.resourceId=resource.body._id;
+										roomManagerAPI.post
+											(token,endPoint,json,function(err,resAsoc){
+											resourceAsoc=resAsoc;
+											done();
 									});									
 							});	
 					});				
@@ -160,7 +154,6 @@ describe('Smoke Testing for Room Resources routes ', function() {
  */
 	it('GET /rooms/{:roomId}/resources/{:roomResourceId}, Verify the status 200',function(done){													
 			endPoint=endPoint+'/'+resourceAsoc.body.resources[0]._id;
-
 			roomManagerAPI.get(endPoint,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);	
 				done();
@@ -173,10 +166,10 @@ describe('Smoke Testing for Room Resources routes ', function() {
  */			
 	it('PUT /rooms/{:roomId}/resources/{:roomResourceId}, Verify the status 200',function(done){		
 			 json={"quantity": 10};
-		roomManagerAPI.put(token,endPoint,json,function(err,resp){
-			expect(resp.status).to.equal(config.httpStatus.Ok);	
-			done();		
-		});
+			roomManagerAPI.put(token,endPoint,json,function(err,resp){
+				expect(resp.status).to.equal(config.httpStatus.Ok);	
+				done();		
+			});
 	});	
 	
  /**
@@ -184,11 +177,10 @@ describe('Smoke Testing for Room Resources routes ', function() {
  * for Removing a specific resource from a specific room
  */	
 	it('DELETE /rooms/{:roomId}/resources/{:roomResourceId}, Verify the status 200 ',function(done){	
-				 roomManagerAPI.del(token,endPoint,function(err,resp){
-				 	expect(resp.status).to.equal(config.httpStatus.Ok);	
-					done();			
-
-				 });						
+		 roomManagerAPI.del(token,endPoint,function(err,resp){
+		 	expect(resp.status).to.equal(config.httpStatus.Ok);	
+			done();			
+		 });						
 	});	
 
 });

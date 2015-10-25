@@ -5,9 +5,9 @@
 	"login" : "/login",
 	"resourceId":"/resources/{:id}",
 	"rooms": "/rooms",
-  	"roomsId": "\/rooms\/{roomId}",
-  	"roomsIdResources":"\/rooms\/{roomId}\/resources",
-  	"roomsIdResourcesId":"\/rooms\/{:roomId}\/resources\/{roomResourceId}",
+  	"roomsId": "/rooms/{roomId}",
+  	"roomsIdResources":"/rooms/{roomId}/resources",
+  	"roomsIdResourcesId":"/rooms/{:roomId}/resources/{roomResourceId}",
 	"apk" : "/apk",
 	"publicKey" : "/public-key",
 	"services":"/services"
