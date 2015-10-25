@@ -12,5 +12,9 @@
 		},
 	"authorization":"Authorization",
 	"jwt":"jwt ",
-	"postFilter":"?type=exchange"
+	"postFilter":"?type=exchange",
+	"mongojs":
+			{
+				"displayName" : "Floor1Room99"
+			}
 }
