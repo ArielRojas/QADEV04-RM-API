@@ -53,7 +53,6 @@ describe('Smoke testing for Locations of room manager', function() {
 		roomManagerAPI
 			.post(token,endPoint,locationJson,function (err,res) {
 				expect(res.status).to.equal(config.httpStatus.Ok);
-				locationID = res.body._id;
 				done();
 			});
 		});
@@ -85,18 +84,21 @@ describe('Smoke testing for Locations of room manager', function() {
 			roomManagerAPI
 				.get(endPointLocationById,function (err,res) {
 					expect(res.status).to.equal(config.httpStatus.Ok);
+					console.log(endPointLocationById);
+					console.log(res.body);
 					done();
 				});
 		});
 
 		it('PUT /locations/{:locationId}', function (done) {
-					roomManagerAPI
-						.put(token,endPointLocationById,locationJson,function (err,res) {
-							expect(res.status).to.equal(config.httpStatus.Ok);
-							done()
-						});
+			var locationJsonMod = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
+			roomManagerAPI
+				.put(token,endPointLocationById,locationJsonMod,function (err,res) {
+					expect(res.status).to.equal(config.httpStatus.Ok);
+					done()
 				});
 		});
+	});
 		
 		describe('create a locations for delete ', function () {
 			var endPointLocationById = null;
