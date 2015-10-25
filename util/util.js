@@ -1,6 +1,7 @@
 // util
 var config = require('../config/config.json')
 var resourceConfig = require('../config/resource.json');
+var locationCongig = require('../config/locations.json');
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -55,13 +56,9 @@ exports.stringReplace = stringReplace;
  *   return the json with name, custonName and description of location.
  */
 var generateLocationJson = function (sizeName, customNameSize, descriptionSize) {
-	
-	var locationsJson = 
-		{
-		  		"name" : generateString(sizeName),
-				"customName" : generateString(customNameSize),
-				"description": generateString(descriptionSize)
-		};
-	return locationsJson;
+	locationCongig.locationJson.name = generateString(sizeName),
+	locationCongig.locationJson.customName = generateString(customNameSize),
+	locationCongig.locationJson.description = generateString(descriptionSize)
+	return locationCongig.locationJson;
 };
 exports.generateLocationJson = generateLocationJson;
