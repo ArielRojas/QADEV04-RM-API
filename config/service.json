@@ -16,5 +16,10 @@
 	"mongojs":
 			{
 				"displayName" : "Floor1Room99"
+			},
+	"service":
+			{
+				"type":"exchange"
 			}
+	
 }
