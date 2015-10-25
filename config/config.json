@@ -1,5 +1,5 @@
 {
-	"url" : "https://172.20.208.194:4040",
+	"url" : "https://172.20.208.120:4040",
 	"timeOut" : 4000,
 	"userAccountJson" : {
 		"username": "test",
