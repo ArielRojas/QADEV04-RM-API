@@ -20,6 +20,9 @@
 	"service":
 			{
 				"type":"exchange"
+			},
+	"serviceId":
+			{
+				"_id":"kasd"
 			}
-	
 }

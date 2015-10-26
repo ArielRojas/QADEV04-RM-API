@@ -15,13 +15,15 @@ var url = config.url;
 var serviceEndPoint = url+endPoints.services;
 var serviceEndPointPost=serviceEndPoint + serviceConfig.postFilter;;
 var serviceTypes = url+endPoints.serviceTypes;
-//Global Variables
-var token = null; 
-var idService = null;
-var idRoom = null;
 var roomEndPoint = serviceEndPoint;
 var rooms = endPoints.rooms;
+//Global Variables
+var token = null; 
+var idService = 0;
+var idRoom = null;
 var servicefromDB = null;
+//variables with Json Archives 
+var serviceIdJson = serviceConfig.serviceId;
 var servicejson = serviceConfig.service;
 //status for response 200
 var ok = config.httpStatus.Ok;
@@ -65,24 +67,74 @@ describe('CRUD Tesinting for Services Room Manager',function()
 		mongodb
 			.findDocument('services',servicejson,function(res)
 			{
-				servicefromDB=res;
+				servicefromDB = res;
 				roomManagerAPI
 					.getwithToken(token,serviceEndPoint,function(err,res)
 					{
+						var resp=res.body[0];
 						expect(res.status).to.equal(200);
-						expect(res.body[0]).to.have.property('type');
-						expect(res.body[0].type).to.equal(servicefromDB.type);
-						expect(res.body[0]).to.have.property('name');
-						expect(res.body[0].name).to.equal(servicefromDB.name);
-						expect(res.body[0]).to.have.property('version');
-						expect(res.body[0].version).to.equal(servicefromDB.version);
-						expect(res.body[0]).to.have.property('_id');
-						//assert.typeOf(servicefromDB._id, 'string');
-						expect(res.body[0]._id).to.equal(servicefromDB._id.toString());
-						expect(res.body[0]).to.have.property('impersonate');
-						expect(res.body[0].impersonate).to.equal(servicefromDB.impersonate);
+						expect(resp).to.have.property('type');
+						expect(resp.type).to.equal(servicefromDB.type);
+						expect(resp).to.have.property('name');
+						expect(resp.name).to.equal(servicefromDB.name);
+						expect(resp).to.have.property('version');
+						expect(resp.version).to.equal(servicefromDB.version);
+						expect(resp).to.have.property('_id');
+						//assert.typeOf(servicefromDB._id, 'HexString');
+						expect(resp._id).to.equal(servicefromDB._id.toString());
+						expect(resp).to.have.property('impersonate');
+						expect(resp.impersonate).to.equal(servicefromDB.impersonate);
 						done();
 					});
 			});
+	});
+	describe('CRUD testing for service/serviceID',function()
+	{
+		beforeEach(function(done)
+		{
+			roomManagerAPI
+				.getwithToken(token,serviceEndPoint,function(err,resp)
+				{
+					idService = resp.body[0]._id;
+					done();
+				});
+		});
+		it('GET /service/serviceID, CRUD testing for an specific service',function(done)
+		{			
+			mongodb
+				.findDocuments('services',function(res)
+				{	
+					servicefromDB = res;
+					roomManagerAPI
+						.getwithToken(token,serviceEndPoint,function(err,res)
+						{
+							var resp = res.body[0];
+							var serFromDB = servicefromDB[0];
+							expect(res.status).to.equal(200);
+							expect(resp).to.have.property('type');
+							expect(resp.type).to.equal(serFromDB.type);
+							expect(resp).to.have.property('name');
+							expect(resp.name).to.equal(serFromDB.name);
+							expect(resp).to.have.property('version');
+							expect(resp.version).to.equal(serFromDB.version);
+							expect(resp).to.have.property('_id');
+							//assert.typeOf(servicefromDB._id, 'string');
+							expect(resp._id).to.equal(serFromDB._id.toString());
+							expect(resp).to.have.property('impersonate');
+							expect(resp.impersonate).to.equal(serFromDB.impersonate);
+							done();
+						});
+				});
+		});
+		it.only('test',function(done)
+		{
+			var ObjectId = require('mongodb').ObjectID;
+			mongodb
+				.findDocument('services',{ "_id": ObjectId(idService) },function(res)
+				{
+					console.log(res)
+					done();
+				})
+		})
 	});
 });
