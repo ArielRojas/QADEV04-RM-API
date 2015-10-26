@@ -6,7 +6,7 @@
 	  	"password": "Client123",
 	  	"authentication": "local"
 	},
-	"httpStatus" :{
+		"httpStatus" :{
 		"Ok": 200
 	},
 	"path":{
@@ -17,7 +17,9 @@
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"locationConfig":"/config/locations.json"
+		"locationConfig":"/config/locations.json",
+		"serviceConfig":"/config/service.json",
+		"mongodb":"/lib/mongodb.js"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt "
