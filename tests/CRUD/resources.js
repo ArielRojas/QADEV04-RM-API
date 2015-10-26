@@ -56,7 +56,7 @@ describe('Resource CRUD Suite get by id and put', function () {
 		}
 		
 	});
-	it.only('CRUD-GET /Resources/{:Id} api returns the resources specified', function (done) {
+	it('CRUD-GET /Resources/{:Id} api returns the resources specified', function (done) {
 
 		roomManagerAPI
 			.get(resourceEndPoint+'/'+resourceId,function(err,res){
