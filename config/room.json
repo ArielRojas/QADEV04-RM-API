@@ -1,0 +1,32 @@
+{
+    "displayName" : "Floor1Room1",
+    
+    "resources" : [
+            {
+            "quantity" : 1   
+            }
+    ],
+    "roomQueries" : [
+        {
+           "customDisplayName" : "Floor1Room1"
+        }
+        
+     ],
+
+     "roomUpdateQ" : [
+        {
+            "customDisplayName" : "ChangedByAPI"
+        },
+
+        {
+             "enabled" : false 
+        },
+
+        {
+             "emailAddress" : "Tester@fundacion-jala.org" 
+        },
+        {
+            "resourceId": "1", "quantity": 1 
+        }
+     ]
+}
