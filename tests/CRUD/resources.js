@@ -75,8 +75,20 @@ describe('Resource CRUD Suite get by id and put', function () {
 					.and.be.equal(resourceId);
 				expect(res.body).to.have.property("fontIcon")
 					.and.not.be.empty;
+				//expects with mongo
 				mongodb.findDocument('resourcemodels',{"_id": ObjectId(resourceId)},function(items){
-					console.log('---------'+resourceId+'/'+items._id);	
+					expect(items).to.have.property("name")
+						.and.be.equal(resourceJson.name);
+					expect(items).to.have.property("customName")
+						.and.be.equal(resourceJson.customName);
+					expect(items).to.have.property("from")
+						.and.be.equal(resourceJson.from);
+					expect(items).to.have.property("description")
+						.and.be.equal(resourceJson.description);
+					expect(items).to.have.property("_id");
+					expect(items._id.toString()).to.equal(resourceId);
+					expect(items).to.have.property("fontIcon")
+						.and.not.be.empty;
 					done();
 				});
 				
@@ -103,20 +115,75 @@ describe('Resource CRUD Suite get by id and put', function () {
 				expect(res.body).to.have.property("fontIcon")
 					.and.not.be.empty;
 				expect(res.body).to.have.property("__v");
-				done();
+				//expects with mongo
+				mongodb.findDocument('resourcemodels',{"_id": ObjectId(resourceId)},function(items){
+					expect(items).to.have.property("name")
+						.and.be.equal(resourceJsonToUpdate.name);
+					expect(items).to.have.property("customName")
+						.and.be.equal(resourceJsonToUpdate.customName);
+					expect(items).to.have.property("from")
+						.and.be.equal(resourceJsonToUpdate.from);
+					expect(items).to.have.property("description")
+						.and.be.equal(resourceJsonToUpdate.description);
+					expect(items).to.have.property("_id");
+					expect(items._id.toString()).to.equal(resourceId);
+					expect(items).to.have.property("fontIcon")
+						.and.not.be.empty;
+					done();
+				});
 			});
 
 	});
 });
 //TODO
-describe.skip('suite', function () {
-	it.skip('CRUD-Delete /Resources/{:Id} api returns all the resources', function (done) {
-		
+describe('Resource CRUD Suite delete', function () {
+	this.timeout(config.timeOut);
+	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+	var resourceId = null;
+	var resourceJson = null;
+
+	before(function (done) {
+		tokenAPI
+			.getToken(function(err,res){
+				token = res.body.token;
+				done();
+			});
 	});
 
-	it.skip('CRUD-POST /Resources api returns a created resource', function (done) {
-		
+	beforeEach(function (done) {
+		//create a resource
+		resourceJson = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
+		roomManagerAPI
+			.post(token,resourceEndPoint,resourceJson,function(err,res){
+				resourceId = res.body._id;
+				done();
+			});
 	});
+
+	it('CRUD-Delete /Resources/{:Id} api returns all the resources', function (done) {
+		roomManagerAPI
+				.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
+					expect(err).to.be.null;
+					expect(res.status).to.equal(config.httpStatus.Ok);
+					expect(res.body).to.have.property("_id")
+						.and.be.equal(resourceId);
+					expect(res.body).to.have.property("name")
+						.and.be.equal(resourceJson.name);
+					expect(res.body).to.have.property("customName")
+						.and.be.equal(resourceJson.customName);
+					expect(res.body).to.have.property("from")
+						.and.be.equal(resourceJson.from);
+					expect(res.body).to.have.property("description")
+						.and.be.equal(resourceJson.description);
+					expect(res.body).to.have.property("fontIcon")
+						.and.not.be.empty;
+					expect(res.body).to.have.property("__v");
+					done();
+				});
+
+	});
+
+	
 });
 //TODO
 describe.skip('Resources CRUD get 10', function () {
@@ -124,6 +191,12 @@ describe.skip('Resources CRUD get 10', function () {
 
 	it.skip('CRUD-GET /Resources api returns all the resources', function (done) {
 			
+	});
+});
+
+describe.skip('suite', function () {
+	it.skip('CRUD-POST /Resources api returns a created resource', function (done) {
+		
 	});
 });
 // testing jenkings8:30

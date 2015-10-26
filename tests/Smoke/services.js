@@ -84,7 +84,7 @@ describe('Smoke test for RoomManager',function()
 					});
 			});
 		});
-		it.only('GET /services/ServiceID Smoke test, Verify the status 200 (GET method) by serviceID',function(done)
+		it('GET /services/ServiceID Smoke test, Verify the status 200 (GET method) by serviceID',function(done)
 		{
 			console.log(idService);
 			roomManagerAPI
@@ -123,7 +123,7 @@ describe('Smoke test for RoomManager',function()
 				});
 		});
 	});
-	xdescribe('Method of Delete Service',function()
+	describe('Method of Delete Service',function()
 	{
 		before(function(done)
 		{
@@ -163,7 +163,7 @@ describe('Smoke test for RoomManager',function()
 				});
 		});
 	});
-	xdescribe('Method Post Service',function()
+	describe('Method Post Service',function()
 	{
 		before(function(done)
 		{
