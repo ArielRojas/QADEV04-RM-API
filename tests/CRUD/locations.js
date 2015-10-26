@@ -9,14 +9,19 @@ var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 var util = require(GLOBAL.initialDirectory+config.path.util);
 var locationConfig = require(GLOBAL.initialDirectory+config.path.locationConfig);
+var mongoDB = require(GLOBAL.initialDirectory+config.path.mongodb);
+
+var ObjectId = require('mongodb').ObjectID;
 
 //global variables
 var token = null;
 var endPoint = config.url + endPoints.locations;
 var endPointById = config.url + endPoints.locationById;
 var size = locationConfig.size;
+var locationJsonId = locationConfig.locationIdForMongo;
 
-describe('CRUD of RoomManager', function () {
+
+describe('CRUD of RoomManager', function (){
 	this.timeout(config.timeOut);
 	//Before
 	before(function (done) {
@@ -29,23 +34,36 @@ describe('CRUD of RoomManager', function () {
 			});
 	});
 	
-	it.skip('CRUD of GET /locations', function(done) {
+	it('CRUD of GET /locations', function(done) {
 		roomManagerAPI
 			.get(endPoint,function (err,res){
-				expect(res.status).to.equal(config.httpStatus.Ok);
-				console.log('the size is = ' + res.body.length);
-				expect(res.body).to.not.be.null;
-				//expect(res.body.length).to.be.at.least(1);
-				// this expect compared to the array of locations are same that the locations that are in the mongoDB, but not yet implemented
-				expect(res.body).to.eql('todas las locations de la base de datos');
-				done();
+				var arrayLocation = res;
+				expect(arrayLocation.status).to.equal(config.httpStatus.Ok);
+				expect(arrayLocation.body).to.not.be.null;
+				for (var i = 0; i < arrayLocation.length; i++) {
+					expect(arrayLocation.body[i]).to.have.property('_id');
+					expect(arrayLocation.body[i]).to.have.property('path');
+					expect(arrayLocation.body[i]).to.have.property('name');
+					expect(arrayLocation.body[i]).to.have.property('customName');
+					expect(arrayLocation.body[i]).to.have.property('description');
+					expect(arrayLocation.body[i]).to.have.property('__v');	
+				};
+				mongoDB.findDocuments('locations',function (res) {
+						for (var i = 0; i < res.length; i++) {
+							expect(arrayLocation.body[i]._id).to.equal(res[i]._id.toString());
+							expect(arrayLocation.body[i].path).to.equal(res[i].path);
+							expect(arrayLocation.body[i].name).to.equal(res[i].name);
+							expect(arrayLocation.body[i].customName).to.equal(res[i].customName);
+							expect(arrayLocation.body[i].description).to.equal(res[i].description);
+							expect(arrayLocation.body[i].__v).to.equal(res[i].__v);
+						};
+						done();		
+					});
 			});
 	});
 
 	describe('CRUD Test that need the DELETE the location at finished', function () {
 		var locationID = null;
-		var locationIDMongo = null;
-
 		after(function (done) {
 			var endPointLocationById = util.stringReplace(endPointById,locationConfig.locationIdReplace,locationID);
 			roomManagerAPI
@@ -54,41 +72,40 @@ describe('CRUD of RoomManager', function () {
 			});
 		});
 
-		it.skip('CRUD of POST /locations', function(done) {
-		// create a locations with random string.
+		it('CRUD of POST /locations', function(done) {
 		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 		roomManagerAPI
 			.post(token,endPoint,locationJson,function (err,res) {
 				locationID = res.body._id;
+				locationJsonId._id =  ObjectId(locationID);
 				var locationCreated = res.body;
+				
 				expect(res.status).to.equal(config.httpStatus.Ok);
-				/** verification the data of location created are the same was inserted in mongoDB, but not yet is implementing*/
-				mongoDB
-					.findById('locatoins',locationID,function (err,res) {
-						expect(res.status).to.equal(config.httpStatus.Ok);
-						expect(locationCreated._id).to.equal(res.body._id);
-						expect(locationCreated.path).to.equal(res.body.path);
-						expect(locationCreated.name).to.equal(res.body.name);
-						expect(locationCreated.customName).to.equal(res.body.customName);
-						expect(locationCreated.description).to.equal(res.body.description);
+				expect(res.body).to.have.property('_id');
+				expect(res.body).to.have.property('path');
+				expect(res.body).to.have.property('name');
+				expect(res.body).to.have.property('customName');
+				expect(res.body).to.have.property('description');
+				expect(res.body).to.have.property('__v');
 
-						console.log('location created ==' + JSON.stringify(locationCreated._id));
-						console.log('location created ==' + JSON.stringify(locationCreated.path));
-						console.log('location created ==' + JSON.stringify(locationCreated.name));
-						console.log('location created ==' + JSON.stringify(locationCreated.customName));
-						console.log('location created ==' + JSON.stringify(locationCreated.description));
-						console.log('location created ==' + JSON.stringify(locationCreated));
+				mongoDB
+					.findDocument('locations',locationJsonId,function (res) {
+						expect(locationCreated._id).to.equal(res._id.toString());
+						expect(locationCreated.path).to.equal(res.path);
+						expect(locationCreated.name).to.equal(res.name);
+						expect(locationCreated.customName).to.equal(res.customName);
+						expect(locationCreated.description).to.equal(res.description);
 						done();
-					})
+					});
 			});
 		});
 	});
 	
 	describe('CRUD Test that needed location created', function () {
+
 		var location = null; 
 		var endPointLocationById = null;
 		var locationJson  = null;
-	
 		beforeEach(function (done) {
 			locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 			roomManagerAPI
@@ -110,13 +127,26 @@ describe('CRUD of RoomManager', function () {
 			roomManagerAPI
 				.get(endPointLocationById,function (err,res) {
 					expect(res.status).to.equal(config.httpStatus.Ok);
-					expect(res.body).to.not.be.null;
-					expect(res.body._id).to.equal(location._id);
-					expect(res.body.path).to.equal(location.path);
-					expect(res.body.name).to.equal(location.name);
-					expect(res.body.customName).to.equal(location.customName);
-					expect(res.body.description).to.equal(location.description);
-					done();
+					expect(res.body).to.have.property('_id');
+					expect(res.body).to.have.property('path');
+					expect(res.body).to.have.property('name');
+					expect(res.body).to.have.property('customName');
+					expect(res.body).to.have.property('description');
+					expect(res.body).to.have.property('__v');
+					locationJsonId._id =  ObjectId(res.body._id);
+					var getLocation = res.body;
+
+					mongoDB
+						.findDocument('locations',locationJsonId,function (res) {
+							expect(res).to.not.be.null;
+							expect(res._id.toString()).to.equal(getLocation._id);
+							expect(res.path).to.equal(getLocation.path);
+							expect(res.name).to.equal(getLocation.name);
+							expect(res.customName).to.equal(getLocation.customName);
+							expect(res.description).to.equal(getLocation.description);
+							expect(res.__v).to.equal(getLocation.__v);
+							done();
+						});
 				});
 		});
 
@@ -126,19 +156,38 @@ describe('CRUD of RoomManager', function () {
 			roomManagerAPI
 				.put(token,endPointLocationById,locationJsonMod,function (err,res) {
 					expect(res.status).to.equal(config.httpStatus.Ok);
-					var locationModify = res.body;
+					expect(locationJsonMod.name).to.equal(res.body.name);
+					expect(locationJsonMod.customName).to.equal(res.body.customName);
+					expect(locationJsonMod.description).to.equal(res.body.description);
+					expect(res.status).to.equal(config.httpStatus.Ok);
+					expect(res.body).to.have.property('_id');
+					expect(res.body).to.have.property('path');
+					expect(res.body).to.have.property('name');
+					expect(res.body).to.have.property('customName');
+					expect(res.body).to.have.property('description');
+					expect(res.body).to.have.property('__v');
 
-					expect(locationJsonMod.name).to.equal(locationModify.name);
-					expect(locationJsonMod.customName).to.equal(locationModify.customName);
-					expect(locationJsonMod.description).to.equal(locationModify.description);
-					done();
+					var locationModify = res.body;
+					locationJsonId._id =  ObjectId(res.body._id);
+
+					mongoDB
+						.findDocument('locations',locationJsonId,function (res) {
+							expect(res).to.not.be.null;
+							expect(res._id.toString()).to.equal(locationModify._id);
+							expect(res.path).to.equal(locationModify.path);
+							expect(res.name).to.equal(locationModify.name);
+							expect(res.customName).to.equal(locationModify.customName);
+							expect(res.description).to.equal(locationModify.description);
+							expect(res.__v).to.equal(locationModify.__v);
+							done();
+						});
 				});
 		});
 	});
 
 	describe('create a locations for delete ', function () {
 		var endPointLocationById = null;
-		//this variable is for compare the location that want removed with the that it was removed in the expect of unit test.
+		
 		var locationToDeleted = null;
 		before(function (done) {
 			var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
@@ -155,6 +204,7 @@ describe('CRUD of RoomManager', function () {
 			  .del(token,endPointLocationById,function (err,res) {
 			  		// this the location that was deleted
 			  		var locationRemove = res.body;
+			  		locationJsonId._id =  ObjectId(res.body._id);
 
 			  		expect(res.status).to.equal(config.httpStatus.Ok);
 			  		expect(locationRemove._id).to.equal(locationToDeleted._id);
@@ -163,6 +213,11 @@ describe('CRUD of RoomManager', function () {
 			  		expect(locationRemove._v).to.equal(locationToDeleted._v);
 			  		expect(locationRemove.description).to.equal(locationToDeleted.description);
 			  		expect(locationRemove.path).to.equal(locationToDeleted.path);
+			  		mongoDB
+			  			.findDocument('locations',locationJsonId,function (res) {
+			  				expect(res).to.not.exist;
+
+			  			})
 			  		done();
 			  });
 		});
