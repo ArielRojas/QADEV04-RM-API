@@ -11,6 +11,7 @@ var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI)
 var endPoint = require(GLOBAL.initialDirectory+config.path.endPoints);
 var meetingConfig = require(GLOBAL.initialDirectory+config.path.meetingConfig);
 var util = require(GLOBAL.initialDirectory+config.path.util);
+var mongodb= require(GLOBAL.initialDirectory+config.path.mongodb);
 //EndPoints
 var url = config.url;
 var meetingsEndPoint = url + endPoint.meetings;
@@ -28,42 +29,31 @@ var serviceId = null;
 var roomId = null;
 //the meetingId variable will contain the meeting id
 var meetingId = null;
+//the Room displayName
 var displayName = null;
 
-describe('Smoke testings for meetings', function () {
+describe('Smoke testings for meetings: GET Method', function () {
 	
 	this.timeout(config.timeOut);
 
-	before('Getting the token ',function (done){
+	before('Getting the token, serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		//getting the token
 		tokenAPI
 			.getToken(function(err, res){
 				token = res;
-				done();
+				roomManagerAPI
+					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
+						serviceId = res1.body[0]._id;
+						json={"customDisplayName": "Floor1Room1"};
+						mongodb.findDocument('rooms',json, function(res2){
+							roomId = res2._id;
+							displayName=res2.displayName;
+							done();
+						});
+					});
 			});
 	});
 
-	beforeEach('Getting the service id and room id ',function (done){
-		roomManagerAPI
-				.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
-					serviceId = res1.body[0]._id;
-				roomManagerAPI
-					.get(roomsEndPoint, function(err, res2){
-						roomId = util.getRandomRoomId(res2)[0];
-						displayName = util.getRandomRoomId(res2)[1];
-						done();
-					});
-				});
-	});
-	/*
-	after('Deleting the meeting ' + function (done) {
-		roomManagerAPI
-			.delwithTokenBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, function(err, res){
-				done();
-			});
-	});
-	*/
 	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings returns 200', function (done){	
 		roomManagerAPI
 			.get(servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, function(err, res){
@@ -71,20 +61,74 @@ describe('Smoke testings for meetings', function () {
 				done();
 			});
 	});
+});
+
+describe('Smoke testings for meetings : POST Method', function () {
+	
+	this.timeout(config.timeOut);
+
+	before('Getting the token, serviceId and roomId', function (done){
+		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+		tokenAPI
+			.getToken(function(err, res){
+				token = res;
+				roomManagerAPI
+					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
+						serviceId = res1.body[0]._id;
+						json={"customDisplayName": "Floor1Room1"};
+						mongodb.findDocument('rooms',json, function(res2){
+							roomId = res2._id;
+							displayName=res2.displayName;
+							done();
+						});
+					});
+			});
+	});
+
+	after('Deleting the meeting', function (done) {
+		roomManagerAPI
+			.delwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, function(err, res){
+				done();
+			});
+	});
 
 	it('POST /services/{:serviceId}/rooms/{:roomId}/meetings returns 200', function (done){	
-		var meetingJSon = meetingConfig.meetingJSon;
 		var num = displayName.substring(10);
-		meetingJSon.location = meetingJSon.location.replace('[num]', num);
-		meetingJSon.roomEmail = meetingJSon.roomEmail.replace('[num]', num);
-		meetingJSon.resources = meetingJSon.resources[0].replace('[num]', num);
-		meetingJSon.start = util.getDate()[0];
-		meetingJSon.end = util.getDate()[1];
+		var meetingJSon = util.generatemeetingJson(num);
 		roomManagerAPI
 			.postwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, meetingJSon, function(err, res){
 				meetingId = res.body._id;
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
+			});
+	});
+});
+
+describe('Smoke testings for meetings : GET, PUT and DELETE methods by meeting Id', function () {
+	
+	this.timeout(config.timeOut);
+
+	before('Getting the basic authentication ',function (done){
+		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+		tokenAPI
+			.getToken(function(err, res){
+				token = res;
+				roomManagerAPI
+					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
+						serviceId = res1.body[0]._id;
+						json={"customDisplayName": "Floor1Room1"};
+						mongodb.findDocument('rooms',json, function(res2){
+							roomId = res2._id;
+							displayName=res2.displayName;
+							var num = displayName.substring(10);
+							var meetingJSon = util.generatemeetingJson(num);
+							roomManagerAPI
+								.postwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, meetingJSon, function(err, res3){
+									meetingId = res3.body._id;
+									done();
+								});
+						});
+					});
 			});
 	});
 
@@ -97,52 +141,14 @@ describe('Smoke testings for meetings', function () {
 	});
 
 	it('PUT /services/{:serviceId}/rooms/{:roomId}/meetings/{:meetingId} returns 200', function (done){	
-		var meetingPutJSon = meetingConfig.meetingPutJSon;
-		meetingPutJSon.start = util.getDate()[0];
-		meetingPutJSon.end = util.getDate()[1];
+		var num = displayName.substring(10);
+		var meetingPutJSon = util.generatemeetingJson(num);
 		roomManagerAPI
 			.putwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, meetingPutJSon, function(err, res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				done();
 			});
 	});	
-});
-
-describe('Smoke testings for meetings DELETE Method', function () {
-	
-	this.timeout(config.timeOut);
-
-	before('Getting the basic authentication ',function (done){
-		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var meetingJSon = meetingConfig.meetingJSon;
-		meetingJSon.start = util.getDate()[0];
-		meetingJSon.end = util.getDate()[1];
-		tokenAPI
-			.getToken(function(err, res){
-				token = res;
-				roomManagerAPI
-					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
-						serviceId = res1.body[0]._id;
-						roomManagerAPI
-							.get(roomsEndPoint, function(err, res2){
-								roomId = util.getRandomRoomId(res2)[0];
-								displayName = util.getRandomRoomId(res2)[1];
-								var meetingJSon = meetingConfig.meetingJSon;
-								var num = displayName.substring(10);
-								meetingJSon.location = meetingJSon.location.replace('[num]', num);
-								meetingJSon.roomEmail = meetingJSon.roomEmail.replace('[num]', num);
-								meetingJSon.resources = meetingJSon.resources[0].replace('[num]', num);
-								meetingJSon.start = util.getDate()[0];
-								meetingJSon.end = util.getDate()[1];
-								roomManagerAPI
-									.postwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, meetingJSon, function(err, res){
-										meetingId = res.body._id;
-										done();
-									});
-							});
-					});
-			});
-	});
 
 	it('DELETE /services/{:serviceId}/rooms/{:roomId}/meetings/{:meetingId} returns 200', function (done) {
 		roomManagerAPI

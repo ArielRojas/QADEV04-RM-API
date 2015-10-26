@@ -17,45 +17,28 @@ describe('CRUD testing for Authentication (token)', function () {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
     });
 
-    it('POST /Authentication/login (local) return a valid token', function (done){
-		tokenAPI
-		.getToken(function(err, token){
-			expect(token.status).to.equal(config.httpStatus.Ok);
-			expect(token.body.token).not.to.be.null;
-			expect(token.body.token).to.not.be.undefined;
-			expect(token.body).to.have.property("token");
-			expect(token.body.token).to.be.a('string');
-			done();
-		});
-	});
-
-	it('POST /Authentication/login (local) return a valid username', function (done){
+    it('POST /Authentication/login (local) Verify that returns a valid token when the entered credentials are correct', function (done){
 		tokenAPI
 		.getToken(function(err, res){
 			expect(res.status).to.equal(config.httpStatus.Ok);
+			expect(res.body.token).not.to.be.null;
+			expect(res.body.token).to.not.be.undefined;
+			expect(res.body).to.have.property("token");
+			expect(res.body.token).to.be.a('string');
+
 			expect(res.body.username).not.to.be.null;
 			expect(res.body.username).to.not.be.undefined;
 			expect(res.body.username).to.be.a('string');
 			expect(res.body).to.have.property("username")
 			.and.be.equal(config.userAccountJson.username);
-			done();
-		});
-	});
-	it('POST /Authentication/login (local) Verify that the token is created in a valid date', function (done) {
-		tokenAPI
-		.getToken(function(err, res){
+
 			var currentDate = util.getDateFromUnixTimeStamp((new Date()).getTime());
 			var createdAuth = res.body.createdAt.substr(0, 10);
 			expect(res.status).to.equal(config.httpStatus.Ok);
 			expect(res.body.createdAt).not.to.be.null;
 			expect(res.body.createdAt).to.not.be.undefined;
 			expect(currentDate).to.equal(createdAuth);
-			done();
-		});
-	});
-	it('POST /Authentication/login (local) Verify that the hours difference between the creation and expiration of token is six', function (done) {
-		tokenAPI
-		.getToken(function(err, res){
+
 			var date = new Date();
 			var hour = date.getHours();
 			var hourCreation = parseInt(res.body.createdAt.substr(11,2));

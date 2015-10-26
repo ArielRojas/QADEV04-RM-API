@@ -1,8 +1,9 @@
 // util
 var moment = require('moment');
-var config = require('../config/config.json')
-var resourceConfig = require('../config/resource.json');
-var locationCongig = require('../config/locations.json');
+var config = require(GLOBAL.initialDirectory + '/config/config.json');
+var resourceConfig = require(GLOBAL.initialDirectory + '/config/resource.json');
+var locationCongig = require(GLOBAL.initialDirectory + '/config/locations.json');
+var meetingsConfig = require(GLOBAL.initialDirectory + '/config/meeting.json');
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -63,40 +64,39 @@ var generateLocationJson = function (sizeName, customNameSize, descriptionSize) 
     return locationCongig.locationJson;
 };
 exports.generateLocationJson = generateLocationJson;
+
 /**
- * This method return a start date and a end date
- * @return {array[date]} return an array of dates.
+ * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
+ * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
+ * @res: return Current date e.g 2015-10-23T16:00:00.000Z
  */
-var getDate = function(){
-    var date = new Array();
-    var objToday = new Date();
-    domEnder = new Array( '', '', '', '', '', '', '', '', '', '' );
-    dayOfMonth = today + (objToday.getDate()+1 < 10) ? '0' + objToday.getDate()+1 + domEnder[objToday.getDate()+1] : (objToday.getDate()+1) + domEnder[parseFloat(("" + (objToday.getDate()+1)).substr(("" + (objToday.getDate()+1)).length - 1))];
-    months = new Array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12');
-    curMonth = months[objToday.getMonth() + 1];
-    curYear = objToday.getFullYear();
-    var curHour = (Math.round(Math.random()*23))+1;
-    if(curHour<10){
-        curHour='0'+curHour;
-    };
-    var today  =  curYear+ "-" + curMonth + "-"+dayOfMonth+"T" +curHour+ ":" + "00:00.000Z";
-    var today_end  =  curYear+ "-" + curMonth + "-"+dayOfMonth+"T" +curHour+ ":"  + "10:00.000Z";
-    date.push(today, today_end);
-    return date;
-};
+
+var getDate = function(num){
+    var date = new Date();
+    var aleatorio = (Math.round(Math.random()*23))+1;
+    if(aleatorio<10){aleatorio='0'+aleatorio}
+    if(num==0){aleatorio=23}
+    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+    return time;
+}
 exports.getDate = getDate;
 /**
- * This method returns the roomId and displayName
- * @param  {object} the parameter that is founded to then be replaced
- * @return {array[roomId, DisplayName]}
+ * This method generated a meeting with location, roomEmail, start date and end date specified
+ * @param  {num} the parameter indicate the posicion of room where the meeting is created
+ * @return {json} returns the json of the meeting configured
  */
-getRandomRoomId = function (rooms) {
-    var data = new Array();
-    var nro = Math.round(Math.random() * (rooms.body.length - 1));
-    data.push(rooms.body[nro]._id, rooms.body[nro].displayName);
-    return data;
+
+var generatemeetingJson = function (num) {
+
+    meetingsConfig.meetingJSon.location = meetingsConfig.meetingJSon.location.replace('[num]', num);
+    meetingsConfig.meetingJSon.roomEmail = meetingsConfig.meetingJSon.roomEmail.replace('[num]', num);
+    meetingsConfig.meetingJSon.resources = meetingsConfig.meetingJSon.resources[0].replace('[num]', num);
+    meetingsConfig.meetingJSon.start = getDate(0);
+    meetingsConfig.meetingJSon.end = getDate(1);
+
+    return meetingsConfig.meetingJSon;
 };
-exports.getRandomRoomId = getRandomRoomId;
+exports.generatemeetingJson = generatemeetingJson;
 /**
  * this method returns a date in american format
  * @param  {Date} the parameter that is founded to then be replaced

@@ -1,16 +1,16 @@
 {
   "meetingJSon" : {
-    "organizer": "Ariel Wagner",
-    "title": "test3",
-    "start": "2015-10-28T12:21:00.000Z",
-    "end": "2015-10-28T13:45:00.000Z",
+    "organizer": "Customer",
+    "title": "test",
+    "start": "InitDate",
+    "end": "FinishDate",
     "location": "Floor1Room[num]",
     "roomEmail": "Floor1Room[num]@forest1.local",
     "resources": [
       "Floor1Room[num]@forest1.local"
     ],
     "attendees": [
-      "test3@myexchange.com"
+      "test@myexchange.com"
     ]
   },
   "meetingPutJSon":{
@@ -18,8 +18,7 @@
     "start": "2015-10-29T10:25:00.000Z",
     "end": "2015-10-29T11:48:00.000Z",
     "attendees": [
-      "test@myexchange.com",
-      "test1@myexchange.com"
+      "test@myexchange.com"
     ]
   }
 }
