@@ -1,15 +1,15 @@
 /**
  * Smoke testing for attendees Route by: Jose Antonio Cardozo
  */
- var init = require('../../init');
- var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var init = require('../../init');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var expect = require('chai').expect;
 var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
 var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 
 var token = null;
-var endPointServices = config.url + endPoints.servicesByIdEndPoint;
+var endPointServices = config.url + endPoints.services;
 var endPointById = config.url + endPoints.attend;
 
 describe('Smoke testing attendees route', function() {
@@ -34,6 +34,7 @@ describe('Smoke testing attendees route', function() {
 			roomManagerAPI
 				//get the ID of services 
 			  .get(endPointServicesById,function (err,res) {
+			 	 console.log(res.body)
 			 	 expect(res.status).to.equal(config.httpStatus.Ok);
 				 done();
 			   });
