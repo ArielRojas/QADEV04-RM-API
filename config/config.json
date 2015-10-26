@@ -1,12 +1,13 @@
 {
-	"url" : "https://172.20.208.120:4040",
+	"url" : "https://172.20.208.194:4040",
+	"urlmongodb" : "mongodb://172.20.208.194:27017/roommanager", 
 	"timeOut" : 4000,
 	"userAccountJson" : {
 		"username": "test",
 	  	"password": "Client123",
 	  	"authentication": "local"
 	},
-		"httpStatus" :{
+	"httpStatus" :{
 		"Ok": 200
 	},
 	"path":{
@@ -15,12 +16,20 @@
 		"endPoints" : "/config/endPoints.json",
 		"resourceConfig" : "/config/resource.json",
 		"meetingsAPI" : "/lib/meetingsAPI",
+		"mongodb" : "/lib/mongodb",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
+
+		"apk" : "/config/apk.json",
+		"publicKey" : "/config/publicKey.json",
+		"roomResource" : "/config/roomResource.json",
+
 		"locationConfig":"/config/locations.json",
-		"serviceConfig":"/config/service.json",
-		"mongodb":"/lib/mongodb.js"
+		"mongodb" : "/lib/mongodb"
+
 	},
 	"tokenHeader" : "Authorization",
-	"tokenPrefix" : "jwt "
+	"tokenPrefix" : "jwt ",
+	"tokenBasicPrefix" : "Basic ",
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXNARm9yZXN0MS5sb2NhbDpDbGllbnQxMjM="
 }
