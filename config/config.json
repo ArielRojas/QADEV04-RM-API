@@ -24,7 +24,7 @@
 		"publicKey" : "/config/publicKey.json",
 		"roomResource" : "/config/roomResource.json",
 
-		"locationConfig":"/config/locations.json",
+		"serviceConfig":"/config/service.json",
 		"mongodb" : "/lib/mongodb"
 
 	},
