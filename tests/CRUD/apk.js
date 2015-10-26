@@ -22,9 +22,12 @@ describe('CRUD TCs of APK Routers', function () {
 
 	it('verify that the service not exists', function(done) {
 		roomManagerAPI
-			.get(apkEndPoint, function(err, res){							
+			.get(apkEndPoint, function(err, res){
+				expect(res.status).to.equal(404);							
 				expect(apk.apkError.code).to.equal(res.body.code);
+				expect(res.body).to.have.property("code");
 				expect(apk.apkError.message).to.equal(res.body.message);
+				expect(res.body).to.have.property("message");
 
 				done();
 			});

@@ -44,4 +44,16 @@ describe('Smoke TC PGP public-key', function () {
 				done();
 			});
 	});
+
+	it('GET /public-key ', function (done) {
+		roomManagerAPI
+			.get(publicKeyEndPoint, function(err, res){	
+				expect(res.status).to.equal(config.httpStatus.Ok);
+				expect(res.body).to.have.property("type");
+				expect(res.body.type).to.equal("text");
+				expect(res.body).to.have.property("content");
+
+				done();
+			});
+	});
 });
