@@ -14,7 +14,7 @@ var util = require(GLOBAL.initialDirectory+config.path.util);
 var userJSon = config.userAccountJson;
 var adminJson = serviceConfig.adminJson;
 var roomJson = serviceConfig.roomJson;
-var mongojs = serviceConfig.mongojs;
+var mongojs = serviceConfig.roomDisplayJson;
 //End Points
 var url = config.url;
 var serviceEndPoint = url+endPoints.services;
@@ -75,7 +75,7 @@ describe('Smoke test for RoomManager',function()
 			roomManagerAPI
 				.getwithToken(token, serviceEndPoint, function(err,resp){
 				idService = resp.body[0]._id;
-				roomEndPoint=roomEndPoint + '/' + idService + rooms;
+				roomEndPoint=roomEndPoint + '/' + idService + '/'+rooms;
 				mongodb
 					.findDocument('rooms',mongojs,function(res)
 					{
@@ -84,13 +84,16 @@ describe('Smoke test for RoomManager',function()
 					});
 			});
 		});
+		afterEach(function(done)
+		{
+			roomEndPoint = serviceEndPoint;
+			done();
+		});
 		it('GET /services/ServiceID Smoke test, Verify the status 200 (GET method) by serviceID',function(done)
 		{
-			console.log(idService);
 			roomManagerAPI
 				.get(serviceEndPoint + '/' + idService, function(err,res)
 				{
-					console.log(res);
 					expect(res.status).to.equal(ok);
 					done();
 				});
@@ -123,7 +126,7 @@ describe('Smoke test for RoomManager',function()
 				});
 		});
 	});
-	describe('Method of Delete Service',function()
+	xdescribe('Method of Delete Service',function()
 	{
 		before(function(done)
 		{
@@ -163,7 +166,7 @@ describe('Smoke test for RoomManager',function()
 				});
 		});
 	});
-	describe('Method Post Service',function()
+	xdescribe('Method Post Service',function()
 	{
 		before(function(done)
 		{
@@ -194,14 +197,14 @@ describe('Smoke test for RoomManager',function()
 		{
 			
 			serviceEndPointPost=serviceEndPoint+serviceConfig.postFilter;
+			console.log(serviceEndPointPost,'adminJson',adminJson);
 			roomManagerAPI
 				.post(token,serviceEndPointPost,adminJson,function(err,resp)
 				{
-					idService=resp.body[0]._id;
+					console.log(resp);
 					expect(resp.status).to.equal(ok);
 					done();
 				});
 		});
 	});		
 });
-		
