@@ -179,9 +179,8 @@ describe('CRUD of RoomManager', function (){
 							expect(res.customName).to.equal(locationModify.customName);
 							expect(res.description).to.equal(locationModify.description);
 							expect(res.__v).to.equal(locationModify.__v);
-
+							done();
 						});
-					done();
 				});
 		});
 	});

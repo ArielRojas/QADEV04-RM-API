@@ -34,7 +34,6 @@ describe('Smoke testing attendees route', function() {
 			roomManagerAPI
 				//get the ID of services 
 			  .get(endPointServicesById,function (err,res) {
-			 	 console.log(res.body)
 			 	 expect(res.status).to.equal(config.httpStatus.Ok);
 				 done();
 			   });
