@@ -8,6 +8,8 @@ var tokenAPI = require(GLOBAL.initialDirectory+config.path.tokenAPI);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var util = require(GLOBAL.initialDirectory+config.path.util);
+var mongodb = require(GLOBAL.initialDirectory+config.path.mongodb);
+var ObjectId = require('mongodb').ObjectID;
 //EndPoints
 var url = config.url;
 var resourceEndPoint = url+endPoints.resources;
@@ -34,6 +36,7 @@ describe('Resource CRUD Suite get by id and put', function () {
 		roomManagerAPI
 			.post(token,resourceEndPoint,resourceJson,function(err,res){
 				resourceId = res.body._id;
+				console.log(resourceId);
 				done();
 			});
 	});
@@ -62,7 +65,6 @@ describe('Resource CRUD Suite get by id and put', function () {
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				expect(res.body).to.have.property("name")
 					.and.be.equal(resourceJson.name);
-					console.log(res.body.name)
 				expect(res.body).to.have.property("customName")
 					.and.be.equal(resourceJson.customName);
 				expect(res.body).to.have.property("from")
@@ -73,7 +75,11 @@ describe('Resource CRUD Suite get by id and put', function () {
 					.and.be.equal(resourceId);
 				expect(res.body).to.have.property("fontIcon")
 					.and.not.be.empty;
-				done();
+				mongodb.findDocument('resourcemodels',{"_id": ObjectId(resourceId)},function(items){
+					console.log('---------'+resourceId+'/'+items._id);	
+					done();
+				});
+				
 			});
 		
 	});
