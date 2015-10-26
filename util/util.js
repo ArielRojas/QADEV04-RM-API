@@ -1,7 +1,7 @@
 // util
 var config = require('../config/config.json')
 var resourceConfig = require('../config/resource.json');
-var outOfOrderConfig = require('../config/outOfOrder.json');
+var outOfOrderConfig = require(GLOBAL.initialDirectory+config.path.outOfOrder);
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -82,3 +82,14 @@ var stringReplace = function(text,textToReplace,replaceWith){
 };
 
 exports.stringReplace = stringReplace;
+
+/**
+ * this method returns a date in american format
+ * @param  {Date} the parameter that is founded to then be replaced
+ * @return {date}
+ */
+var getDateFromUnixTimeStamp = function (timeStamp) {
+    var date = moment(timeStamp,'x').format('YYYY-MM-DD');
+    return date;
+};
+exports.getDateFromUnixTimeStamp = getDateFromUnixTimeStamp;

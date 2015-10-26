@@ -1,12 +1,12 @@
 {
-	"url" : "https://172.20.208.27:4040",
+	"url" : "https://172.20.208.120:4040",
 	"urlmongodb" : "mongodb://172.20.208.27:27017/roommanager",
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "forest1\\admin.ivan",
-	  	"password": "Control123",
-	  	"authentication": "ldap"
-	},
+		"username": "test",
+	  	"password": "Client123",
+	  	"authentication": "local"
+	},	
 	"httpStatus" :{
 		"Ok": 200
 	},
@@ -18,7 +18,8 @@
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"roomsAPI" : "/lib/roomsAPI"
+		"mongodb" : "/lib/mongodb",
+		"outOfOrder" : "/config/outOfOrder.json"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
