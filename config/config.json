@@ -1,10 +1,9 @@
 {
-	"url" : "https://172.20.208.216:4040",
-	"urlmongodb" : "mongodb://172.20.208.216:27017/roommanager",
+	"url" : "https://172.20.208.120:4040",
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "BrayanRosas",
-	  	"password": "Bgrf44360303bpm",
+		"username": "test",
+	  	"password": "Client123",
 	  	"authentication": "local"
 	},
 	"httpStatus" :{
@@ -17,9 +16,9 @@
 		"resourceConfig" : "/config/resource.json",
 		"meetingsAPI" : "/lib/meetingsAPI",
 		"util" : "/util/util",
-		"roomManagerAPI" : "/lib/roomManagerAPI"
+		"roomManagerAPI" : "/lib/roomManagerAPI",
+		"locationConfig":"/config/locations.json"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt "
-
 }
