@@ -23,8 +23,9 @@
 		"outOfOrder" : "/config/outOfOrder.json",
 		"apk" : "/config/apk.json",
 		"publicKey" : "/config/publicKey.json",
-		"roomResource" : "/config/roomResource.json",		
-		"locationConfig":"/config/locations.json"
+		"roomResource" : "/config/roomResource.json",
+		"locationConfig":"/config/locations.json",
+		"serviceConfig":"/config/service.json"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",

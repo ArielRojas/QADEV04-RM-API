@@ -112,5 +112,7 @@ var generateLocationJson = function (sizeName, customNameSize, descriptionSize) 
 	locationCongig.locationJson.description = generateString(descriptionSize)
 	return locationCongig.locationJson;
 };
+
 exports.generateLocationJson = generateLocationJson;
+
 
