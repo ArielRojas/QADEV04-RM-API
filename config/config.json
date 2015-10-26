@@ -19,14 +19,12 @@
 		"mongodb" : "/lib/mongodb",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-
 		"apk" : "/config/apk.json",
 		"publicKey" : "/config/publicKey.json",
 		"roomResource" : "/config/roomResource.json",
-
 		"locationConfig":"/config/locations.json",
-		"mongodb" : "/lib/mongodb"
-
+		"mongodb" : "/lib/mongodb",
+		"serviceConfig":"/config/service.json"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
