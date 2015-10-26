@@ -1,0 +1,9 @@
+{
+	"size" : {"nameSize": 8, "customNameSize": 8, "description": 20},
+	"locationIdReplace":"{:locationId}",
+	"locationJson" : {
+		"name": "locationName",
+		"customName": "locationCustomName",
+		"description": "locationDescription"
+	}
+}
