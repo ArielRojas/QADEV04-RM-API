@@ -9,14 +9,19 @@ var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var roomManagerAPI = require(GLOBAL.initialDirectory+config.path.roomManagerAPI);
 var util = require(GLOBAL.initialDirectory+config.path.util);
 var locationConfig = require(GLOBAL.initialDirectory+config.path.locationConfig);
+var mongoDB = require(GLOBAL.initialDirectory+config.path.mongodb);
+
+var ObjectId = require('mongodb').ObjectID;
 
 //global variables
 var token = null;
 var endPoint = config.url + endPoints.locations;
 var endPointById = config.url + endPoints.locationById;
 var size = locationConfig.size;
+var locationJsonId = locationConfig.locationIdForMongo;
 
-describe('CRUD of RoomManager', function () {
+
+describe('CRUD of RoomManager', function (){
 	this.timeout(config.timeOut);
 	//Before
 	before(function (done) {
@@ -29,16 +34,31 @@ describe('CRUD of RoomManager', function () {
 			});
 	});
 	
-	it.skip('CRUD of GET /locations', function(done) {
+	it('CRUD of GET /locations', function(done) {
 		roomManagerAPI
 			.get(endPoint,function (err,res){
-				expect(res.status).to.equal(config.httpStatus.Ok);
-				console.log('the size is = ' + res.body.length);
-				expect(res.body).to.not.be.null;
-				//expect(res.body.length).to.be.at.least(1);
-				// this expect compared to the array of locations are same that the locations that are in the mongoDB, but not yet implemented
-				expect(res.body).to.eql('todas las locations de la base de datos');
-				done();
+				var arrayLocation = res;
+				expect(arrayLocation.status).to.equal(config.httpStatus.Ok);
+				expect(arrayLocation.body).to.not.be.null;
+				for (var i = 0; i < arrayLocation.length; i++) {
+					expect(arrayLocation.body[i]).to.have.property('_id');
+					expect(arrayLocation.body[i]).to.have.property('path');
+					expect(arrayLocation.body[i]).to.have.property('name');
+					expect(arrayLocation.body[i]).to.have.property('customName');
+					expect(arrayLocation.body[i]).to.have.property('description');
+					expect(arrayLocation.body[i]).to.have.property('__v');	
+				};
+				mongoDB.findDocuments('locations',function (res) {
+						for (var i = 0; i < res.length; i++) {
+							expect(arrayLocation.body[i]._id).to.equal(res[i]._id.toString());
+							expect(arrayLocation.body[i].path).to.equal(res[i].path);
+							expect(arrayLocation.body[i].name).to.equal(res[i].name);
+							expect(arrayLocation.body[i].customName).to.equal(res[i].customName);
+							expect(arrayLocation.body[i].description).to.equal(res[i].description);
+							expect(arrayLocation.body[i].__v).to.equal(res[i].__v);
+						};
+						done();		
+					})
 			});
 	});
 
@@ -59,18 +79,22 @@ describe('CRUD of RoomManager', function () {
 		var locationJson = util.generateLocationJson(size.nameSize,size.customNameSize,size.description);
 		roomManagerAPI
 			.post(token,endPoint,locationJson,function (err,res) {
-				locationID = res.body._id;
-				var locationCreated = res.body;
+				locationID = res.body;
+				//locationJsonId =  { "_id": ObjectId(locationID) }
+				console.log(locationID);
+				
+				//var locationCreated = res.body;
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				/** verification the data of location created are the same was inserted in mongoDB, but not yet is implementing*/
 				mongoDB
-					.findById('locatoins',locationID,function (err,res) {
-						expect(res.status).to.equal(config.httpStatus.Ok);
-						expect(locationCreated._id).to.equal(res.body._id);
-						expect(locationCreated.path).to.equal(res.body.path);
-						expect(locationCreated.name).to.equal(res.body.name);
-						expect(locationCreated.customName).to.equal(res.body.customName);
-						expect(locationCreated.description).to.equal(res.body.description);
+					.findDocument('locations',{ "_id": ObjectId("562d70cf562ce53c0b0e8d68") },function (err,res) {
+						//console.log('gfvhg '+res);
+						//expect(res.status).to.equal(config.httpStatus.Ok);
+						expect(locationCreated._id).to.equal(res._id);
+						expect(locationCreated.path).to.equal(res.path);
+						expect(locationCreated.name).to.equal(res.name);
+						expect(locationCreated.customName).to.equal(res.customName);
+						expect(locationCreated.description).to.equal(res.description);
 
 						console.log('location created ==' + JSON.stringify(locationCreated._id));
 						console.log('location created ==' + JSON.stringify(locationCreated.path));
