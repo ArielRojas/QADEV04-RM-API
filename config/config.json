@@ -23,10 +23,9 @@
 		"apk" : "/config/apk.json",
 		"publicKey" : "/config/publicKey.json",
 		"roomResource" : "/config/roomResource.json",
-		"locationConfig":"/config/locations.json",
-		"mongodb" : "/lib/mongodb",
 		"serviceConfig":"/config/service.json",
 		"meetingConfig" : "/config/meeting.json"
+
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
