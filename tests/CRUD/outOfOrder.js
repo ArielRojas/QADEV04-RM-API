@@ -30,7 +30,7 @@ describe('CRUD test about out of order', function () {
 	 * Get the token of room manager
 	 */
 
-	before('Before get the token',function (done) {
+	before('Before get the token of room manager',function (done) {
 			process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 			tokenAPI
 				.getToken(function(err,res){
@@ -122,25 +122,25 @@ describe('CRUD test about out of order', function () {
 			it('GET/out-of-orders', function(done){
 					outOfOrderConfig.serviceId.serviceId=room.serviceId
 					mongodb.
-							findDocument('rooms',outOfOrderConfig.serviceId,function(res){
-							servicefromDB=res;
-							roomManagerAPI
-								.get(RoomEndPoint,function(err,res){
-									expect(res.status).to.equal(config.httpStatus.Ok);
-									expect(res.body).to.not.be.null;
-									expect(res.body[0]).to.have.property('_id');
-									expect(res.body[0]._id).to.equal(servicefromDB._id.toString());
-									expect(res.body[0]).to.have.property('emailAddress');
-									expect(res.body[0].emailAddress).to.equal(servicefromDB.emailAddress);
-									expect(res.body[0]).to.have.property('displayName');
-									expect(res.body[0].displayName).to.equal(servicefromDB.displayName);
-									expect(res.body[0]).to.have.property('serviceId');
-									expect(res.body[0].serviceId).to.equal(servicefromDB.serviceId.toString());
-									expect(res.body[0]).to.have.property('customDisplayName');
-									expect(res.body[0].customDisplayName).to.equal(servicefromDB.customDisplayName);
-									done();
-								});	
-							});
+						findDocument('rooms',outOfOrderConfig.serviceId,function(res){
+						servicefromDB=res;
+						roomManagerAPI
+							.get(RoomEndPoint,function(err,res){
+								expect(res.status).to.equal(config.httpStatus.Ok);
+								expect(res.body).to.not.be.null;
+								expect(res.body[0]).to.have.property('_id');
+								expect(res.body[0]._id).to.equal(servicefromDB._id.toString());
+								expect(res.body[0]).to.have.property('emailAddress');
+								expect(res.body[0].emailAddress).to.equal(servicefromDB.emailAddress);
+								expect(res.body[0]).to.have.property('displayName');
+								expect(res.body[0].displayName).to.equal(servicefromDB.displayName);
+								expect(res.body[0]).to.have.property('serviceId');
+								expect(res.body[0].serviceId).to.equal(servicefromDB.serviceId.toString());
+								expect(res.body[0]).to.have.property('customDisplayName');
+								expect(res.body[0].customDisplayName).to.equal(servicefromDB.customDisplayName);
+								done();
+							});	
+						});
 			});
 
 		describe(' test with use out-of-orderId for rooms out of orders', function () {
@@ -355,41 +355,4 @@ describe('CRUD test about out of order', function () {
 			});
 		});
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

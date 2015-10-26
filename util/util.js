@@ -65,7 +65,7 @@ var getDate = function(num){
 	var date = new Date();
 	var aleatorio = (Math.round(Math.random()*23))+1;
 	if(aleatorio<10){aleatorio='0'+aleatorio}
-	if(num==0){aleatorio=24}
+	if(num==0){aleatorio=23}
     var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
 	return time;
 }

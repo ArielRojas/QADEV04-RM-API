@@ -30,7 +30,7 @@ describe('Smoke test about out of order', function () {
 	 * Get the token of room manager
 	 */
 
-	before('Before Set',function (done) {
+	before('Before get the token of room manager',function (done) {
 			process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 			tokenAPI
 				.getToken(function(err,res){
