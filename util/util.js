@@ -2,6 +2,7 @@
 var moment = require('moment');
 var config = require('../config/config.json')
 var resourceConfig = require('../config/resource.json');
+var locationCongig = require('../config/locations.json');
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -43,6 +44,25 @@ var stringReplace = function(text,textToReplace,replaceWith){
     text = text.replace(textToReplace,replaceWith);
     return text;
 };
+exports.stringReplace = stringReplace;
+
+/**
+ * Function: generateLocationJson
+ * This function generate random string to location that recive of size for name, custom name and description
+ * Parameters:
+ *   sizeName        - is the size of name of location
+ *   customNameSize  - is the size of display name
+ *   descriptionSize - is a small description about of location.
+ * Returns:
+ *   return the json with name, custonName and description of location.
+ */
+var generateLocationJson = function (sizeName, customNameSize, descriptionSize) {
+    locationCongig.locationJson.name = generateString(sizeName),
+    locationCongig.locationJson.customName = generateString(customNameSize),
+    locationCongig.locationJson.description = generateString(descriptionSize)
+    return locationCongig.locationJson;
+};
+exports.generateLocationJson = generateLocationJson;
 /**
  * This method return a start date and a end date
  * @return {array[date]} return an array of dates.
