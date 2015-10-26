@@ -90,6 +90,7 @@ describe('Smoke test for RoomManager',function()
 			roomManagerAPI
 				.get(serviceEndPoint + '/' + idService, function(err,res)
 				{
+					console.log(res);
 					expect(res.status).to.equal(ok);
 					done();
 				});
@@ -184,7 +185,7 @@ describe('Smoke test for RoomManager',function()
 		after(function(done)
 		{
 			roomManagerAPI
-				.del(token,serviceEndPoint+'/'+idService[0]._id,function(err,res)
+				.del(token,serviceEndPoint+'/'+idService,function(err,res)
 				{
 					done();
 				});
