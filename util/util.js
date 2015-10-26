@@ -1,8 +1,8 @@
 // util
-var config = require('../config/config.json')
-var resourceConfig = require('../config/resource.json');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var resourceConfig = require(GLOBAL.initialDirectory+config.path.resourceConfig);
 var outOfOrderConfig = require(GLOBAL.initialDirectory+config.path.outOfOrder);
-var locationCongig = require('../config/locations.json');
+var locationCongig = require(GLOBAL.initialDirectory+config.path.locationConfig);
 
 var generateString = function(size){
     var text = "";

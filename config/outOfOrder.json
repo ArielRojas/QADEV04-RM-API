@@ -9,6 +9,5 @@
 
 	"RoomId":{"roomId" : "room._id"},
 	"serviceId":{"serviceId":"serviceId"},
-	"deleteOutOfOrder":{"delete":"NotFoundError"},
-	"nameRoom":{"customDisplayName": "Floor1Room1"}
+	"deleteOutOfOrder":{"delete":"NotFoundError"}
 }

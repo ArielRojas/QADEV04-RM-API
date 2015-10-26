@@ -25,7 +25,8 @@
 		"publicKey" : "/config/publicKey.json",
 		"roomResource" : "/config/roomResource.json",
 		"locationConfig":"/config/locations.json",
-		"serviceConfig":"/config/service.json"
+		"serviceConfig":"/config/service.json",
+		"room":"/config/room.json"
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",

@@ -10,6 +10,7 @@ var getEndPoint=require(GLOBAL.initialDirectory+config.path.endPoints);
 var mongodb= require(GLOBAL.initialDirectory+config.path.mongodb);
 var ObjectId = require('mongodb').ObjectID;
 var outOfOrderConfig = require(GLOBAL.initialDirectory+config.path.outOfOrder);
+var roomJson = require(GLOBAL.initialDirectory+config.path.room);
 
 /* End Points*/  
 var RoomEndPoint=config.url+getEndPoint.room;     	
@@ -44,7 +45,7 @@ describe('Smoke test about out of order', function () {
 		 * @res: res an endpoint with the roomId
 		 */	 
 	before('return the Id of the room',function (done) {
-		mongodb.findDocument('rooms',outOfOrderConfig.nameRoom,function(res){
+		mongodb.findDocument('rooms',roomJson.roomUpdateQ.customDisplayName,function(res){
 			room = res;
 			endPoint1= util.stringReplace(outOfOrderbyIDEndPoint,config.nameId.serviceId,res.serviceId)
 			endPointOutOfOrder= util.stringReplace(endPoint1,config.nameId.roomId,res._id)
