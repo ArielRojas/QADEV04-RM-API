@@ -44,8 +44,8 @@ describe('Smoke testings for meetings: GET Method', function () {
 				roomManagerAPI
 					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
 						serviceId = res1.body[0]._id;
-						json={"customDisplayName": "Floor1Room1"};
-						mongodb.findDocument('rooms',json, function(res2){
+						json=meetingConfig.displayName;
+						mongodb.findDocument('rooms', json, function(res2){
 							roomId = res2._id;
 							displayName=res2.displayName;
 							done();
@@ -75,8 +75,8 @@ describe('Smoke testings for meetings : POST Method', function () {
 				roomManagerAPI
 					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
 						serviceId = res1.body[0]._id;
-						json={"customDisplayName": "Floor1Room1"};
-						mongodb.findDocument('rooms',json, function(res2){
+						json=meetingConfig.displayName;
+						mongodb.findDocument('rooms', json, function(res2){
 							roomId = res2._id;
 							displayName=res2.displayName;
 							done();
@@ -116,8 +116,8 @@ describe('Smoke testings for meetings : GET, PUT and DELETE methods by meeting I
 				roomManagerAPI
 					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
 						serviceId = res1.body[0]._id;
-						json={"customDisplayName": "Floor1Room1"};
-						mongodb.findDocument('rooms',json, function(res2){
+						json=meetingConfig.displayName;
+						mongodb.findDocument('rooms', json, function(res2){
 							roomId = res2._id;
 							displayName=res2.displayName;
 							var num = displayName.substring(10);
