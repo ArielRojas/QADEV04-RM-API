@@ -62,7 +62,6 @@ describe('Resource CRUD Suite get by id and put', function () {
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				expect(res.body).to.have.property("name")
 					.and.be.equal(resourceJson.name);
-					console.log(res.body.name)
 				expect(res.body).to.have.property("customName")
 					.and.be.equal(resourceJson.customName);
 				expect(res.body).to.have.property("from")
