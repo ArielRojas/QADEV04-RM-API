@@ -19,8 +19,18 @@
 		"mongodb" : "/lib/mongodb",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"locationConfig":"/config/locations.json"
+
+		"apk" : "/config/apk.json",
+		"publicKey" : "/config/publicKey.json",
+		"roomResource" : "/config/roomResource.json",
+
+		"locationConfig":"/config/locations.json",
+		"mongodb" : "/lib/mongodb"
+
 	},
 	"tokenHeader" : "Authorization",
-	"tokenPrefix" : "jwt "
+	"tokenPrefix" : "jwt ",
+	"tokenBasicPrefix" : "Basic ",
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXNARm9yZXN0MS5sb2NhbDpDbGllbnQxMjM=",
+	 "urlmongodb" : "mongodb://172.20.208.120:27017/roommanager"
 }
