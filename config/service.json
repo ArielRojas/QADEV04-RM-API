@@ -13,7 +13,7 @@
 	"authorization":"Authorization",
 	"jwt":"jwt ",
 	"postFilter":"?type=exchange",
-	"mongojs":
+	"roomDisplayJson":
 			{
 				"displayName" : "Floor1Room99"
 			},
@@ -24,5 +24,27 @@
 	"serviceId":
 			{
 				"_id":"kasd"
-			}
+			},
+	"PropertiesRoom":
+	{
+		"emailAddress":"emailAddress",
+		"displayName":"displayName",
+		"serviceId":"serviceId",
+		"_id":"_id",
+		"enabled":"enabled",
+		"locationId":"locationId",
+		"customDisplayName":"customDisplayName"
+	},
+	"PropertiesService":
+	{
+		"type":"type",
+		"name":"name",
+		"version":"version",
+		"_id":"_id",
+		"impersonate":"impersonate",
+		"zero":"0.0.1",
+		"exchange":"exchange",
+		"support":"support",
+		"Exchange":"Exchange Server 2010"
+	}
 }
