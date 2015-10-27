@@ -1,0 +1,13 @@
+{
+	"outOfOrderJson" : {
+				"roomId":"id",
+				"from": "from",
+				"to": "to",
+				"title":"title"
+	},
+	"titleSize": 6,
+
+	"RoomId":{"roomId" : "room._id"},
+	"serviceId":{"serviceId":"serviceId"},
+	"deleteOutOfOrder":{"delete":"NotFoundError"}
+}
