@@ -19,15 +19,17 @@
 		"mongodb" : "/lib/mongodb",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
+		"locationConfig":"/config/locations.json",
 		"apk" : "/config/apk.json",
 		"publicKey" : "/config/publicKey.json",
 		"roomResource" : "/config/roomResource.json",
-		"locationConfig":"/config/locations.json",
-		"mongodb" : "/lib/mongodb",
-		"serviceConfig":"/config/service.json"
+		"serviceConfig":"/config/service.json",
+		"meetingConfig" : "/config/meeting.json"
+
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
 	"tokenBasicPrefix" : "Basic ",
-	"userBasicAccountJson" : "QXJpZWwuUm9qYXNARm9yZXN0MS5sb2NhbDpDbGllbnQxMjM="
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz"
+
 }
