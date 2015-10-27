@@ -36,21 +36,15 @@ describe('Smoke testings for meetings: GET Method', function () {
 	
 	this.timeout(config.timeOut);
 
-	before('Getting the token, serviceId and roomId', function (done){
+	before('Getting the serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		tokenAPI
-			.getToken(function(err, res){
-				token = res;
-				roomManagerAPI
-					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
-						serviceId = res1.body[0]._id;
-						json=meetingConfig.displayName;
-						mongodb.findDocument('rooms', json, function(res2){
-							roomId = res2._id;
-							displayName=res2.displayName;
-							done();
-						});
-					});
+		var json = meetingConfig.displayName;
+		mongodb
+			.findDocument('rooms', json, function(res2){
+				roomId = res2._id;
+				serviceId = res2.serviceId;
+				displayName=res2.displayName;
+				done();
 			});
 	});
 
@@ -67,21 +61,15 @@ describe('Smoke testings for meetings : POST Method', function () {
 	
 	this.timeout(config.timeOut);
 
-	before('Getting the token, serviceId and roomId', function (done){
+	before('Getting the serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		tokenAPI
-			.getToken(function(err, res){
-				token = res;
-				roomManagerAPI
-					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
-						serviceId = res1.body[0]._id;
-						json=meetingConfig.displayName;
-						mongodb.findDocument('rooms', json, function(res2){
-							roomId = res2._id;
-							displayName=res2.displayName;
-							done();
-						});
-					});
+		var json = meetingConfig.displayName;
+		mongodb
+			.findDocument('rooms', json, function(res2){
+				roomId = res2._id;
+				serviceId = res2.serviceId;
+				displayName=res2.displayName;
+				done();
 			});
 	});
 
@@ -110,24 +98,18 @@ describe('Smoke testings for meetings : GET, PUT and DELETE methods by meeting I
 
 	before('Getting the basic authentication ',function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		tokenAPI
-			.getToken(function(err, res){
-				token = res;
+		var json=meetingConfig.displayName;
+		mongodb
+			.findDocument('rooms', json, function(res2){
+				roomId = res2._id;
+				serviceId = res2.serviceId;
+				displayName=res2.displayName;
+				var num = displayName.substring(10);
+				var meetingJSon = util.generatemeetingJson(num);
 				roomManagerAPI
-					.getwithToken(token.body.token, servicesEndPoint, function(err, res1){
-						serviceId = res1.body[0]._id;
-						json=meetingConfig.displayName;
-						mongodb.findDocument('rooms', json, function(res2){
-							roomId = res2._id;
-							displayName=res2.displayName;
-							var num = displayName.substring(10);
-							var meetingJSon = util.generatemeetingJson(num);
-							roomManagerAPI
-								.postwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, meetingJSon, function(err, res3){
-									meetingId = res3.body._id;
-									done();
-								});
-						});
+					.postwithBasic(basic, servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, meetingJSon, function(err, res3){
+						meetingId = res3.body._id;
+						done();
 					});
 			});
 	});
