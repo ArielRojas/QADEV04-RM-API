@@ -1,132 +1,224 @@
-[2015-10-26 21:38:27.756] [INFO] roomManager - Getting token
-[2015-10-26 21:38:27.756] [INFO] roomManager - Getting token
-[2015-10-26 21:38:27.882] [TRACE] roomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAxOjM4OjI3Ljc5OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuNDgiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkwOTkwNywiZXhwIjoxNDQ1OTMxNTA3fQ.iVbjB66J6k6ebX6HQiQBMZzjD4-1f-Sel_CKlBjPK-4
-[2015-10-26 21:38:27.882] [TRACE] roomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAxOjM4OjI3Ljc5OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuNDgiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkwOTkwNywiZXhwIjoxNDQ1OTMxNTA3fQ.iVbjB66J6k6ebX6HQiQBMZzjD4-1f-Sel_CKlBjPK-4
-[2015-10-26 21:38:28.019] [INFO] roomManager - posting success!
-[2015-10-26 21:38:28.019] [INFO] roomManager - posting success!
-[2015-10-26 21:38:28.095] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.095] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.223] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.223] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.316] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:28.316] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:28.511] [INFO] roomManager - posting success!
-[2015-10-26 21:38:28.511] [INFO] roomManager - posting success!
-[2015-10-26 21:38:28.602] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.602] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.838] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.838] [INFO] roomManager - getting success!
-[2015-10-26 21:38:28.939] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:28.939] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:29.052] [INFO] roomManager - posting success!
-[2015-10-26 21:38:29.052] [INFO] roomManager - posting success!
-[2015-10-26 21:38:29.163] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.163] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.247] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.247] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.437] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.437] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.699] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:29.699] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:29.790] [INFO] roomManager - posting success!
-[2015-10-26 21:38:29.790] [INFO] roomManager - posting success!
-[2015-10-26 21:38:29.904] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.904] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.970] [INFO] roomManager - getting success!
-[2015-10-26 21:38:29.970] [INFO] roomManager - getting success!
-[2015-10-26 21:38:30.156] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:30.156] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:30.396] [INFO] roomManager - posting success!
-[2015-10-26 21:38:30.396] [INFO] roomManager - posting success!
-[2015-10-26 21:38:30.463] [INFO] roomManager - getting success!
-[2015-10-26 21:38:30.463] [INFO] roomManager - getting success!
-[2015-10-26 21:38:30.691] [INFO] roomManager - putting success!
-[2015-10-26 21:38:30.691] [INFO] roomManager - putting success!
-[2015-10-26 21:38:30.768] [INFO] roomManager - getting success!
-[2015-10-26 21:38:30.768] [INFO] roomManager - getting success!
-[2015-10-26 21:38:31.068] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:31.068] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:31.275] [INFO] roomManager - posting success!
-[2015-10-26 21:38:31.275] [INFO] roomManager - posting success!
-[2015-10-26 21:38:31.342] [INFO] roomManager - getting success!
-[2015-10-26 21:38:31.342] [INFO] roomManager - getting success!
-[2015-10-26 21:38:31.540] [INFO] roomManager - posting success!
-[2015-10-26 21:38:31.540] [INFO] roomManager - posting success!
-[2015-10-26 21:38:31.616] [INFO] roomManager - getting success!
-[2015-10-26 21:38:31.616] [INFO] roomManager - getting success!
-[2015-10-26 21:38:31.964] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:31.964] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:32.131] [INFO] roomManager - posting success!
-[2015-10-26 21:38:32.131] [INFO] roomManager - posting success!
-[2015-10-26 21:38:32.225] [INFO] roomManager - getting success!
-[2015-10-26 21:38:32.225] [INFO] roomManager - getting success!
-[2015-10-26 21:38:32.389] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:32.389] [INFO] roomManager - deleting success!
-[2015-10-26 21:38:32.533] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found
-[2015-10-26 21:38:32.533] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found
-[2015-10-26 21:47:40.771] [INFO] roomManager - Getting token
-[2015-10-26 21:47:40.771] [INFO] roomManager - Getting token
-[2015-10-26 21:47:40.942] [TRACE] roomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAxOjQ3OjQwLjg1NloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuNDgiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxMDQ2MCwiZXhwIjoxNDQ1OTMyMDYwfQ.SqXQ4lIy9kuhu3ayAI9SDdfG0uE7S3Xt50dHqXzoBqc
-[2015-10-26 21:47:40.942] [TRACE] roomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAxOjQ3OjQwLjg1NloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuNDgiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxMDQ2MCwiZXhwIjoxNDQ1OTMyMDYwfQ.SqXQ4lIy9kuhu3ayAI9SDdfG0uE7S3Xt50dHqXzoBqc
-[2015-10-26 21:47:41.149] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.149] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.224] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.224] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.413] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.413] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.523] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed59737689ac40d724715
-[2015-10-26 21:47:41.523] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed59737689ac40d724715
-[2015-10-26 21:47:41.722] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.722] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.817] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:41.817] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.162] [INFO] roomManager - getting success! from https://172.20.208.194:4040/rooms
-[2015-10-26 21:47:42.162] [INFO] roomManager - getting success! from https://172.20.208.194:4040/rooms
-[2015-10-26 21:47:42.397] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed59837689ac40d724716
-[2015-10-26 21:47:42.397] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed59837689ac40d724716
-[2015-10-26 21:47:42.573] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.573] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.639] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.639] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.745] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.745] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:42.864] [INFO] roomManager - getting success! from https://172.20.208.194:4040/out-of-orders/562ed7bd37689ac40d72471f
-[2015-10-26 21:47:42.864] [INFO] roomManager - getting success! from https://172.20.208.194:4040/out-of-orders/562ed7bd37689ac40d72471f
-[2015-10-26 21:47:43.060] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d72471f
-[2015-10-26 21:47:43.060] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d72471f
-[2015-10-26 21:47:43.166] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.166] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.315] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.315] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.394] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d724720
-[2015-10-26 21:47:43.394] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d724720
-[2015-10-26 21:47:43.611] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d724720
-[2015-10-26 21:47:43.611] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bd37689ac40d724720
-[2015-10-26 21:47:43.781] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.781] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.852] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:43.852] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.060] [INFO] roomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.060] [INFO] roomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.132] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.132] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.414] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.414] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7be37689ac40d724721
-[2015-10-26 21:47:44.652] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.652] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.812] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.812] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.885] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:44.885] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:45.067] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724722
-[2015-10-26 21:47:45.067] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724722
-[2015-10-26 21:47:45.311] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724722
-[2015-10-26 21:47:45.311] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724722
-[2015-10-26 21:47:45.514] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:45.514] [INFO] roomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:45.574] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:45.574] [INFO] roomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders
-[2015-10-26 21:47:45.765] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
-[2015-10-26 21:47:45.765] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
-[2015-10-26 21:47:45.841] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
-[2015-10-26 21:47:45.841] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
+[2015-10-26 23:26:01.543] [ERROR] RoomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/apk
+[2015-10-26 23:26:01.556] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:01.621] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjAxLjkyMloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2MSwiZXhwIjoxNDQ1OTM3OTYxfQ.tEHDCf940rUF6MMh1U7mwZdLm2NvaOPUq5P4HW1mjQ4
+[2015-10-26 23:26:01.789] [ERROR] RoomManager - Error getting from RoomManagerAPI: Error: Internal Server Error https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/attendees?filter=A
+[2015-10-26 23:26:01.794] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:01.857] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjAyLjE2MVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2MiwiZXhwIjoxNDQ1OTM3OTYyfQ.Dmx0rONU--SYf_0jlUmt9YbS6bTLgWBB741AS_q1IEE
+[2015-10-26 23:26:01.862] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:01.917] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjAyLjIyMloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2MiwiZXhwIjoxNDQ1OTM3OTYyfQ.6YTOXH3YHItMUAfRtClltXr6IMzsbvMBNRdxnz6SVi0
+[2015-10-26 23:26:01.976] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:26:02.055] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:26:02.126] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b05
+[2015-10-26 23:26:02.188] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:26:02.243] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b06
+[2015-10-26 23:26:02.306] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b06
+[2015-10-26 23:26:02.368] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:26:02.435] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b07
+[2015-10-26 23:26:02.523] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b07
+[2015-10-26 23:26:02.583] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:26:02.646] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eeeca37689ac40d724b08
+[2015-10-26 23:26:02.656] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:02.719] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjAzLjAyMloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2MywiZXhwIjoxNDQ1OTM3OTYzfQ.UuR8lcJAMSWI2SJU2_S1gRFLEPiPB9R3BUktRKerZs8
+[2015-10-26 23:26:02.893] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-26 23:26:02.897] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:02.954] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjAzLjI1OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2MywiZXhwIjoxNDQ1OTM3OTYzfQ.yGUOnSwUfNIpro44wYfKAZlGhFZ1Lit_toJGa5trNcQ
+[2015-10-26 23:26:03.653] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-26 23:26:04.060] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562eeecb37689ac40d724b09
+[2015-10-26 23:26:04.062] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:04.114] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA0LjQyMFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2NCwiZXhwIjoxNDQ1OTM3OTY0fQ.H65t7_Vd76vDLYmJoYyC1eW-GO9ctBunSUJMP4yJeSY
+[2015-10-26 23:26:04.670] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-26 23:26:04.739] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562eeecc37689ac40d724b0a
+[2015-10-26 23:26:05.260] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562eeecc37689ac40d724b0a
+[2015-10-26 23:26:05.591] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562eeecc37689ac40d724b0a
+[2015-10-26 23:26:05.595] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:05.645] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA1Ljk0OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2NSwiZXhwIjoxNDQ1OTM3OTY1fQ.47k5rb1ObPxbxXf-3DK9-IDPyjXgwN2sUDqPil76YpA
+[2015-10-26 23:26:05.739] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:05.796] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:05.847] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:05.904] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeece37689ac40d724b0b
+[2015-10-26 23:26:05.963] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.015] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.145] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:26:06.192] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeece37689ac40d724b0c
+[2015-10-26 23:26:06.244] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.285] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.335] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.385] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/out-of-orders/562eeece37689ac40d724b0d
+[2015-10-26 23:26:06.442] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeece37689ac40d724b0d
+[2015-10-26 23:26:06.508] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.563] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.611] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeece37689ac40d724b0e
+[2015-10-26 23:26:06.668] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeece37689ac40d724b0e
+[2015-10-26 23:26:06.727] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.763] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.820] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeecf37689ac40d724b0f
+[2015-10-26 23:26:06.888] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeecf37689ac40d724b0f
+[2015-10-26 23:26:06.941] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:06.993] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:07.040] [ERROR] RoomManager - Error posting from RoomManagerAPI: Error: Internal Server Error https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:07.095] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeecf37689ac40d724b10
+[2015-10-26 23:26:07.142] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:07.191] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders
+[2015-10-26 23:26:07.246] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/out-of-orders/562eeecf37689ac40d724b11
+[2015-10-26 23:26:07.288] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/public-key
+[2015-10-26 23:26:07.293] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:07.333] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA3LjYzOVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2NywiZXhwIjoxNDQ1OTM3OTY3fQ.qDJjq2Shr48O7c-Or40sXvUdyJK68JKMPlXVYsbQ74U
+[2015-10-26 23:26:07.381] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:07.435] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:07.498] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeecf37689ac40d724b12
+[2015-10-26 23:26:07.563] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:07.626] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/resources/562eeecf37689ac40d724b13
+[2015-10-26 23:26:07.675] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeecf37689ac40d724b13
+[2015-10-26 23:26:07.722] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:07.768] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/resources/562eeed037689ac40d724b14
+[2015-10-26 23:26:07.821] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed037689ac40d724b14
+[2015-10-26 23:26:07.868] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:07.913] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed037689ac40d724b15
+[2015-10-26 23:26:07.916] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:07.964] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA4LjI3MFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2OCwiZXhwIjoxNDQ1OTM3OTY4fQ.xZPqS1E5Ztc3EImznzFFx0kJsLQbb8cePIejtJhjTKU
+[2015-10-26 23:26:08.157] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:26:08.205] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:08.252] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d72457f/resources
+[2015-10-26 23:26:08.295] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/resources/562eeed037689ac40d724b17
+[2015-10-26 23:26:08.342] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed037689ac40d724b16
+[2015-10-26 23:26:08.465] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:26:08.517] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:08.559] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d72457f/resources
+[2015-10-26 23:26:08.616] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72457f/resources/562eeed037689ac40d724b19
+[2015-10-26 23:26:08.667] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed037689ac40d724b18
+[2015-10-26 23:26:08.779] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:26:08.827] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:08.879] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724584/resources
+[2015-10-26 23:26:08.935] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/resources/562eeed137689ac40d724b1b
+[2015-10-26 23:26:09.002] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed137689ac40d724b1a
+[2015-10-26 23:26:09.006] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:09.074] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA5LjM3OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2OSwiZXhwIjoxNDQ1OTM3OTY5fQ.DM6Zw0cqvouh3IY4Ckn14osfgxoKkaKLw3xNjrG_pLY
+[2015-10-26 23:26:09.304] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:26:09.372] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530
+[2015-10-26 23:26:09.431] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530
+[2015-10-26 23:26:09.488] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530
+[2015-10-26 23:26:09.490] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:09.550] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjA5Ljg1MloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM2OSwiZXhwIjoxNDQ1OTM3OTY5fQ.hF9cliXezo8avM3vYvn7H9kdsnWPf672sdYWHOLrLrU
+[2015-10-26 23:26:09.657] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:26:09.714] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530/resources
+[2015-10-26 23:26:09.770] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530/resources
+[2015-10-26 23:26:09.840] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530/resources/562eeed237689ac40d724b1d
+[2015-10-26 23:26:09.920] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530/resources/562eeed237689ac40d724b1d
+[2015-10-26 23:26:09.994] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724530/resources/562eeed237689ac40d724b1d
+[2015-10-26 23:26:10.065] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eeed137689ac40d724b1c
+[2015-10-26 23:26:10.068] [INFO] RoomManager - Getting token
+[2015-10-26 23:26:10.124] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI2OjEwLjQyOVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjM3MCwiZXhwIjoxNDQ1OTM3OTcwfQ.myVw3R27osRoL6Oy_UaCpRyD2qJVfRAkMCtHgXlPwcM
+[2015-10-26 23:26:10.180] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/service-types
+[2015-10-26 23:26:10.430] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f
+[2015-10-26 23:26:10.789] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms
+[2015-10-26 23:26:10.945] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724592
+[2015-10-26 23:26:11.098] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724592
+[2015-10-26 23:27:10.180] [ERROR] RoomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/apk
+[2015-10-26 23:27:10.211] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:10.277] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjEwLjU4MVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzMCwiZXhwIjoxNDQ1OTM4MDMwfQ.iWzi2-6M4_kSJpQuLkEezjbafpOwNyhGm8utt1sbnEk
+[2015-10-26 23:27:10.457] [ERROR] RoomManager - Error getting from RoomManagerAPI: Error: Internal Server Error https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/attendees?filter=A
+[2015-10-26 23:27:10.463] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:10.518] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjEwLjgyM1oiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzMCwiZXhwIjoxNDQ1OTM4MDMwfQ.UUTwh396TLmkXu-EIAsMffvdc9zZOBV1dO89AlAUde0
+[2015-10-26 23:27:10.527] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:10.589] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjEwLjg5NFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzMCwiZXhwIjoxNDQ1OTM4MDMwfQ.ZcX9YEHxNhHEd5-GaaPcfzpEPTovtVDMTGCb27Ckfvg
+[2015-10-26 23:27:10.669] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:27:10.821] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:27:10.952] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b1e
+[2015-10-26 23:27:11.025] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:27:11.093] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b1f
+[2015-10-26 23:27:11.198] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b1f
+[2015-10-26 23:27:11.259] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:27:11.335] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b20
+[2015-10-26 23:27:11.437] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b20
+[2015-10-26 23:27:11.510] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/locations
+[2015-10-26 23:27:11.574] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/locations/562eef0f37689ac40d724b21
+[2015-10-26 23:27:11.580] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:11.634] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjExLjk0MFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzMSwiZXhwIjoxNDQ1OTM4MDMxfQ.TGqGJlcvSSK72gWgfp_yLQPNwP4zwvufkv-zysn2OxQ
+[2015-10-26 23:27:11.742] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:11.798] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:11.915] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:11.975] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1037689ac40d724b22
+[2015-10-26 23:27:12.031] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.087] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.235] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:27:12.308] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1037689ac40d724b23
+[2015-10-26 23:27:12.379] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.444] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.497] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.553] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/out-of-orders/562eef1037689ac40d724b24
+[2015-10-26 23:27:12.651] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1037689ac40d724b24
+[2015-10-26 23:27:12.715] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.810] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:12.872] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b25
+[2015-10-26 23:27:12.992] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b25
+[2015-10-26 23:27:13.071] [ERROR] RoomManager - Error posting from RoomManagerAPI: Error: Internal Server Error https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.129] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.191] [ERROR] RoomManager - Error deleting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b25
+[2015-10-26 23:27:13.260] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.326] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.391] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.444] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b26
+[2015-10-26 23:27:13.557] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b26
+[2015-10-26 23:27:13.627] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.690] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders
+[2015-10-26 23:27:13.768] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b27
+[2015-10-26 23:27:13.834] [ERROR] RoomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/out-of-orders/562eef1137689ac40d724b27
+[2015-10-26 23:27:13.940] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/public-key
+[2015-10-26 23:27:13.993] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/public-key
+[2015-10-26 23:27:13.997] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:14.064] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjE0LjM3MFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzNCwiZXhwIjoxNDQ1OTM4MDM0fQ.sDyb_J3rz1OeSjP_hZWYuZjxioTuN14zlKprK45swsM
+[2015-10-26 23:27:14.138] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:14.208] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/resources/562eef1237689ac40d724b29
+[2015-10-26 23:27:14.322] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1237689ac40d724b29
+[2015-10-26 23:27:14.382] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:14.448] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/resources/562eef1237689ac40d724b2a
+[2015-10-26 23:27:14.548] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1237689ac40d724b2a
+[2015-10-26 23:27:14.607] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:14.671] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1237689ac40d724b2b
+[2015-10-26 23:27:14.705] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:14.762] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjE1LjA2OFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzNSwiZXhwIjoxNDQ1OTM4MDM1fQ.ZdEewv9tbu6124DnQp91LXv7EO4zDyWH1x3AkS_Eh08
+[2015-10-26 23:27:15.164] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.167] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.168] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.170] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.173] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.174] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.175] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.176] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.177] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.178] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.229] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.600] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b2e
+[2015-10-26 23:27:15.602] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b30
+[2015-10-26 23:27:15.603] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b32
+[2015-10-26 23:27:15.605] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b34
+[2015-10-26 23:27:15.610] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b2c
+[2015-10-26 23:27:15.612] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b2d
+[2015-10-26 23:27:15.613] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b35
+[2015-10-26 23:27:15.614] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b2f
+[2015-10-26 23:27:15.615] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b31
+[2015-10-26 23:27:15.616] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b33
+[2015-10-26 23:27:15.682] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:15.790] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1337689ac40d724b36
+[2015-10-26 23:27:15.793] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:15.846] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjE2LjE1MVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzNiwiZXhwIjoxNDQ1OTM4MDM2fQ.vBYekFpbAt4kCwFur3GtRISE9MWkB6xXjhGooO3zoTo
+[2015-10-26 23:27:16.005] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:27:16.063] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:16.140] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724584/resources
+[2015-10-26 23:27:16.226] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/resources/562eef1437689ac40d724b38
+[2015-10-26 23:27:16.286] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1437689ac40d724b37
+[2015-10-26 23:27:16.395] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:27:16.454] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:16.506] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724584/resources
+[2015-10-26 23:27:16.577] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724584/resources/562eef1437689ac40d724b3a
+[2015-10-26 23:27:16.678] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1437689ac40d724b39
+[2015-10-26 23:27:16.780] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/rooms
+[2015-10-26 23:27:16.869] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/resources
+[2015-10-26 23:27:16.931] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/rooms/562eb78b37689ac40d724589/resources
+[2015-10-26 23:27:16.994] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724589/resources/562eef1537689ac40d724b3c
+[2015-10-26 23:27:17.085] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/resources/562eef1537689ac40d724b3b
+[2015-10-26 23:27:17.089] [INFO] RoomManager - Getting token
+[2015-10-26 23:27:17.154] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDAzOjI3OjE3LjQ2MVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzkiLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTkxNjQzNywiZXhwIjoxNDQ1OTM4MDM3fQ.4KyecQZsft84lWkg2eddQLUabvI-1cND9MyxFs0xTk0
+[2015-10-26 23:27:17.202] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/service-types
+[2015-10-26 23:27:17.592] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms
+[2015-10-26 23:27:17.750] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d724592
