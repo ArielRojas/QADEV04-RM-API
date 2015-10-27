@@ -1,0 +1,14 @@
+[2015-10-27 15:50:34.428] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:35.100] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:35.518] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd58be41518440a38bb97
+[2015-10-27 15:50:36.522] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:36.586] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd58ce41518440a38bb98
+[2015-10-27 15:50:37.643] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd58ce41518440a38bb98
+[2015-10-27 15:50:38.097] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd58ce41518440a38bb98
+[2015-10-27 15:50:41.667] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:42.204] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd591e41518440a38bb99
+[2015-10-27 15:50:42.925] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:43.024] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings
+[2015-10-27 15:50:43.084] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd593e41518440a38bb9b
+[2015-10-27 15:50:43.814] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd593e41518440a38bb9b
+[2015-10-27 15:50:44.612] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562fd14aa52b09280d803117//rooms/562fd14ba52b09280d80318b//meetings/562fd593e41518440a38bb9b
