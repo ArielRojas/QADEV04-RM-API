@@ -125,10 +125,16 @@ exports.generateLocationJson = generateLocationJson;
 
 var getDate = function(num){
     var date = new Date();
+    var day =date.getDate()+num;
+    var month =date.getMonth()+1;
     var aleatorio = (Math.round(Math.random()*23))+1;
     if(aleatorio<10){aleatorio='0'+aleatorio}
     if(num==0){aleatorio=23}
-    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+         if(day>31){
+            month =date.getMonth()+2;
+            day='0'+(1+num);
+         }
+    var time = date.getFullYear()+'-'+(month)+'-'+(day)+'T'+aleatorio+':00:00.000Z';
     return time;
 }
 exports.getDate = getDate;
