@@ -1,8 +1,11 @@
 // util
+var moment = require('moment');
 var config = require(GLOBAL.initialDirectory+'/config/config.json');
 var resourceConfig = require(GLOBAL.initialDirectory+config.path.resourceConfig);
 var outOfOrderConfig = require(GLOBAL.initialDirectory+config.path.outOfOrder);
 var locationCongig = require(GLOBAL.initialDirectory+config.path.locationConfig);
+var meetingsConfig = require(GLOBAL.initialDirectory+config.path.meetingConfig);
+
 
 var generateString = function(size){
     var text = "";
@@ -21,17 +24,17 @@ exports.generateString = generateString;
  */
 var getRandomResourcesJson = function(size){
 
-	if(size==undefined)
-		size = 12;
-	var resourceJSon = resourceConfig.resourceJson;
-		resourceJSon = JSON.stringify(resourceJSon)
-		resourceJSon = stringReplace(resourceJSon,'resourceName',generateString(size));
-		resourceJSon = stringReplace(resourceJSon,'resourceCustomName',generateString(size));
-		resourceJSon = stringReplace(resourceJSon,'resourceFrom',generateString(size));
-		resourceJSon = stringReplace(resourceJSon,'resourceDescription',generateString(size));
+    if(size==undefined)
+        size = 12;
+    var resourceJSon = resourceConfig.resourceJson;
+        resourceJSon = JSON.stringify(resourceJSon)
+        resourceJSon = stringReplace(resourceJSon,'resourceName',generateString(size));
+        resourceJSon = stringReplace(resourceJSon,'resourceCustomName',generateString(size));
+        resourceJSon = stringReplace(resourceJSon,'resourceFrom',generateString(size));
+        resourceJSon = stringReplace(resourceJSon,'resourceDescription',generateString(size));
 
-		resourceJSon = JSON.parse(resourceJSon);
-		return resourceJSon;
+        resourceJSon = JSON.parse(resourceJSon);
+        return resourceJSon;
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
 
@@ -79,8 +82,8 @@ exports.getDate = getDate;
  * @text {string} return the string modified with the changes
  */
 var stringReplace = function(text,textToReplace,replaceWith){
-	text = text.replace(textToReplace,replaceWith);
-	return text;
+    text = text.replace(textToReplace,replaceWith);
+    return text;
 };
 
 exports.stringReplace = stringReplace;
@@ -107,12 +110,53 @@ exports.getDateFromUnixTimeStamp = getDateFromUnixTimeStamp;
  *   return the json with name, custonName and description of location.
  */
 var generateLocationJson = function (sizeName, customNameSize, descriptionSize) {
-	locationCongig.locationJson.name = generateString(sizeName),
-	locationCongig.locationJson.customName = generateString(customNameSize),
-	locationCongig.locationJson.description = generateString(descriptionSize)
-	return locationCongig.locationJson;
+    locationCongig.locationJson.name = generateString(sizeName),
+    locationCongig.locationJson.customName = generateString(customNameSize),
+    locationCongig.locationJson.description = generateString(descriptionSize)
+    return locationCongig.locationJson;
 };
-
 exports.generateLocationJson = generateLocationJson;
 
+/**
+ * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
+ * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
+ * @res: return Current date e.g 2015-10-23T16:00:00.000Z
+ */
 
+var getDate = function(num){
+    var date = new Date();
+    var aleatorio = (Math.round(Math.random()*23))+1;
+    if(aleatorio<10){aleatorio='0'+aleatorio}
+    if(num==0){aleatorio=23}
+    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+    return time;
+}
+exports.getDate = getDate;
+/**
+ * This method generated a meeting with location, roomEmail, start date and end date specified
+ * @param  {num} the parameter indicate the posicion of room where the meeting is created
+ * @return {json} returns the json of the meeting configured
+ */
+
+var generatemeetingJson = function (num) {
+
+    meetingsConfig.meetingJSon.location = meetingsConfig.meetingJSon.location.replace('[num]', num);
+    meetingsConfig.meetingJSon.roomEmail = meetingsConfig.meetingJSon.roomEmail.replace('[num]', num);
+    meetingsConfig.meetingJSon.resources = meetingsConfig.meetingJSon.resources[0].replace('[num]', num);
+    meetingsConfig.meetingJSon.start = getDate(0);
+    meetingsConfig.meetingJSon.end = getDate(1);
+
+    return meetingsConfig.meetingJSon;
+};
+exports.generatemeetingJson = generatemeetingJson;
+/**
+ * this method returns a date in american format
+ * @param  {Date} the parameter that is founded to then be replaced
+ * @return {date}
+ */
+var getDateFromUnixTimeStamp = function (timeStamp) {
+    var date = moment(timeStamp,'x').format('YYYY-MM-DD');
+    return date;
+};
+
+exports.getDateFromUnixTimeStamp = getDateFromUnixTimeStamp;

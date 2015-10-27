@@ -26,7 +26,9 @@
 		"roomResource" : "/config/roomResource.json",
 		"locationConfig":"/config/locations.json",
 		"serviceConfig":"/config/service.json",
-		"room":"/config/room.json"
+		"room":"/config/room.json",
+		"meetingConfig" : "/config/meeting.json"
+
 	},
 	"tokenHeader" : "Authorization",
 	"tokenPrefix" : "jwt ",
@@ -36,5 +38,7 @@
 		"outOfOrderId" : "{:outOfOrderId}"
 	},
 	"tokenBasicPrefix" : "Basic ",
-	"userBasicAccountJson" : "QXJpZWwuUm9qYXNARm9yZXN0MS5sb2NhbDpDbGllbnQxMjM="
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz"
 }
+
+
