@@ -130,3 +130,20 @@
 [2015-10-26 21:47:45.765] [INFO] roomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
 [2015-10-26 21:47:45.841] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
 [2015-10-26 21:47:45.841] [ERROR] roomManager - Error getting from RoomManagerAPI: Error: Not Found https://172.20.208.194:4040/services/562eb78a37689ac40d72452f/rooms/562eb78b37689ac40d72453e/out-of-orders/562ed7bf37689ac40d724723
+[2015-10-27 08:11:19.418] [INFO] RoomManager - Getting token
+[2015-10-27 08:11:19.550] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDEyOjExOjE5Ljc1MVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzciLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTk0Nzg3OSwiZXhwIjoxNDQ1OTY5NDc5fQ.gj6O68r-XXqL9akEVR5CvE3bRf2IpdJv_dY_ddHKbD0
+[2015-10-27 08:11:19.782] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-27 08:11:19.786] [INFO] RoomManager - Getting token
+[2015-10-27 08:11:19.840] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDEyOjExOjIwLjA0OVoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzciLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTk0Nzg4MCwiZXhwIjoxNDQ1OTY5NDgwfQ.pQzd6J8U0JG7vxG_Pjdr4isooZ-4M3yO6Q3SjKdADJs
+[2015-10-27 08:11:20.404] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-27 08:11:20.751] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562f69e837689ac40d724b3f
+[2015-10-27 08:11:20.752] [INFO] RoomManager - Getting token
+[2015-10-27 08:11:20.806] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDEyOjExOjIxLjAxN1oiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzciLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTk0Nzg4MSwiZXhwIjoxNDQ1OTY5NDgxfQ.zzQe-GgdnSauqJiryJzvn0NnCBKeR7BqvTUKWXanug0
+[2015-10-27 08:11:21.307] [INFO] RoomManager - posting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings
+[2015-10-27 08:11:21.369] [INFO] RoomManager - getting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562f69e937689ac40d724b40
+[2015-10-27 08:11:21.806] [INFO] RoomManager - putting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562f69e937689ac40d724b40
+[2015-10-27 08:11:22.117] [INFO] RoomManager - deleting success! from https://172.20.208.194:4040/services/562eb78a37689ac40d72452f//rooms/562eb78b37689ac40d724539//meetings/562f69e937689ac40d724b40
+[2015-10-27 08:11:42.470] [INFO] RoomManager - Getting token
+[2015-10-27 08:11:42.904] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDEyOjExOjQzLjEwOFoiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzciLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTk0NzkwMywiZXhwIjoxNDQ1OTY5NTAzfQ.Zoorb8xAPWuB417LkyLtmun4VIJXBSqT18FpcuZEbCk
+[2015-10-27 08:11:50.116] [INFO] RoomManager - Getting token
+[2015-10-27 08:11:50.452] [TRACE] RoomManager - Token...:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkQXQiOiIyMDE1LTEwLTI3VDEyOjExOjUwLjYzNloiLCJ1c2VybmFtZSI6InRlc3QiLCJyZW1vdGVBZGRyZXNzIjoiOjpmZmZmOjE3Mi4yMC4yMDAuMzciLCJwcml2aWxlZ2UiOm51bGwsImlhdCI6MTQ0NTk0NzkxMCwiZXhwIjoxNDQ1OTY5NTEwfQ.hD7OYm07Puar1K2VN5zBn414SkQAx3A6Wjfu-wwZ4eM
