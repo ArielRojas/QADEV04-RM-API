@@ -36,7 +36,6 @@ describe('Resource CRUD Suite get by id and put', function () {
 		roomManagerAPI
 			.post(token,resourceEndPoint,resourceJson,function(err,res){
 				resourceId = res.body._id;
-				console.log(resourceId);
 				done();
 			});
 	});
@@ -224,7 +223,6 @@ describe('Resources CRUD get 10', function () {
 		var count= 0;
 		roomManagerAPI
 			.get(resourceEndPoint,function(err,res){
-				console.log('------------------------',res.body.length);
 				expect(res.body.length).to.be.equal(quantityOfResources);
 
 				//TODO trying to recover each of the resources to compare with the array resources[]
