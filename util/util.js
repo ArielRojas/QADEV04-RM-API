@@ -1,9 +1,12 @@
 // util
 var moment = require('moment');
-var config = require(GLOBAL.initialDirectory + '/config/config.json');
-var resourceConfig = require(GLOBAL.initialDirectory + '/config/resource.json');
-var locationCongig = require(GLOBAL.initialDirectory + '/config/locations.json');
-var meetingsConfig = require(GLOBAL.initialDirectory + '/config/meeting.json');
+var config = require(GLOBAL.initialDirectory+'/config/config.json');
+var resourceConfig = require(GLOBAL.initialDirectory+config.path.resourceConfig);
+var outOfOrderConfig = require(GLOBAL.initialDirectory+config.path.outOfOrder);
+var locationCongig = require(GLOBAL.initialDirectory+config.path.locationConfig);
+var meetingsConfig = require(GLOBAL.initialDirectory+config.path.meetingConfig);
+
+
 var generateString = function(size){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -35,6 +38,43 @@ var getRandomResourcesJson = function(size){
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
 
+ 
+ /**
+ * @description: This method get a Json with create an out of order in a room
+ * @param: id, room's Id of the roommanager
+ * @param: to,  date to start the out of order e.g. e.g 2015-10-23T16:00:00.000Z
+ * @param: from , date to end the out of order e.g. e.g 2015-10-24T24:00:00.000Z
+ * @param: title , the title of the out of order
+ * @res: return a Json with the configations entered
+ */
+ var generateOutOforderJson = function (id,from,to){
+        var outOfOrder;
+		outOfOrderConfig.outOfOrderJson.roomId=id;
+		outOfOrderConfig.outOfOrderJson.from=from;
+		outOfOrderConfig.outOfOrderJson.to=to;
+		outOfOrderConfig.outOfOrderJson.title=generateString(outOfOrderConfig.titleSize);
+		outOfOrder=outOfOrderConfig.outOfOrderJson
+		return 	outOfOrder;
+
+};
+exports.generateOutOforderJson = generateOutOforderJson;
+ /**
+ * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
+ * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
+ * @res: return Current date e.g 2015-10-23T16:00:00.000Z
+ */
+
+var getDate = function(num){
+	var date = new Date();
+	var aleatorio = (Math.round(Math.random()*23))+1;
+	if(aleatorio<10){aleatorio='0'+aleatorio}
+	if(num==0){aleatorio=23}
+    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+	return time;
+}
+exports.getDate = getDate;
+
+
 /**
  * @text  {string} the text that its want to replace some value
  * @textToreplace  {[string} the text that is founded to then be replaced
@@ -45,7 +85,19 @@ var stringReplace = function(text,textToReplace,replaceWith){
     text = text.replace(textToReplace,replaceWith);
     return text;
 };
+
 exports.stringReplace = stringReplace;
+
+/**
+ * this method returns a date in american format
+ * @param  {Date} the parameter that is founded to then be replaced
+ * @return {date}
+ */
+var getDateFromUnixTimeStamp = function (timeStamp) {
+    var date = moment(timeStamp,'x').format('YYYY-MM-DD');
+    return date;
+};
+exports.getDateFromUnixTimeStamp = getDateFromUnixTimeStamp;
 
 /**
  * Function: generateLocationJson
@@ -106,4 +158,5 @@ var getDateFromUnixTimeStamp = function (timeStamp) {
     var date = moment(timeStamp,'x').format('YYYY-MM-DD');
     return date;
 };
+
 exports.getDateFromUnixTimeStamp = getDateFromUnixTimeStamp;
