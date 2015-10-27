@@ -208,4 +208,3 @@ describe('Smoke test for RoomManager',function()
 		});
 	});		
 });
-		
