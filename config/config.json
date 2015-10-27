@@ -38,7 +38,12 @@
 		"outOfOrderId" : "{:outOfOrderId}"
 	},
 	"tokenBasicPrefix" : "Basic ",
-	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz"
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz",
+	"exchangeAccount":{
+		"username":"Administrator",
+		"password":"Clave123",
+		"hostname":"qadev04exc04.forest1.local"
+	}
 }
 
 
