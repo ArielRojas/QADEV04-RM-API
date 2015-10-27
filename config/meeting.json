@@ -14,6 +14,7 @@
     ]
   },
   "displayName":{"customDisplayName": "Floor1Room10"},
+  "CustomdisplayName":{"displayName": "Floor1Room20"},
   "meetingPutJSon":{
     "title": "test",
     "start": "2015-10-29T10:25:00.000Z",
