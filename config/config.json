@@ -38,7 +38,12 @@
 		"outOfOrderId" : "{:outOfOrderId}"
 	},
 	"tokenBasicPrefix" : "Basic ",
-	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz"
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz",
+	"Log4js":{
+	"path" : "/logs/roomManager.log",
+	"nameLog" : "roomManager",
+	"format" : "file"
+	}
 }
 
 
