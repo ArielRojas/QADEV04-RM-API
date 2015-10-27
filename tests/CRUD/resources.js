@@ -142,14 +142,6 @@ describe('Resource CRUD Suite delete', function () {
 	var resourceId = null;
 	var resourceJson = null;
 
-	before(function (done) {
-		tokenAPI
-			.getToken(function(err,res){
-				token = res.body.token;
-				done();
-			});
-	});
-
 	beforeEach(function (done) {
 		//create a resource
 		resourceJson = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
@@ -178,25 +170,122 @@ describe('Resource CRUD Suite delete', function () {
 					expect(res.body).to.have.property("fontIcon")
 						.and.not.be.empty;
 					expect(res.body).to.have.property("__v");
-					done();
+					mongodb.findDocument('resourcemodels',{"_id": ObjectId("562ed30637689ac40d7246e1")},function(items){
+						expect(items).to.be.null;
+						done();
+					});
 				});
-
 	});
-
-	
 });
 //TODO
-describe.skip('Resources CRUD get 10', function () {
+describe('Resources CRUD get 10', function () {
+	this.timeout(config.timeOut);
+	var resourceJson = null;
+	var quantityOfResources = 10;
+	var resources = [];
+	before(function (done) {
+		tokenAPI
+			.getToken(function(err,res){
+				token = res.body.token;
+				done();
+			});
+	});
+	beforeEach(function (done) {
+		//create a resource
+		var count = 0;
+		
+		for (var i = 0; i < quantityOfResources; i++) {
+			resourceJson = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
+	        roomManagerAPI
+				.post(token,resourceEndPoint,resourceJson,function(err,res){
+					resources.push(res.body);
+					count++;
+					if(count==quantityOfResources){
+						done();
+					};
+				});
+		};
+	});
+	afterEach(function (done) {
+		var count = 0;
+		for (var i = 0; i < quantityOfResources; i++) {
+			roomManagerAPI
+				.del(token,resourceEndPoint+'/'+resources[i]._id,function(err,res){
+					count++
+					if(count==quantityOfResources){
+						done();
+					};
+				});
+		};
+		
+	});
 
+	it('CRUD-GET /Resources api returns all the resources', function (done) {
+		var count= 0;
+		roomManagerAPI
+			.get(resourceEndPoint,function(err,res){
+				console.log('------------------------',res.body.length);
+				expect(res.body.length).to.be.equal(quantityOfResources);
 
-	it.skip('CRUD-GET /Resources api returns all the resources', function (done) {
-			
+				//TODO trying to recover each of the resources to compare with the array resources[]
+				/*for (var i = 0; i < res.body.length; i++) {
+					expect(res.body[i]._id).to.equal(resources[i]._id);
+					count++;
+					if(count ==quantityOfResources )
+						done();
+				};*/
+				done();
+			});
+		
 	});
 });
 
-describe.skip('suite', function () {
-	it.skip('CRUD-POST /Resources api returns a created resource', function (done) {
-		
+describe('Post a resource', function () {
+	var resourceId = null;
+	afterEach(function (done) {
+		roomManagerAPI
+			.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
+				done();
+			});
+	});
+
+	it('CRUD-POST /Resources api returns a created resource', function (done) {
+		resourceJson = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
+		roomManagerAPI
+			.post(token,resourceEndPoint,resourceJson,function(err,res){
+				resourceId = res.body._id;
+				expect(err).to.be.null;
+				expect(res.status).to.equal(config.httpStatus.Ok);
+				expect(res.body).to.have.property("_id")
+					.and.not.be.null;
+				expect(res.body).to.have.property("name")
+					.and.be.equal(resourceJson.name);
+				expect(res.body).to.have.property("customName")
+					.and.be.equal(resourceJson.customName);
+				expect(res.body).to.have.property("from")
+					.and.be.equal(resourceJson.from);
+				expect(res.body).to.have.property("description")
+					.and.be.equal(resourceJson.description);
+				expect(res.body).to.have.property("fontIcon")
+					.and.not.be.empty;
+				expect(res.body).to.have.property("__v");
+				//expects with mongo
+				mongodb.findDocument('resourcemodels',{"_id": ObjectId(resourceId)},function(items){
+					expect(items).to.have.property("name")
+						.and.be.equal(resourceJson.name);
+					expect(items).to.have.property("customName")
+						.and.be.equal(resourceJson.customName);
+					expect(items).to.have.property("from")
+						.and.be.equal(resourceJson.from);
+					expect(items).to.have.property("description")
+						.and.be.equal(resourceJson.description);
+					expect(items).to.have.property("_id");
+					expect(items._id.toString()).to.equal(resourceId);
+					expect(items).to.have.property("fontIcon")
+						.and.not.be.empty;
+					done();
+				});
+			});
 	});
 });
 // testing jenkings8:30
