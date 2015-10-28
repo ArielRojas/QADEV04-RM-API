@@ -1,11 +1,13 @@
 {
-	"url" : "https://172.20.208.120:4040",
+
+	"url" : "https://172.20.208.194:4040",
+	"urlmongodb" : "mongodb://172.20.208.194:27017/roommanager", 
 	"timeOut" : 4000,
 	"userAccountJson" : {
 		"username": "test",
 	  	"password": "Client123",
 	  	"authentication": "local"
-	},
+	},	
 	"httpStatus" :{
 		"Ok": 200
 	},
@@ -15,10 +17,31 @@
 		"endPoints" : "/config/endPoints.json",
 		"resourceConfig" : "/config/resource.json",
 		"meetingsAPI" : "/lib/meetingsAPI",
+		"mongodb" : "/lib/mongodb",
 		"util" : "/util/util",
 		"roomManagerAPI" : "/lib/roomManagerAPI",
-		"locationConfig":"/config/locations.json"
+		"outOfOrder" : "/config/outOfOrder.json",
+		"apk" : "/config/apk.json",
+		"publicKey" : "/config/publicKey.json",
+		"roomResource" : "/config/roomResource.json",
+		"locationConfig":"/config/locations.json",
+		"serviceConfig":"/config/service.json",
+		"room":"/config/room.json",
+		"meetingConfig" : "/config/meeting.json"
+
 	},
 	"tokenHeader" : "Authorization",
-	"tokenPrefix" : "jwt "
+	"tokenPrefix" : "jwt ",
+	"nameId":{
+		"serviceId" : "{:serviceId}",
+		"roomId" : "{:roomId}",
+		"outOfOrderId" : "{:outOfOrderId}"
+	},
+	"tokenBasicPrefix" : "Basic ",
+	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz",
+	"exchangeAccount":{
+		"username":"Administrator",
+		"password":"Clave123",
+		"hostname":"qadev04exc04.forest1.local"
+	}
 }

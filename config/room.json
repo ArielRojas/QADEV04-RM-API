@@ -1,32 +1,42 @@
 {
     "displayName" : "Floor1Room1",
-    
-    "resources" : [
+
+    "resources" : {
+        "roomsAsoc":
+
             {
-            "quantity" : 1   
+           "resourceId": "1", "quantity": 1 
             }
-    ],
-    "roomQueries" : [
-        {
-           "customDisplayName" : "Floor1Room1"
-        }
-        
-     ],
 
-     "roomUpdateQ" : [
-        {
-            "customDisplayName" : "ChangedByAPI"
-        },
+    },          
 
-        {
-             "enabled" : false 
-        },
+    "roomQueries" : {
 
-        {
-             "emailAddress" : "Tester@fundacion-jala.org" 
-        },
-        {
-            "resourceId": "1", "quantity": 1 
-        }
-     ]
+        "customDisplayName":
+            {
+           "customDisplayName" : "Floor1Room1" 
+            },
+        "roomPut":
+            {
+                 "emailAddress" : "Floor1Room1@forest1.local",
+                  "displayName" : "Floor1Room1",
+                  "resources" : [],
+                  "enabled" : true,
+                  "locationId" : null,
+                  "customDisplayName" : "Floor1Room1",
+                   "code" : "",
+                   "__v" : 0
+            },
+
+           "resourcesUpdate" :
+           {
+             "quantity": 1 
+           }
+
+    }
+
+    
 }
+
+
+
