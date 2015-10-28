@@ -1,10 +1,10 @@
 {
 
-	"url" : "https://172.20.208.194:4040",
-	"urlmongodb" : "mongodb://172.20.208.194:27017/roommanager", 
+	"url" : "https://172.20.208.195:4040",
+	"urlmongodb" : "mongodb://172.20.208.195:27017/roommanager", 
 	"timeOut" : 4000,
 	"userAccountJson" : {
-		"username": "test",
+		"username": "ArielWagner",
 	  	"password": "Client123",
 	  	"authentication": "local"
 	},	
@@ -37,7 +37,7 @@
 		"roomId" : "{:roomId}",
 		"outOfOrderId" : "{:outOfOrderId}"
 	},
-	"tokenBasicPrefix" : "Basic ",
+	"basicPrefix" : "Basic ",
 	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz",
 	"exchangeAccount":{
 		"username":"Administrator",
