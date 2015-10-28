@@ -1,0 +1,25 @@
+{
+  "meetingJSon" : {
+    "organizer": "Customer",
+    "title": "test",
+    "start": "InitDate",
+    "end": "FinishDate",
+    "location": "Floor1Room[num]",
+    "roomEmail": "Floor1Room[num]@forest1.local",
+    "resources": [
+      "Floor1Room[num]@forest1.local"
+    ],
+    "attendees": [
+      "test@myexchange.com"
+    ]
+  },
+  "displayName":{"displayName": "Floor1Room15"},
+  "meetingPutJSon":{
+    "title": "test",
+    "start": "2015-10-29T10:25:00.000Z",
+    "end": "2015-10-29T11:48:00.000Z",
+    "attendees": [
+      "test@myexchange.com"
+    ]
+  }
+}
