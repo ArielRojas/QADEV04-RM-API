@@ -45,7 +45,7 @@ describe('CRUD test about out of order', function () {
 		 */	 
 	before('return the Id of the room',function (done) {
 		outOfOrderConfig.RoomId
-		mongodb.findDocument('rooms',roomJson.roomUpdateQ.customDisplayName,function(res){
+		mongodb.findDocument('rooms',roomJson.roomQueries.customDisplayName,function(res){
 			room = res;
 			endPoint1= util.stringReplace(outOfOrderbyIDEndPoint,config.nameId.serviceId,res.serviceId)
 			endPointOutOfOrder= util.stringReplace(endPoint1,config.nameId.roomId,res._id)
