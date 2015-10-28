@@ -1,17 +1,12 @@
 {
     "displayName" : "Floor1Room1",
-
     "resources" : {
         "roomsAsoc":
-
             {
            "resourceId": "1", "quantity": 1 
             }
-
     },          
-
     "roomQueries" : {
-
         "customDisplayName":
             {
            "customDisplayName" : "Floor1Room1" 
@@ -27,15 +22,11 @@
                    "code" : "",
                    "__v" : 0
             },
-
-           "resourcesUpdate" :
+        "resourcesUpdate" :
            {
              "quantity": 1 
            }
-
     }
-
-    
 }
 
 
