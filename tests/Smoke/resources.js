@@ -54,7 +54,7 @@ describe('Resources Smoke tests', function () {
 			}
 		});
 
-		it('Post /Resources', function (done) {
+		it('Post /resources', function (done) {
 			
 			var resourceJSon = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 			roomManagerAPI
@@ -92,7 +92,7 @@ describe('Resources Smoke tests', function () {
 				console.log('the resourceID is null (after)');
 			}
 		});
-		it('Get /Resources/{id}', function (done) {
+		it('Get /resources/{id}', function (done) {
 
 			roomManagerAPI
 				.get(resourceEndPoint+'/'+resourceId,function(err,res){
@@ -100,7 +100,7 @@ describe('Resources Smoke tests', function () {
 					done();
 				});
 		});
-		it('Put /Resources/{id}', function (done) {
+		it('Put /resources/{id}', function (done) {
 			var resourcePutJSon = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 			roomManagerAPI
 				.put(token,resourceEndPoint+'/'+resourceId,resourcePutJSon,function(err,res){
@@ -122,7 +122,7 @@ describe('Resources Smoke tests', function () {
 					done();
 				});
 		});
-		it('Delete /Resources/{id}', function (done) {
+		it('Delete /resources/{id}', function (done) {
 			roomManagerAPI
 				.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
 					expect(res.status).to.equal(config.httpStatus.Ok);
@@ -130,5 +130,4 @@ describe('Resources Smoke tests', function () {
 				});
 		});
 	});
-	
 });
