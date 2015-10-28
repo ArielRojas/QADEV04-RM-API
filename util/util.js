@@ -116,7 +116,6 @@ var generateLocationJson = function (sizeName, customNameSize, descriptionSize) 
     return locationCongig.locationJson;
 };
 exports.generateLocationJson = generateLocationJson;
-
 /**
  * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
  * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
@@ -125,10 +124,16 @@ exports.generateLocationJson = generateLocationJson;
 
 var getDate = function(num){
     var date = new Date();
+    var day =date.getDate()+num;
+    var month =date.getMonth()+1;
     var aleatorio = (Math.round(Math.random()*23))+1;
     if(aleatorio<10){aleatorio='0'+aleatorio}
     if(num==0){aleatorio=23}
-    var time = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate()+num)+'T'+aleatorio+':00:00.000Z';
+         if(day>28){
+            month =date.getMonth()+2;
+            day='0'+(1+num);
+         }
+    var time = date.getFullYear()+'-'+(month)+'-'+(day)+'T'+aleatorio+':00:00.000Z';
     return time;
 }
 exports.getDate = getDate;

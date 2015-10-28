@@ -9,5 +9,11 @@
 
 	"RoomId":{"roomId" : "room._id"},
 	"serviceId":{"serviceId":"serviceId"},
-	"deleteOutOfOrder":{"delete":"NotFoundError"}
+	"deleteOutOfOrder":{"delete":"NotFoundError"},
+	"bdtJson" : {
+				"roomId":"id",
+  				"from": "2015-10-29T23:00:00.000Z",
+  				"to": "2015-10-30T17:00:00.000Z",
+				"title":"room out of order"
+	}
 }
