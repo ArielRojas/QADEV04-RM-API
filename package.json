@@ -13,7 +13,8 @@
     "mongodb": "^2.0.46",
     "superagent": "^1.4.0",
 	"moment": "^2.10.6",
-	"log4js": "^0.6.27"
+	"log4js": "^0.6.27",
+  "xunit-file": "0.0.8"
   },
   "scripts": {
     "test": "mocha"
