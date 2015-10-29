@@ -21,12 +21,10 @@ describe('CRUD testing for Authentication (token)', function () {
 		tokenAPI
 		.getToken(function(err, res){
 			expect(res.status).to.equal(config.httpStatus.Ok);
-			expect(res.body.token).not.to.be.null;
 			expect(res.body.token).to.not.be.undefined;
 			expect(res.body).to.have.property("token");
 			expect(res.body.token).to.be.a('string');
 
-			expect(res.body.username).not.to.be.null;
 			expect(res.body.username).to.not.be.undefined;
 			expect(res.body.username).to.be.a('string');
 			expect(res.body).to.have.property("username")
@@ -35,7 +33,6 @@ describe('CRUD testing for Authentication (token)', function () {
 			var currentDate = util.getDateFromUnixTimeStamp((new Date()).getTime());
 			var createdAuth = res.body.createdAt.substr(0, 10);
 			expect(res.status).to.equal(config.httpStatus.Ok);
-			expect(res.body.createdAt).not.to.be.null;
 			expect(res.body.createdAt).to.not.be.undefined;
 			expect(currentDate).to.equal(createdAuth);
 
@@ -51,7 +48,6 @@ describe('CRUD testing for Authentication (token)', function () {
 				expect(differenceHours).to.equal(6);
 			}
 			expect(res.status).to.equal(config.httpStatus.Ok);
-			expect(res.body.createdAt).not.to.be.null;
 			expect(res.body.createdAt).to.not.be.undefined;
 			done();
 		});

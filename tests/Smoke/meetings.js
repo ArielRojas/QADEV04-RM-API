@@ -38,7 +38,7 @@ describe('Smoke testings for meetings: GET Method', function () {
 
 	before('Getting the serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var json = meetingConfig.displayName;
+		var json = meetingConfig.displayNameRoom;
 		mongodb
 			.findDocument('rooms', json, function(res2){
 				roomId = res2._id;
@@ -63,7 +63,7 @@ describe('Smoke testings for meetings : POST Method', function () {
 
 	before('Getting the serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var json = meetingConfig.displayName;
+		var json = meetingConfig.displayNameRoom;
 		mongodb
 			.findDocument('rooms', json, function(res2){
 				roomId = res2._id;
@@ -98,7 +98,7 @@ describe('Smoke testings for meetings : GET, PUT and DELETE methods by meeting I
 
 	before('Getting the basic authentication ',function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var json=meetingConfig.displayName;
+		var json=meetingConfig.displayNameRoom;
 		mongodb
 			.findDocument('rooms', json, function(res2){
 				roomId = res2._id;
