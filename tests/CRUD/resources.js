@@ -55,7 +55,7 @@ describe('Resource CRUD Suite get by id and put', function () {
 		}
 		
 	});
-	it('CRUD-GET /Resources/{:Id} api returns the resources specified', function (done) {
+	it('CRUD-GET /resources/{:Id} api returns the resources specified', function (done) {
 
 		roomManagerAPI
 			.get(resourceEndPoint+'/'+resourceId,function(err,res){
@@ -95,7 +95,7 @@ describe('Resource CRUD Suite get by id and put', function () {
 		
 	});
 
-	it('CRUD-PUT /Resources/{:id} api returns the resource modified', function (done) {
+	it('CRUD-PUT /resources/{:id} api returns the resource modified', function (done) {
 		var resourceJsonToUpdate = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 		roomManagerAPI
 			.put(token,resourceEndPoint+'/'+resourceId,resourceJsonToUpdate,function(err,res){
@@ -151,7 +151,7 @@ describe('Resource CRUD Suite delete', function () {
 			});
 	});
 
-	it('CRUD-Delete /Resources/{:Id} api returns all the resources', function (done) {
+	it('CRUD-Delete /resources/{:id} api returns all the resources', function (done) {
 		roomManagerAPI
 				.del(token,resourceEndPoint+'/'+resourceId,function(err,res){
 					expect(err).to.be.null;
@@ -219,7 +219,7 @@ describe('Resources CRUD get 10', function () {
 		
 	});
 
-	it('CRUD-GET /Resources api returns all the resources', function (done) {
+	it('CRUD-GET /resources api returns all the resources', function (done) {
 		var count= 0;
 		roomManagerAPI
 			.get(resourceEndPoint,function(err,res){
@@ -247,7 +247,7 @@ describe('Post a resource', function () {
 			});
 	});
 
-	it('CRUD-POST /Resources api returns a created resource', function (done) {
+	it('CRUD-POST /resources api returns a created resource', function (done) {
 		resourceJson = util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 		roomManagerAPI
 			.post(token,resourceEndPoint,resourceJson,function(err,res){
@@ -286,4 +286,3 @@ describe('Post a resource', function () {
 			});
 	});
 });
-// testing jenkings8:30

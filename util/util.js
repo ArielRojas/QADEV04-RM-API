@@ -38,6 +38,20 @@ var getRandomResourcesJson = function(size){
 };
 exports.getRandomResourcesJson = getRandomResourcesJson;
 
+var getResourcesJson = function(name,customName,from,description){
+
+    var resourceJSon = resourceConfig.resourceJson;
+        resourceJSon = JSON.stringify(resourceJSon)
+        resourceJSon = stringReplace(resourceJSon,'resourceName',name);
+        resourceJSon = stringReplace(resourceJSon,'resourceCustomName',customName);
+        resourceJSon = stringReplace(resourceJSon,'resourceFrom',from);
+        resourceJSon = stringReplace(resourceJSon,'resourceDescription',description);
+
+        resourceJSon = JSON.parse(resourceJSon);
+        return resourceJSon;
+};
+exports.getResourcesJson = getResourcesJson;
+
  
  /**
  * @description: This method get a Json with create an out of order in a room
@@ -73,6 +87,21 @@ var getDate = function(num){
 	return time;
 }
 exports.getDate = getDate;
+
+var getCurrentDate = function(moreSeconds){
+    var date = new Date();
+    date.setMilliseconds(000);
+    var res = [];
+    var currentTime = date.toJSON();
+    res.push(currentTime);
+    if(moreSeconds !== undefined){
+        date.setSeconds(date.getSeconds()+moreSeconds);
+        var currentPlus = date.toJSON();
+        res.push(currentPlus);
+    };
+    return res;
+}
+exports.getCurrentDate = getCurrentDate;
 
 
 /**
