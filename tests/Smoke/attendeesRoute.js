@@ -13,7 +13,8 @@ var endPointServices = config.url + endPoints.services;
 var endPointById = config.url + endPoints.attend;
 
 describe('Smoke testing attendees route', function() {
-	this.timeout(config.timeOut);
+	//The services needed 6 seconds for response
+	this.timeout(6000);
 	before(function (done) {
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 		//getting the token

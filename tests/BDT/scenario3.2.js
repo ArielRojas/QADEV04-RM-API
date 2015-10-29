@@ -1,4 +1,4 @@
-//scenario3.1.js
+//scenario3.2.js
 //Ivan Morales Camacho
 var init = require('../../init');
 var expect = require('chai').expect;
@@ -47,10 +47,10 @@ var meetingId = null;
 var roomEmail = null;
 var locationName = null;
 
-describe('Scenario 3.1 – Create a meeting a room out of order associated to location', function () {
+describe('Scenario 3.2 – Create a meeting in a room associated to location when it stops be out of order ', function () {
 	this.timeout(timeout);
 	context('Given a room out of order e.g roomA ',function(){
-		before('get the token of the roomManager', function(done) {
+		before('get the token of the roomManager',function(done) {
 			process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 			tokenAPI
 				.getToken(function(err,res){
@@ -112,13 +112,13 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 					done();
 				});				
 		});
-		describe('When you want to create a meeting in the roomA out of order\n', function () {
-		it('then the meeting must not be created', function(done) {
+		describe('When you want to create a meeting in the roomA that its stops be room out of order\n', function () {
+		it('then the meeting must be created', function(done) {
 				var num = room.displayName.substring(10);
 				meetingsConfig.meetingJSon.location=room.displayName;
 				meetingsConfig.meetingJSon.roomEmail=room.emailAddress
-				meetingsConfig.meetingJSon.start = outOfOrderConfig.bdtJson.from;
-		   		meetingsConfig.meetingJSon.end = outOfOrderConfig.bdtJson.to;
+				meetingsConfig.meetingJSon.start = util.getDate(4);
+		   		meetingsConfig.meetingJSon.end = util.getDate(5);
 				associateEndPointM=servicesEndPoint + '/' + room.serviceId + rooms + '/' + roomId + meetings;
 
 				roomManagerAPI
@@ -129,7 +129,36 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 							meeting = res1;
 							meetingId = res.body._id;
 							expect(res.status).to.equal(config.httpStatus.Ok);
-							expect(meetingId).to.not.exist;
+							expect(res.body).to.have.property("serviceId");
+							expect(res.body.serviceId).to.equal(meeting.serviceId);
+							expect(res.body).to.have.property("roomId");
+							expect(res.body.roomId).to.equal(meeting.roomId);
+							expect(res.body).to.have.property("roomEmail");
+							expect(res.body.roomEmail).to.equal(meeting.roomEmail);
+							expect(res.body).to.have.property("start");
+							expect((new Date(res.body.start)).toGMTString()).to.equal((new Date(meeting.start)).toGMTString());
+							expect(res.body).to.have.property("end");
+							expect((new Date(res.body.end)).toGMTString()).to.equal((new Date(meeting.end)).toGMTString());
+							expect(res.body).to.have.property("location");
+							expect(res.body.location).to.equal(meeting.location);
+							expect(res.body).to.have.property("title");
+							expect(res.body.title).to.equal(meeting.title);
+							expect(res.body).to.have.property("organizer");
+							expect(res.body.organizer).to.equal(meeting.organizer);
+							expect(res.body).to.have.property("uniqueId");
+							expect(res.body.uniqueId).to.equal(meeting.uniqueId);
+							expect(res.body.id).to.equal(meeting.id);
+							expect(res.body.itemIds).to.equal(meeting.itemIds);
+							expect(res.body).to.have.property("createdByRM");
+							expect(res.body.createdByRM).to.equal(meeting.createdByRM);
+							expect(res.body).to.have.property("_id");
+							expect(res.body._id).to.equal(meeting._id.toString());
+							expect(res.body).to.have.property("resources");
+							expect(res.body.resources).to.eql(meeting.resources);
+							expect(res.body).to.have.property("attendees");
+							expect(res.body.attendees).to.eql(meeting.attendees);
+							expect(res.body).to.have.property("kind");
+							expect(res.body.kind).to.equal(meeting.kind);
 							done();
 						});
 					});

@@ -129,7 +129,7 @@ var getDate = function(num){
     var aleatorio = (Math.round(Math.random()*23))+1;
     if(aleatorio<10){aleatorio='0'+aleatorio}
     if(num==0){aleatorio=23}
-         if(day>28){
+         if(day>31){
             month =date.getMonth()+2;
             day='0'+(1+num);
          }
@@ -150,7 +150,7 @@ var generatemeetingJson = function (num) {
     meetingsConfig.meetingJSon.resources = meetingsConfig.meetingJSon.resources[0].replace('[num]', num);
     meetingsConfig.meetingJSon.start = getDate(0);
     meetingsConfig.meetingJSon.end = getDate(1);
-
+    
     return meetingsConfig.meetingJSon;
 };
 exports.generatemeetingJson = generatemeetingJson;

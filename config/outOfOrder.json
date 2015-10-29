@@ -12,8 +12,8 @@
 	"deleteOutOfOrder":{"delete":"NotFoundError"},
 	"bdtJson" : {
 				"roomId":"id",
-  				"from": "2015-10-29T23:00:00.000Z",
-  				"to": "2015-10-30T17:00:00.000Z",
+  				"from": "2015-10-30T23:00:00.000Z",
+  				"to": "2015-10-31T17:00:00.000Z",
 				"title":"room out of order"
 	}
 }

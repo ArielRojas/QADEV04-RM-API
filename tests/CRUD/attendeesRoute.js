@@ -17,7 +17,8 @@ var ObjectId = require('mongodb').ObjectID;
 var servicesId = locationConfig.locationIdForMongo;
 
 describe('CRUD testing attendees route', function() {
-	this.timeout(config.timeOut);
+	//The services needed 6 seconds for response
+	this.timeout(6000);
 	before(function (done) {
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 		//getting the token

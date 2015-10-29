@@ -1,4 +1,4 @@
-//scenario3.1.js
+//scenario3.3.js
 //Ivan Morales Camacho
 var init = require('../../init');
 var expect = require('chai').expect;
@@ -47,7 +47,7 @@ var meetingId = null;
 var roomEmail = null;
 var locationName = null;
 
-describe('Scenario 3.1 – Create a meeting a room out of order associated to location', function () {
+describe('Scenario 3.3 – Create a meeting in a room associated to location later put out of order ', function () {
 	this.timeout(timeout);
 	context('Given a room out of order e.g roomA ',function(){
 		before('get the token of the roomManager', function(done) {
@@ -82,7 +82,6 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 			  	 	done();
 			  });
 		});	
-	
 		before( function(done){
 			console.log('\t \t And the floor1 is associated to roomA');
 			associateLocation = { "locationId" :locationID};
@@ -92,33 +91,30 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 					done();
 				});				
 		});
-		before( function(done){
-			console.log('\t \t And put out of order a roomA with a spesific time');
-			endPoint1= util.stringReplace(outOfOrderbyIDEndPoint,config.nameId.serviceId,room.serviceId);
-			endPointOutOfOrder= util.stringReplace(endPoint1,config.nameId.roomId,room._id);
-			outOfOrderConfig.bdtJson.roomId=roomId;
-			associateOutOfOrder=outOfOrderConfig.bdtJson;
-			roomManagerAPI.post(token,endPointOutOfOrder,associateOutOfOrder,function(err,res){
-				outOforderId= res.body._id;
-				done();
-			});					
-		});
-		after('delete the out of order of the roomA',function(done){
-			endPoint1= util.stringReplace(outOfOrderbyServiceEndPoint,config.nameId.serviceId,room.serviceId);
-			endPoint2= util.stringReplace(endPoint1,config.nameId.roomId,room._id);
-			endPoint= util.stringReplace(endPoint2,config.nameId.outOfOrderId,outOforderId);	
-			roomManagerAPI
-				.del(token,endPoint,function(err,res){
-					done();
-				});				
-		});
-		describe('When you want to create a meeting in the roomA out of order\n', function () {
-		it('then the meeting must not be created', function(done) {
+		describe('When you want to create a meeting in the roomA \n', function () {
+			
+			after('delete the meeting ',function (done) {
+					roomManagerAPI
+						.delwithBasic(basic, servicesEndPoint + '/' + room.serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, function(err, res){
+							done();
+						});
+			});		
+			after('delete the out of order of the roomA',function(done){
+				endPoint1= util.stringReplace(outOfOrderbyServiceEndPoint,config.nameId.serviceId,room.serviceId);
+				endPoint2= util.stringReplace(endPoint1,config.nameId.roomId,room._id);
+				endPoint= util.stringReplace(endPoint2,config.nameId.outOfOrderId,outOforderId);	
+				roomManagerAPI
+					.del(token,endPoint,function(err,res){
+						done();
+					});				
+			});
+
+			it('then the meeting must be created in a specific date', function(done) {
 				var num = room.displayName.substring(10);
 				meetingsConfig.meetingJSon.location=room.displayName;
 				meetingsConfig.meetingJSon.roomEmail=room.emailAddress
-				meetingsConfig.meetingJSon.start = outOfOrderConfig.bdtJson.from;
-		   		meetingsConfig.meetingJSon.end = outOfOrderConfig.bdtJson.to;
+				meetingsConfig.meetingJSon.start = util.getDate(4);
+		   		meetingsConfig.meetingJSon.end = util.getDate(5);
 				associateEndPointM=servicesEndPoint + '/' + room.serviceId + rooms + '/' + roomId + meetings;
 
 				roomManagerAPI
@@ -129,17 +125,47 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 							meeting = res1;
 							meetingId = res.body._id;
 							expect(res.status).to.equal(config.httpStatus.Ok);
-							expect(meetingId).to.not.exist;
+							expect(res.body).to.have.property("serviceId");
+							expect(res.body.serviceId).to.equal(meeting.serviceId);
+							expect(res.body).to.have.property("roomId");
+							expect(res.body.roomId).to.equal(meeting.roomId);
+							expect(res.body).to.have.property("roomEmail");
+							expect(res.body.roomEmail).to.equal(meeting.roomEmail);
+							expect(res.body).to.have.property("start");
+							expect((new Date(res.body.start)).toGMTString()).to.equal((new Date(meeting.start)).toGMTString());
+							expect(res.body).to.have.property("end");
+							expect((new Date(res.body.end)).toGMTString()).to.equal((new Date(meeting.end)).toGMTString());
+							expect(res.body).to.have.property("location");
+							expect(res.body.location).to.equal(meeting.location);
+							expect(res.body).to.have.property("title");
+							expect(res.body.title).to.equal(meeting.title);
 							done();
 						});
 					});
 			});
-			after('delete the meeting ',function (done) {
-					roomManagerAPI
-						.delwithBasic(basic, servicesEndPoint + '/' + room.serviceId + '/' + rooms + '/' + roomId + '/' + meetings + '/' + meetingId, function(err, res){
-							done();
-						});
-				});
+			it('And put out of order the roomA in the same date of the meeting', function(done){
+				endPoint1= util.stringReplace(outOfOrderbyIDEndPoint,config.nameId.serviceId,room.serviceId);
+				endPointOutOfOrder= util.stringReplace(endPoint1,config.nameId.roomId,room._id);
+				outOfOrderConfig.bdtJson.roomId=roomId;
+				associateOutOfOrder=outOfOrderConfig.bdtJson;
+				roomManagerAPI.post(token,endPointOutOfOrder,associateOutOfOrder,function(err,res){
+				result=res;
+					mongodb.findDocument('outoforders',res.roomId,function(res){	
+							expect(result.status).to.equal(config.httpStatus.Ok);
+							expect(result.body).to.not.be.null;
+							expect(result.body).to.have.property('_id');
+							expect(result.body).to.have.property('roomId');
+							expect(result.body.roomId).to.equal(res.roomId.toString());
+							expect(result.body).to.have.property('from');
+							expect((new Date(result.body.from)).toGMTString()).to.equal((new Date(res.from)).toGMTString());
+							expect(result.body).to.have.property('to');
+							expect((new Date(result.body.to)).toGMTString()).to.equal((new Date(res.to)).toGMTString());
+							expect(result.body).to.have.property('title');
+							expect(result.body.title).to.equal(res.title);
+							done();		
+					});
+				});					
+			});
 		});
 	});	
 });
