@@ -102,7 +102,7 @@ describe('Scenario 4 – The same room should not be associated at two different
 
 		before('And select two rooms',function(done) {
 
-			console.log('\t \t And select two rooms in odert to associate a Location');		
+			console.log('\t \t And select two rooms in order to associate a Location');		
 			jsonRoom=roomConfig.roomQueries.customDisplayName;
 			mongoDB.findDocument('rooms',jsonRoom,function(room){
 				jsonRoom.customDisplayName="Floor1Room2";
