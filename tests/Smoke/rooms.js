@@ -97,7 +97,6 @@ describe('Smoke Testing for Room Resources routes ', function() {
 	 * Get a room randomly and create a resource
 	 */
 	before('Before Set',function (done) {
-		//console.log('11111111'+JSON.stringify(json));
 		tokenAPI
 			.getToken(function(err,res){
 				token = res.body.token;
