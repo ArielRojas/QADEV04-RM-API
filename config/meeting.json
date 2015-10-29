@@ -1,6 +1,6 @@
 {
   "meetingJSon" : {
-    "organizer": "Customer",
+    "organizer": "Ariel.Rojas",
     "title": "test",
     "start": "InitDate",
     "end": "FinishDate",
@@ -13,13 +13,12 @@
       "test@myexchange.com"
     ]
   },
-  "displayName":{"displayName": "Floor1Room15"},
-  "meetingPutJSon":{
-    "title": "test",
-    "start": "2015-10-29T10:25:00.000Z",
-    "end": "2015-10-29T11:48:00.000Z",
-    "attendees": [
-      "test@myexchange.com"
-    ]
-  }
+  "displayName":{"displayName": "Floor1Room90"},
+  "startMeeting":"2015-11-29T11:25:00.000Z",
+  "endMeeting": "2015-11-29T11:35:00.000Z",
+  "startMeeting2":"2015-11-29T12:00:00.000Z",
+  "endMeeting2":"2015-11-29T12:10:00.000Z",
+  "startMeeting3":"2015-11-29T12:20:00.000Z",
+  "endMeeting3":"2015-11-29T12:30:00.000Z",
+  "locationId":{"locationId":"null"}
 }
