@@ -46,5 +46,13 @@
 		"exchange":"exchange",
 		"support":"support",
 		"Exchange":"Exchange Server 2010"
+	},
+	"locationId":
+	{
+		"locationId":""
+	},
+	"RoomDisablejson":
+	{
+		"enabled":"false"
 	}
 }

@@ -12,7 +12,7 @@ var endPoints = require(GLOBAL.initialDirectory+config.path.endPoints);
 var util = require(GLOBAL.initialDirectory+config.path.util);
 //user account
 var userJSon = config.userAccountJson;
-var adminJson = serviceConfig.adminJson;
+var adminJson = config.exchangeAccount;
 var roomJson = serviceConfig.roomJson;
 var mongojs = serviceConfig.roomDisplayJson;
 //End Points
