@@ -125,7 +125,14 @@ describe('Scenario 7.1 – have a meeting with 15 seconds of duration and then t
 				roomManagerAPI
 					.delwithBasic(basic,servicesEndPoint+'/'+roomJson.serviceId+'/'+rooms+'/'+roomJson._id+'/'+meetings+'/'+meeting._id,function(err,res){
 						//console.log('after'+servicesEndPoint+'/'+roomJson.serviceId+rooms+'/'+roomJson._id+meetings+'/'+meeting._id);
-						done();
+						roomManagerAPI
+							.del(token,resourceEndPoint+'/'+resourceJson._id,function(err,res){
+								roomManagerAPI
+									.del(token,locationEndPoint+'/'+locationJson._id,function(err,res){
+										done();
+									});
+							});
+						
 					});
 			});
 
