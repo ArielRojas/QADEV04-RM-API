@@ -32,7 +32,7 @@ describe('Smoke Testing for Room routes', function() {
 			.getToken(function(err,res){
 				token = res.body.token;
 				endPoint=config.url+endPoints.rooms;
-				json=roomJson.roomQueries[0];
+				json=roomJson.roomQueries.customDisplayName;
 				mongodb.findDocument('rooms',json,function(doc){
 					room=doc;
 					done();
@@ -77,8 +77,8 @@ describe('Smoke Testing for Room routes', function() {
  * Smoke Test to the service room with the method put for modify the
  * display name of the room 
  */
-	it('PUT /rooms/{roomId}, Verify the status 200',function(done){			
-		json=roomJson.roomUpdateQ[0];
+	it('PUT /rooms/{roomId}, Verify the status 200',function(done){	
+		json.customDisplayName='ChangedByAPI';
 		roomManagerAPI.
 			put(token,endPoint,json,function(err,res){
 				expect(res.status).to.equal(config.httpStatus.Ok);
@@ -89,7 +89,7 @@ describe('Smoke Testing for Room routes', function() {
 
 describe('Smoke Testing for Room Resources routes ', function() {
 	this.timeout(config.timeOut);
-	
+
 	/**
 	 * Pre condition to execute the set Test Cases.
 	 * @getToken(rollback)
@@ -97,6 +97,7 @@ describe('Smoke Testing for Room Resources routes ', function() {
 	 * Get a room randomly and create a resource
 	 */
 	before('Before Set',function (done) {
+		//console.log('11111111'+JSON.stringify(json));
 		tokenAPI
 			.getToken(function(err,res){
 				token = res.body.token;
@@ -107,8 +108,8 @@ describe('Smoke Testing for Room Resources routes ', function() {
 						json=util.getRandomResourcesJson(resourceConfig.resourceNameSize);
 							roomManagerAPI.post(token,endPoint2,json,function(err,resourceRes){
 								resource=resourceRes;
-								 	endPoint=endPoint+'/'+room._id+'/resources';		
-									json=roomJson.roomUpdateQ[3];
+								 	endPoint=endPoint+'/'+room._id+'/resources';	
+								 	json=roomJson.resources.roomsAsoc;	
 									json.resourceId=resource.body._id;
 										roomManagerAPI.post
 											(token,endPoint,json,function(err,resAsoc){
@@ -165,7 +166,7 @@ describe('Smoke Testing for Room Resources routes ', function() {
  * for Updating a specific resource from a specific room
  */			
 	it('PUT /rooms/{:roomId}/resources/{:roomResourceId}, Verify the status 200',function(done){		
-			 json={"quantity": 10};
+			 json=roomJson.roomQueries.resourcesUpdate;
 			roomManagerAPI.put(token,endPoint,json,function(err,resp){
 				expect(resp.status).to.equal(config.httpStatus.Ok);	
 				done();		
@@ -184,3 +185,4 @@ describe('Smoke Testing for Room Resources routes ', function() {
 	});	
 
 });
+
