@@ -121,13 +121,13 @@ describe('Scenario 7.1 – have a meeting with 15 seconds of duration and then t
 					});
 			});
 
-			/*after(function (done) {
+			after(function (done) {
 				roomManagerAPI
 					.delwithBasic(basic,servicesEndPoint+'/'+roomJson.serviceId+'/'+rooms+'/'+roomJson._id+'/'+meetings+'/'+meeting._id,function(err,res){
 						//console.log('after'+servicesEndPoint+'/'+roomJson.serviceId+rooms+'/'+roomJson._id+meetings+'/'+meeting._id);
 						done();
 					});
-			});*/
+			});
 
 			it('Then the room should be reserved for the meeting', function (done) {
 				var jsonId = {"_id" : ObjectId(meeting._id)}
