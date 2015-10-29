@@ -41,7 +41,7 @@ describe('CRUD testings for meetings : POST Method', function () {
 
 	before('Getting the serviceId and roomId', function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var json = meetingConfig.displayName;
+		var json = meetingConfig.displayNameRoom;
 		mongodb
 			.findDocument('rooms', json, function(res2){
 				roomId = res2._id;
@@ -110,7 +110,7 @@ describe('CRUD testings for meetings : GET method (all meetings), GET, PUT and D
 
 	before('Creating the meeting ',function (done){
 		process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-		var json=meetingConfig.displayName;
+		var json=meetingConfig.displayNameRoom;
 		mongodb
 			.findDocument('rooms', json, function(res2){
 				roomId = res2._id;
@@ -134,9 +134,6 @@ describe('CRUD testings for meetings : GET method (all meetings), GET, PUT and D
 	it('GET /services/{:serviceId}/rooms/{:roomId}/meetings', function (done){	
 		roomManagerAPI
 			.get(servicesEndPoint + '/' + serviceId + '/' + rooms + '/' + roomId + '/' + meetings, function(err, res){
-				expect(res.status).to.equal(config.httpStatus.Ok);
-				expect(res.body).not.to.be.null;
-				expect(res.body).to.not.be.undefined;
 				expect(res.status).to.equal(config.httpStatus.Ok);
 				expect(res.body[0]).to.have.property("serviceId");
 				expect(res.body[0].serviceId).to.equal(meeting.serviceId);
