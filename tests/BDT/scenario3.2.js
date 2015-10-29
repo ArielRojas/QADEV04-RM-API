@@ -47,7 +47,7 @@ var meetingId = null;
 var roomEmail = null;
 var locationName = null;
 
-describe('Scenario 3.2 – Create a meeting in a room associated to location when it stops be out of order ', function () {
+describe('Scenario 3.2 – Create a meeting in a room associated to location in diferent date of the out of order ', function () {
 	this.timeout(timeout);
 	context('Given a room out of order e.g roomA ',function(){
 		before('get the token of the roomManager',function(done) {

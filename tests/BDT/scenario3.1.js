@@ -82,7 +82,6 @@ describe('Scenario 3.1 – Create a meeting a room out of order associated to lo
 			  	 	done();
 			  });
 		});	
-	
 		before( function(done){
 			console.log('\t \t And the floor1 is associated to roomA');
 			associateLocation = { "locationId" :locationID};

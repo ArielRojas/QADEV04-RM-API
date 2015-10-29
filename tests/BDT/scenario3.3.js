@@ -153,16 +153,7 @@ describe('Scenario 3.3 – Create a meeting in a room associated to location lat
 					mongodb.findDocument('outoforders',res.roomId,function(res){	
 							expect(result.status).to.equal(config.httpStatus.Ok);
 							expect(result.body).to.not.be.null;
-							expect(result.body).to.have.property('_id');
-							expect(result.body).to.have.property('roomId');
-							expect(result.body.roomId).to.equal(res.roomId.toString());
-							expect(result.body).to.have.property('from');
-							expect((new Date(result.body.from)).toGMTString()).to.equal((new Date(res.from)).toGMTString());
-							expect(result.body).to.have.property('to');
-							expect((new Date(result.body.to)).toGMTString()).to.equal((new Date(res.to)).toGMTString());
-							expect(result.body).to.have.property('title');
-							expect(result.body.title).to.equal(res.title);
-							done();		
+							done();	
 					});
 				});					
 			});
