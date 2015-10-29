@@ -1,4 +1,4 @@
-//BTD - Meetings
+//BDT - Meetings
 //Author Ariel Wagner Rojas
 // the next line call the file init.js to declare a global var(GLOBAL.initialDirectory)
 var init = require('../../init');
