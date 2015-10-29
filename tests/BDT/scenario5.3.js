@@ -59,7 +59,7 @@ describe('meetings', function () {
 			});
 	});
 
-	describe('Scenario 5.2: Create meetings at different date in a Room', function () {
+	describe('Scenario 5.3: The meetings created in the same room has the same location, room id and room Email', function () {
 		context('Given I have a Room', function(){
 			before('And a location assigned at to Room', function (done) {
 				console.log('\t\tAnd a location assigned at to Room');
