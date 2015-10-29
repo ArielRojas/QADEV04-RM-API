@@ -88,6 +88,21 @@ var getDate = function(num){
 }
 exports.getDate = getDate;
 
+var getCurrentDate = function(moreSeconds){
+    var date = new Date();
+    date.setMilliseconds(000);
+    var res = [];
+    var currentTime = date.toJSON();
+    res.push(currentTime);
+    if(moreSeconds !== undefined){
+        date.setSeconds(date.getSeconds()+moreSeconds);
+        var currentPlus = date.toJSON();
+        res.push(currentPlus);
+    };
+    return res;
+}
+exports.getCurrentDate = getCurrentDate;
+
 
 /**
  * @text  {string} the text that its want to replace some value
