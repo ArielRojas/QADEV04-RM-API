@@ -37,7 +37,7 @@
 		"roomId" : "{:roomId}",
 		"outOfOrderId" : "{:outOfOrderId}"
 	},
-	"basicPrefix" : "Basic ",
+	"tokenBasicPrefix" : "Basic ",
 	"userBasicAccountJson" : "QXJpZWwuUm9qYXM6Q2xpZW50MTIz",
 	"exchangeAccount":{
 		"username":"Administrator",
