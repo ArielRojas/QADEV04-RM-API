@@ -145,7 +145,6 @@ var generateLocationJson = function (sizeName, customNameSize, descriptionSize) 
     return locationCongig.locationJson;
 };
 exports.generateLocationJson = generateLocationJson;
-
 /**
  * @description: This method get to Current date with diferent hours e.g. 2015-10-23T16:00:00.000Z
  * @param:  num sum the number sending to actual day  if you put 0, the day is the day actual
@@ -180,7 +179,7 @@ var generatemeetingJson = function (num) {
     meetingsConfig.meetingJSon.resources = meetingsConfig.meetingJSon.resources[0].replace('[num]', num);
     meetingsConfig.meetingJSon.start = getDate(0);
     meetingsConfig.meetingJSon.end = getDate(1);
-
+    
     return meetingsConfig.meetingJSon;
 };
 exports.generatemeetingJson = generatemeetingJson;
